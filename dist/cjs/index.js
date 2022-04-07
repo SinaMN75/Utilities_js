@@ -18,4 +18,5 @@ __exportStar(require("./components/components"), exports);
 __exportStar(require("./utils/utils"), exports);
 __exportStar(require("./data/models/models"), exports);
 __exportStar(require("./core/core"), exports);
+__exportStar(require("axios"), exports);
 //# sourceMappingURL=index.js.map
