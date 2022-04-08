@@ -24,6 +24,7 @@ __exportStar(require("./data/models/models"), exports);
 __exportStar(require("./core/core"), exports);
 __exportStar(require("axios"), exports);
 __exportStar(require("react-dom"), exports);
+__exportStar(require("prop-types"), exports);
 const react_1 = __importDefault(require("react"));
 exports.React = react_1.default;
 //# sourceMappingURL=index.js.map
