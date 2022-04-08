@@ -1,3 +1,5 @@
-import { Component } from 'react';
+import { Component, PureComponent } from 'react';
 export declare class BaseComponent<P, S> extends Component<P, S> {
+}
+export declare class BasePureComponent<P, S> extends PureComponent<P, S> {
 }
