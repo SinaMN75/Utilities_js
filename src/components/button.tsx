@@ -1,20 +1,21 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
-export interface IButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
-    backgroundColor?: string;
-    color?: string;
-}
+export const Button = (props: any) => {
+    let _style: React.CSSProperties = props.style || {};
 
-export const Button: React.FunctionComponent<IButtonProps> = (props) => {
-    const {children, backgroundColor, color, style} = props;
+    if (props.backgroundColor && _style) _style.backgroundColor = props.backgroundColor;
 
-    let _style: React.CSSProperties = style || {};
-
-    /** Override Defaults */
-    if (backgroundColor && _style) _style.backgroundColor = backgroundColor;
-    if (color && _style) _style.color = color;
-
-    return <button style={_style} {...props}>
-        {children}
-    </button>;
+    return <div>
+        <button onClick={props.onClick}
+                style={_style} {...props}
+        >{props.children}</button>
+    </div>;
 };
+
+Button.propTypes = {
+    backgroundColor: PropTypes.string,
+    onClick: PropTypes.func,
+};
+
+export const ButtonMemo = React.memo(Button);

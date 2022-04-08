@@ -1,6 +1,16 @@
 import React from 'react';
-export interface IButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
-    backgroundColor?: string;
-    color?: string;
-}
-export declare const Button: React.FunctionComponent<IButtonProps>;
+import PropTypes from "prop-types";
+export declare const Button: {
+    (props: any): JSX.Element;
+    propTypes: {
+        backgroundColor: PropTypes.Requireable<string>;
+        onClick: PropTypes.Requireable<(...args: any[]) => any>;
+    };
+};
+export declare const ButtonMemo: React.MemoExoticComponent<{
+    (props: any): JSX.Element;
+    propTypes: {
+        backgroundColor: PropTypes.Requireable<string>;
+        onClick: PropTypes.Requireable<(...args: any[]) => any>;
+    };
+}>;

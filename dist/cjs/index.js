@@ -19,4 +19,5 @@ __exportStar(require("./utils/utils"), exports);
 __exportStar(require("./data/models/models"), exports);
 __exportStar(require("./core/core"), exports);
 __exportStar(require("axios"), exports);
+__exportStar(require("react-dom"), exports);
 //# sourceMappingURL=index.js.map
