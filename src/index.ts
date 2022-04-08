@@ -5,3 +5,7 @@ export * from "./core/core";
 
 export * from "axios";
 export * from "react-dom";
+
+import React from "react";
+
+export {React};
