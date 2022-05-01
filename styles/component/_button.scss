@@ -1,0 +1,41 @@
+@import './../base/base-dir.scss';
+
+.button-component {
+    position: relative;
+    .notification {
+        position: absolute;
+        top: 21px;
+        left: 47px;
+        background-color: #FF8800;
+        width: 24px;
+        height: 17px;
+        border-radius: 9px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #FFFFFF;
+    }
+    .button {
+        background-color: transparent;
+        border-radius: 20px;
+        border: 1px;
+        border-style: solid;
+        height: 60px;
+        min-width: 60px;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .border-color-orange {
+        border-color:#FF8800;
+    }
+    .border-color-green {
+        color:#00E17F; 
+    }
+    .text-button {
+        @include TextStyleFA(112px, 19px, 500, 14px, #FFFFFF);
+        white-space: nowrap;
+        margin: 0 15px 0 30px;
+    }
+}

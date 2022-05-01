@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+}
+@mixin TextStyleEN($Width, $Height, $FontWeight, $FontSize, $FontColor) {
+    width: $Width;
+    height: $Height;
+    font-weight: $FontWeight;
+    font-size: $FontSize;
+    font-family: 'Sora', sans-serif;
+    color: $FontColor;
+}
+@mixin TextStyleFA($Width, $Height, $FontWeight, $FontSize, $FontColor) {
+    width: $Width;
+    height: $Height;
+    font-weight: $FontWeight;
+    font-size: $FontSize;
+    font-family: 'IRANYekanWeb', sans-serif;
+    color: $FontColor;
+}
