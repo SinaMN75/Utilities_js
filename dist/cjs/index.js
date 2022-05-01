@@ -18,5 +18,4 @@ __exportStar(require("./components/components"), exports);
 __exportStar(require("./utils/utils"), exports);
 __exportStar(require("./data/models/models"), exports);
 __exportStar(require("./core/core"), exports);
-require("./styles/app.css");
 //# sourceMappingURL=index.js.map
