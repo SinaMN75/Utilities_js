@@ -8,7 +8,7 @@ interface Props extends HTMLAttributes<HTMLDivElement>{
 
 function Button({ children, borderColor, textButton, notification }: Props): ReactElement {
     return (  
-        <div className="button-component">
+        <div className="button-component" style={{backgroundColor: "red"}}>
             {notification === true ? (
                 <span className="notification">3</span>
             ) : (null)}
