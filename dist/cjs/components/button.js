@@ -10,8 +10,8 @@ const Button = (props) => {
     let _style = props.style || {};
     if (props.backgroundColor && _style)
         _style.backgroundColor = props.backgroundColor;
-    return react_1.default.createElement("div", null,
-        react_1.default.createElement("button", Object.assign({ onClick: props.onClick, style: _style }, props), props.children));
+    return (react_1.default.createElement("div", null,
+        react_1.default.createElement("button", Object.assign({ onClick: props.onClick, style: _style }, props), props.children)));
 };
 exports.Button = Button;
 exports.Button.propTypes = {

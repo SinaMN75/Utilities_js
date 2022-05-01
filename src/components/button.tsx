@@ -6,11 +6,13 @@ export const Button = (props: any) => {
 
     if (props.backgroundColor && _style) _style.backgroundColor = props.backgroundColor;
 
-    return <div>
-        <button onClick={props.onClick}
+    return (
+        <div>
+            <button onClick={props.onClick}
                 style={_style} {...props}
-        >{props.children}</button>
-    </div>;
+            >{props.children}</button>
+        </div>
+    )
 };
 
 Button.propTypes = {
