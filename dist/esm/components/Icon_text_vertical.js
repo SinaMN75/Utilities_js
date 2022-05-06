@@ -1,5 +1,5 @@
 /* eslint-disable no-useless-concat */
-import React from "react";
+import React, { memo } from "react";
 import { Theme } from "../core/constants";
 export const IconTextVertical = ({ text, theme, children, className, fontSize, onClick }) => {
     let StyleTheme = "";
@@ -23,4 +23,5 @@ export const IconTextVertical = ({ text, theme, children, className, fontSize, o
         children,
         React.createElement("span", null, text)));
 };
+export default memo(IconTextVertical);
 //# sourceMappingURL=Icon_text_vertical.js.map

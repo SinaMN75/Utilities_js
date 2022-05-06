@@ -9,4 +9,5 @@ interface IconTextVerticalProp {
     onClick?: () => void;
 }
 export declare const IconTextVertical: React.FC<IconTextVerticalProp>;
-export {};
+declare const _default: React.NamedExoticComponent<IconTextVerticalProp>;
+export default _default;

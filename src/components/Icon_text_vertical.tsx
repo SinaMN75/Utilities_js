@@ -1,5 +1,5 @@
 /* eslint-disable no-useless-concat */
-import React, { ReactNode } from "react";
+import React, { memo, ReactNode } from "react";
 import { Theme } from "../core/constants";
 
 interface IconTextVerticalProp {
@@ -45,3 +45,4 @@ export const IconTextVertical: React.FC<IconTextVerticalProp> = ({
     </div>
   );
 };
+export default memo(IconTextVertical);
