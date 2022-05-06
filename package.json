@@ -23,7 +23,6 @@
     "prop-types": "^15.8.1",
     "axios": "^0.27.2"
   },
-  "bundledDependencies": true,
   "devDependencies": {
     "@types/node": "^17.0.21",
     "@types/react": "^18.0.8",
