@@ -13,20 +13,9 @@ var __createBinding = (this && this.__createBinding) || (Object.create ? (functi
 var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PropTypes = exports.React = void 0;
-const react_1 = __importDefault(require("react"));
-exports.React = react_1.default;
-const prop_types_1 = __importDefault(require("prop-types"));
-exports.PropTypes = prop_types_1.default;
 __exportStar(require("./components/components"), exports);
 __exportStar(require("./utils/utils"), exports);
 __exportStar(require("./data/models/models"), exports);
 __exportStar(require("./core/core"), exports);
-__exportStar(require("axios"), exports);
-__exportStar(require("prop-types"), exports);
-__exportStar(require("react-dom"), exports);
 //# sourceMappingURL=index.js.map
