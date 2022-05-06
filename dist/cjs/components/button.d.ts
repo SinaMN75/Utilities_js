@@ -4,6 +4,6 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
     textButton: string;
     notification: boolean;
 }
-declare function Button({ children, borderColor, textButton, notification }: Props): ReactElement;
+export declare function Button({ children, borderColor, textButton, notification }: Props): ReactElement;
 declare const _default: React.MemoExoticComponent<typeof Button>;
 export default _default;

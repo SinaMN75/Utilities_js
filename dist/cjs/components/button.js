@@ -23,13 +23,15 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Button = void 0;
 const react_1 = __importStar(require("react"));
 function Button({ children, borderColor, textButton, notification }) {
     return (react_1.default.createElement("div", { className: "button-component", style: { backgroundColor: "red" } },
-        notification === true ? (react_1.default.createElement("span", { className: "notification" }, "3")) : (null),
+        notification ? (react_1.default.createElement("span", { className: "notification" }, "3")) : null,
         react_1.default.createElement("button", { className: `button ${borderColor}` },
             children,
-            textButton !== '' ? (react_1.default.createElement("h3", { className: "text-button" }, textButton)) : (null))));
+            textButton !== '' ? (react_1.default.createElement("h3", { className: "text-button" }, textButton)) : null)));
 }
+exports.Button = Button;
 exports.default = (0, react_1.memo)(Button);
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=button.js.map
