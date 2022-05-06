@@ -1,0 +1,23 @@
+.IconTextVertical{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.IconTextVertical.IconTextVerticalDark{
+    color: #ffff;
+}
+.IconTextVertical.IconTextVerticalLight{
+    color: #474747;
+}
+.IconTextRow{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.IconTextRow.IconTextRowDark{
+    color: #ffff;
+}
+.IconTextRow.IconTextRowLight{
+    color: #474747;
+}

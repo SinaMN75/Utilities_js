@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Sample = exports.UtilitiesConstants = void 0;
+exports.Theme = exports.Sample = exports.UtilitiesConstants = void 0;
 class UtilitiesConstants {
 }
 exports.UtilitiesConstants = UtilitiesConstants;
@@ -16,4 +16,9 @@ Sample.profileImageUrl = "https://www.himalmag.com/wp-content/uploads/2019/07/sa
 Sample.loremPicsum = "https://picsum.photos/seed/picsum/200/300";
 Sample.timeElapse = "25 minuets ago";
 Sample.timeElapsePersian = "۳۵ دقیقه پیش";
+var Theme;
+(function (Theme) {
+    Theme[Theme["light"] = 0] = "light";
+    Theme[Theme["dark"] = 1] = "dark";
+})(Theme = exports.Theme || (exports.Theme = {}));
 //# sourceMappingURL=constants.js.map

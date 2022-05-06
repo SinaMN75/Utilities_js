@@ -11,4 +11,9 @@ Sample.profileImageUrl = "https://www.himalmag.com/wp-content/uploads/2019/07/sa
 Sample.loremPicsum = "https://picsum.photos/seed/picsum/200/300";
 Sample.timeElapse = "25 minuets ago";
 Sample.timeElapsePersian = "۳۵ دقیقه پیش";
+export var Theme;
+(function (Theme) {
+    Theme[Theme["light"] = 0] = "light";
+    Theme[Theme["dark"] = 1] = "dark";
+})(Theme || (Theme = {}));
 //# sourceMappingURL=constants.js.map
