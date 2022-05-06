@@ -1,6 +1,6 @@
-import React, { ReactNode } from "react";
+import React, { HTMLAttributes, ReactElement, ReactNode } from "react";
 import { Theme } from "../core/constants";
-interface IconTextVerticalProp {
+interface Props extends HTMLAttributes<HTMLDivElement> {
     text: ReactNode;
     theme: Theme;
     children: ReactNode;
@@ -8,6 +8,6 @@ interface IconTextVerticalProp {
     fontSize?: string;
     onClick?: () => void;
 }
-export declare const IconTextVertical: React.FC<IconTextVerticalProp>;
-declare const _default: React.NamedExoticComponent<IconTextVerticalProp>;
+export declare function IconTextVertical({ text, theme, children, className, fontSize, }: Props): ReactElement;
+declare const _default: React.MemoExoticComponent<typeof IconTextVertical>;
 export default _default;

@@ -1,8 +1,6 @@
-/* eslint-disable no-useless-concat */
-import React, { memo, ReactNode } from "react";
+import React, { HTMLAttributes, memo, ReactElement, ReactNode } from "react";
 import { Theme } from "../core/constants";
-
-interface IconTextVerticalProp {
+interface Props extends HTMLAttributes<HTMLDivElement> {
   text: ReactNode;
   theme: Theme;
   children: ReactNode;
@@ -11,14 +9,11 @@ interface IconTextVerticalProp {
   onClick?: () => void;
 }
 
-export const IconTextVertical: React.FC<IconTextVerticalProp> = ({
-  text,
+export function IconTextVertical({ text,
   theme,
   children,
   className,
-  fontSize,
-  onClick
-}) => {
+  fontSize, }: Props): ReactElement {
   let StyleTheme: string = "";
   if (theme === Theme.light) {
     StyleTheme = "IconTextVerticalLight";
@@ -38,11 +33,11 @@ export const IconTextVertical: React.FC<IconTextVerticalProp> = ({
     <div
       style={Styles}
       className={`${IsclassName + " " + StyleTheme + " " + "IconTextVertical"}`}
-      onClick={onClick}
     >
       {children}
       <span>{text}</span>
     </div>
   );
-};
+}
+
 export default memo(IconTextVertical);

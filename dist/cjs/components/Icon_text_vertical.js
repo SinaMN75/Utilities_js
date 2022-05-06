@@ -24,10 +24,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.IconTextVertical = void 0;
-/* eslint-disable no-useless-concat */
 const react_1 = __importStar(require("react"));
 const constants_1 = require("../core/constants");
-const IconTextVertical = ({ text, theme, children, className, fontSize, onClick }) => {
+function IconTextVertical({ text, theme, children, className, fontSize, }) {
     let StyleTheme = "";
     if (theme === constants_1.Theme.light) {
         StyleTheme = "IconTextVerticalLight";
@@ -45,10 +44,10 @@ const IconTextVertical = ({ text, theme, children, className, fontSize, onClick 
     let Styles = {
         fontSize,
     };
-    return (react_1.default.createElement("div", { style: Styles, className: `${IsclassName + " " + StyleTheme + " " + "IconTextVertical"}`, onClick: onClick },
+    return (react_1.default.createElement("div", { style: Styles, className: `${IsclassName + " " + StyleTheme + " " + "IconTextVertical"}` },
         children,
         react_1.default.createElement("span", null, text)));
-};
+}
 exports.IconTextVertical = IconTextVertical;
-exports.default = (0, react_1.memo)(exports.IconTextVertical);
+exports.default = (0, react_1.memo)(IconTextVertical);
 //# sourceMappingURL=Icon_text_vertical.js.map
