@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, memo, ReactElement, ReactNode } from "react";
+import React, { HTMLAttributes, memo, ReactElement } from "react";
 interface Props extends HTMLAttributes<HTMLDivElement> {
   list: any[];
   className?: string;
@@ -30,11 +30,7 @@ export function TabNavigation({
       ".tab-navigation .tabs-item.active"
     );
     Activeelement.forEach((box) => {
-      // ✅ Remove class from each element
       box.classList.remove("active");
-
-      // ✅ Add class to each element
-      // box.classList.add('small');
     });
     const ClickedElement = document.querySelector(`.tab-navigation .${value}`);
     ClickedElement?.classList.add("active");

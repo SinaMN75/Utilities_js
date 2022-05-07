@@ -13,10 +13,7 @@ export function TabNavigation({ list, TextItem, ValueItem, border, className, on
     const handelActiveItem = (value, BackVal) => {
         const Activeelement = document.querySelectorAll(".tab-navigation .tabs-item.active");
         Activeelement.forEach((box) => {
-            // ✅ Remove class from each element
             box.classList.remove("active");
-            // ✅ Add class to each element
-            // box.classList.add('small');
         });
         const ClickedElement = document.querySelector(`.tab-navigation .${value}`);
         ClickedElement === null || ClickedElement === void 0 ? void 0 : ClickedElement.classList.add("active");
