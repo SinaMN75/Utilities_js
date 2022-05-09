@@ -78,4 +78,22 @@ body {
   color: #474747;
 }
 
+.tab-navigation .tabs-parnet {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tab-navigation .tabs-parnet .tabs-item {
+  text-align: center;
+  width: 100%;
+  padding: 1rem;
+  border-bottom: 3px solid rgba(120, 120, 120, 0.2);
+  cursor: pointer;
+}
+.tab-navigation .tabs-parnet .tabs-item.active {
+  border-bottom: 3px solid #00de8e;
+  transition: all 0.3s ease-in;
+}
+
 /*# sourceMappingURL=utilities.css.map */
