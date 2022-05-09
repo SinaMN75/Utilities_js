@@ -1,1 +1,0 @@
-{"version":3,"file":"pokemon_response.js","sourceRoot":"","sources":["../../../../../src/data/models/responses/pokemon_response.ts"],"names":[],"mappings":";;;AA0BA,MAAa,sBAAsB;IACxB,MAAM,CAAC,QAAQ,CAAC,IAAY;QAC/B,OAAO,IAAI,CAAC,KAAK,CAAC,IAAI,CAAC,CAAC;IAC5B,CAAC;IAEM,MAAM,CAAC,MAAM,CAAC,KAAsB;QACvC,OAAO,IAAI,CAAC,SAAS,CAAC,KAAK,CAAC,CAAC;IACjC,CAAC;CACJ;AARD,wDAQC"}
