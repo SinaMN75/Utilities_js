@@ -11,7 +11,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "rm -rf dist/ && npm run build:esm && npm run build:cjs&&sass --watch src/style/app.scss:../../dist/utilities.css",
+    "build": "rm -rf dist/ && npm run build:esm && npm run build:cjs&&sass --watch src/styles/app.scss:../../dist/utilities.css",
     "build:esm": "tsc",
     "build:cjs": "tsc --module CommonJS --outDir dist/cjs"
   },
