@@ -12,3 +12,7 @@ export class Sample {
     static timeElapse = "25 minuets ago"
     static timeElapsePersian = "۳۵ دقیقه پیش";
 }
+export enum Theme {
+    light,
+    dark,
+}  

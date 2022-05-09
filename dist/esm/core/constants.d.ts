@@ -11,3 +11,7 @@ export declare class Sample {
     static timeElapse: string;
     static timeElapsePersian: string;
 }
+export declare enum Theme {
+    light = 0,
+    dark = 1
+}
