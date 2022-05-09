@@ -65,4 +65,76 @@ body {
   white-space: nowrap;
   margin: 0 15px 0 30px;
 }
+
+.IconTextVertical {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.IconTextVertical.IconTextVerticalDark {
+  color: #ffff;
+}
+
+.IconTextVertical.IconTextVerticalLight {
+  color: #474747;
+}
+
+.IconTextRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.IconTextRow.IconTextRowDark {
+  color: #ffff;
+}
+
+.IconTextRow.IconTextRowLight {
+  color: #474747;
+}
+
+.tab-navigation .tabs-parnet {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tab-navigation .tabs-parnet .tabs-item {
+  text-align: center;
+  width: 100%;
+  padding: 1rem;
+  border-bottom: 3px solid rgba(120, 120, 120, 0.2);
+  cursor: pointer;
+}
+
+.tab-navigation .tabs-parnet .tabs-item.active {
+  border-bottom: 3px solid #00de8e;
+  -webkit-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+}
 /*# sourceMappingURL=app.css.map */
