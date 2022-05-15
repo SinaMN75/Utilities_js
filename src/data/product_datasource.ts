@@ -9,7 +9,7 @@ export class ProductDataSource {
     }
 
     async getProducts(onResponse: (response: GenericResponse<ProductReadDto>) => any,
-                      onError: (response: Response) => any): Promise<GenericResponse<ProductReadDto>> {
+                      onError: (response: GenericResponse<ProductReadDto>) => any): Promise<GenericResponse<ProductReadDto>> {
         return await httpGet(`${this.baseUrl}api/Tutorial`,
             response => onResponse(response),
             response => onError(response)
