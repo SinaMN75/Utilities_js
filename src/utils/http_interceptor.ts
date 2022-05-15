@@ -4,12 +4,12 @@ import {UtilitiesConstants} from "../core/constants";
 
 const axios = require('axios');
 
-export function request(method: Method,
-                        url: string,
-                        body: object | null,
-                        onResponse: (response: any) => any,
-                        onError: (error: any) => any) {
-    axios({
+export async function request(method: Method,
+                              url: string,
+                              body: object | null,
+                              onResponse: (response: any) => any,
+                              onError: (error: any) => any): Promise<any> {
+    return await axios({
         method: method,
         url: url,
         headers: {'Authorization': getData(UtilitiesConstants.TOKEN)},
@@ -26,8 +26,8 @@ export function request(method: Method,
 
 export function httpGet(url: string,
                         onResponse: (response: any) => any,
-                        onError: (response: any) => any) {
-    request("get",
+                        onError: (response: any) => any): Promise<any> {
+    return request("get",
         url,
         null,
         (response: any) => onResponse(response),
@@ -37,8 +37,8 @@ export function httpGet(url: string,
 export function httpPost(url: string,
                          body: object | null = null,
                          onResponse: (response: any) => any,
-                         onError: (response: any) => any) {
-    request("post",
+                         onError: (response: any) => any): Promise<any> {
+    return request("post",
         url,
         body,
         (response: any) => onResponse(response),
@@ -48,8 +48,8 @@ export function httpPost(url: string,
 export function httpPut(url: string,
                         body: object | null = null,
                         onResponse: (response: any) => any,
-                        onError: (response: any) => any) {
-    request("put",
+                        onError: (response: any) => any): Promise<any> {
+    return request("put",
         url,
         body,
         (response: any) => onResponse(response),
@@ -59,8 +59,8 @@ export function httpPut(url: string,
 export function httpDelete(url: string,
                            body: object | null = null,
                            onResponse: (response: any) => any,
-                           onError: (response: any) => any) {
-    request("delete",
+                           onError: (response: any) => any): Promise<any> {
+    return request("delete",
         url,
         body,
         (response: any) => onResponse(response),
