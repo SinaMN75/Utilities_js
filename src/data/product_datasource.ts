@@ -1,5 +1,5 @@
 import {httpGet} from "../utils/http_interceptor";
-import {GenericResponse, ProductReadDto} from "./data";
+import {ProductReadDto} from "./data";
 
 export class ProductDataSource {
     baseUrl: string;
@@ -8,8 +8,8 @@ export class ProductDataSource {
         this.baseUrl = baseUrl;
     }
 
-    async getProducts(onResponse: (response: GenericResponse<ProductReadDto>) => any,
-                      onError: (response: Response) => any): Promise<GenericResponse<ProductReadDto>> {
+    async getProducts(onResponse: (response: ProductReadDto) => any,
+                      onError: (response: Response) => any): Promise<ProductReadDto> {
         return await httpGet(`${this.baseUrl}api/Tutorial`,
             response => onResponse(response),
             response => onError(response)
