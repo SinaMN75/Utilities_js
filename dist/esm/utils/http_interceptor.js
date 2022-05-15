@@ -20,6 +20,7 @@ export function request(method, url, body, onResponse, onError) {
             responseType: "json",
         }).then(function (response) {
             onResponse(response.data);
+            console.log(response.data);
         }).catch(function (response) {
             onError(response);
         }).then(function () {

@@ -17,6 +17,7 @@ export async function request(method: Method,
         responseType: "json",
     }).then(function (response: AxiosResponse) {
         onResponse(response.data);
+        console.log(response.data);
     }).catch(function (response: any) {
         onError(response);
     }).then(function () {
