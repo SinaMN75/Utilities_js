@@ -25,9 +25,9 @@ export async function request(method: Method,
 
 }
 
-export function httpGet<T>(url: string,
-                           onResponse: (response: T) => any,
-                           onError: (response: T) => any): Promise<T> {
+export function httpGet(url: string,
+                        onResponse: (response: any) => any,
+                        onError: (response: any) => any): Promise<any> {
     return request("get",
         url,
         null,
