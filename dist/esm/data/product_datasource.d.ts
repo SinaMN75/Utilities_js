@@ -1,6 +1,7 @@
-import { ProductReadDto } from "./data";
+import { GenericResponse, ProductReadDto, ProductResult } from "./data";
 export declare class ProductDataSource {
     baseUrl: string;
     constructor(baseUrl: string);
-    getProducts(onResponse: (response: ProductReadDto) => any, onError: (response: Response) => any): Promise<ProductReadDto>;
+    read(onResponse: (response: GenericResponse<ProductResult[]>) => any, onError: (response: Response) => any): Promise<GenericResponse<ProductResult[]>>;
+    readById(id: string, onResponse: (response: ProductReadDto) => any, onError: (response: Response) => any): Promise<ProductReadDto>;
 }
