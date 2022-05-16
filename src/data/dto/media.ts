@@ -1,6 +1,6 @@
 export interface MediaReadDto {
-    id?:      string;
-    type?:    number;
-    useCase?: string;
-    link?:    string;
+    Id?:      string;
+    Type?:    number;
+    UseCase?: string;
+    Link?:    string;
 }

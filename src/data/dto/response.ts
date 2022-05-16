@@ -1,10 +1,10 @@
 export interface GenericResponse<T> {
-    status?: number;
-    message?: string;
-    result?: T;
+    Status?: number;
+    Message?: string;
+    Result?: T;
 }
 
 export interface Response {
-    status?: number;
-    message?: string;
+    Status?: number;
+    Message?: string;
 }
