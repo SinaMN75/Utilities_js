@@ -14,12 +14,12 @@ export class ProductDataSource {
     }
     read(onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            return yield httpGet(`${this.baseUrl}api/Tutorial`, response => onResponse(response), response => onError(response));
+            return yield httpGet(`${this.baseUrl}api/Product`, response => onResponse(response), response => onError(response));
         });
     }
     readById(id, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            return yield httpGet(`${this.baseUrl}api/Tutorial/${id}`, response => onResponse(response), response => onError(response));
+            return yield httpGet(`${this.baseUrl}api/Product/${id}`, response => onResponse(response), response => onError(response));
         });
     }
 }

@@ -9,22 +9,22 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProductDataSource = void 0;
+exports.TutorialDataSource = void 0;
 const http_interceptor_1 = require("../utils/http_interceptor");
-class ProductDataSource {
+class TutorialDataSource {
     constructor(baseUrl) {
         this.baseUrl = baseUrl;
     }
     read(onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            return yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}api/Product`, response => onResponse(response), response => onError(response));
+            return yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}api/Tutorial`, response => onResponse(response), response => onError(response));
         });
     }
     readById(id, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            return yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}api/Product/${id}`, response => onResponse(response), response => onError(response));
+            return yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}api/Tutorial/${id}`, response => onResponse(response), response => onError(response));
         });
     }
 }
-exports.ProductDataSource = ProductDataSource;
-//# sourceMappingURL=product_datasource.js.map
+exports.TutorialDataSource = TutorialDataSource;
+//# sourceMappingURL=tutorial_datasource.js.map
