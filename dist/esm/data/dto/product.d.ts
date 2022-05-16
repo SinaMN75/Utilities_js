@@ -1,10 +1,5 @@
 import { IdTitleReadDto, LocationReadDto, MediaReadDto, UserReadDto, VoteReadDto } from "./dto";
 export interface ProductReadDto {
-    status?: number;
-    message?: string;
-    result?: ProductResult[];
-}
-export interface ProductResult {
     id?: string;
     title?: string;
     subtitle?: string;

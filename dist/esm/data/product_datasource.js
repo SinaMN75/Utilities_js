@@ -8,18 +8,28 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { httpGet } from "../utils/http_interceptor";
+export var ProductDataSourceType;
+(function (ProductDataSourceType) {
+    ProductDataSourceType["products"] = "Product";
+    ProductDataSourceType["tutorials"] = "Tutorial";
+    ProductDataSourceType["projects"] = "Project";
+    ProductDataSourceType["companies"] = "Company";
+    ProductDataSourceType["tenders"] = "Tender";
+    ProductDataSourceType["magazine"] = "Magazine";
+})(ProductDataSourceType || (ProductDataSourceType = {}));
 export class ProductDataSource {
-    constructor(baseUrl) {
+    constructor(baseUrl, type) {
         this.baseUrl = baseUrl;
+        this.type = type;
     }
     read(onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            return yield httpGet(`${this.baseUrl}api/Product`, response => onResponse(response), response => onError(response));
+            return yield httpGet(`${this.baseUrl}api/${this.type.toString()}`, response => onResponse(response), response => onError(response));
         });
     }
     readById(id, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            return yield httpGet(`${this.baseUrl}api/Product/${id}`, response => onResponse(response), response => onError(response));
+            return yield httpGet(`${this.baseUrl}api/${this.type.toString()}/${id}`, response => onResponse(response), response => onError(response));
         });
     }
 }
