@@ -3,7 +3,7 @@ import {IdTitleReadDto, LocationReadDto, MediaReadDto, UserReadDto, VoteReadDto}
 export interface ProductReadDto {
     status?: number;
     message?: string;
-    result?: ProductReadDto[];
+    result?: ProductResult[];
 }
 
 export interface ProductResult {

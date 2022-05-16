@@ -15,9 +15,14 @@ class ProductDataSource {
     constructor(baseUrl) {
         this.baseUrl = baseUrl;
     }
-    getProducts(onResponse, onError) {
+    read(onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
             return yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}api/Tutorial`, response => onResponse(response), response => onError(response));
+        });
+    }
+    readById(id, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}api/Tutorial/${id}`, response => onResponse(response), response => onError(response));
         });
     }
 }
