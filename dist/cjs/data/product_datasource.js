@@ -19,6 +19,9 @@ var ProductDataSourceType;
     ProductDataSourceType["companies"] = "Company";
     ProductDataSourceType["tenders"] = "Tender";
     ProductDataSourceType["magazine"] = "Magazine";
+    ProductDataSourceType["ads"] = "Ad";
+    ProductDataSourceType["dailyPrice"] = "DailyPrice";
+    ProductDataSourceType["job"] = "Job";
 })(ProductDataSourceType = exports.ProductDataSourceType || (exports.ProductDataSourceType = {}));
 class ProductDataSource {
     constructor(baseUrl, type) {

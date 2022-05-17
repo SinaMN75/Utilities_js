@@ -8,6 +8,9 @@ export enum ProductDataSourceType {
     companies = "Company",
     tenders = "Tender",
     magazine = "Magazine",
+    ads = "Ad",
+    dailyPrice = "DailyPrice",
+    job = "Job",
 }
 
 export class ProductDataSource {
