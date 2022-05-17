@@ -5,7 +5,10 @@ export declare enum ProductDataSourceType {
     projects = "Project",
     companies = "Company",
     tenders = "Tender",
-    magazine = "Magazine"
+    magazine = "Magazine",
+    ads = "Ad",
+    dailyPrice = "DailyPrice",
+    job = "Job"
 }
 export declare class ProductDataSource {
     baseUrl: string;
