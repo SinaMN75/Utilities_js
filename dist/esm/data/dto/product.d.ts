@@ -12,6 +12,7 @@ export interface ProductReadDto {
     StartDate?: string;
     EndDate?: string;
     User?: UserReadDto;
+    CreatedAt?: string;
     Location?: LocationReadDto[];
     Media?: MediaReadDto[];
     Categories?: IdTitleReadDto[];
