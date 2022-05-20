@@ -23,10 +23,12 @@ function request(method, url, body, onResponse, onError) {
             responseType: "json",
         }).then(function (response) {
             onResponse(response.data);
-            console.log(response.data);
+            console.log("RESPOBNSE: ", response.data);
         }).catch(function (response) {
             onError(response);
+            console.log("ERROR: ", response.data);
         }).then(function () {
+            console.log("WTF");
         });
     });
 }

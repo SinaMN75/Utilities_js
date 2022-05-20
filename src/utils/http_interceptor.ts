@@ -17,10 +17,12 @@ export async function request(method: Method,
         responseType: "json",
     }).then(function (response: AxiosResponse) {
         onResponse(response.data);
-        console.log(response.data);
+        console.log("RESPOBNSE: ", response.data);
     }).catch(function (response: any) {
         onError(response);
+        console.log("ERROR: ",response.data);
     }).then(function () {
+        console.log("WTF");
     });
 
 }
