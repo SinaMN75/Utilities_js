@@ -22,9 +22,9 @@ export class ProductDataSource {
         this.type = type;
     }
 
-    async create(params: ProductCreateUpdateDto,
-                 onResponse: (response: GenericResponse<ProductReadDto>) => any,
-                 onError: (response: Response) => any) {
+    create(params: ProductCreateUpdateDto,
+           onResponse: (response: GenericResponse<ProductReadDto>) => any,
+           onError: (response: Response) => any) {
         httpPost(
             `${this.baseUrl}api/${this.type.toString()}`,
             params,
@@ -33,17 +33,17 @@ export class ProductDataSource {
         );
     }
 
-    async read(onResponse: (response: GenericResponse<ProductReadDto[]>) => any,
-               onError: (response: Response) => any) {
+    read(onResponse: (response: GenericResponse<ProductReadDto[]>) => any,
+         onError: (response: Response) => any) {
         httpGet(`${this.baseUrl}api/${this.type.toString()}`,
             response => onResponse(response),
             response => onError(response)
         );
     }
 
-    async readById(id: string,
-                   onResponse: (response: ProductReadDto) => any,
-                   onError: (response: Response) => any) {
+    readById(id: string,
+             onResponse: (response: ProductReadDto) => any,
+             onError: (response: Response) => any) {
         httpGet(`${this.baseUrl}api/${this.type.toString()}/${id}`,
             response => onResponse(response),
             response => onError(response)
