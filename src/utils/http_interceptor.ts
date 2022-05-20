@@ -4,12 +4,12 @@ import {UtilitiesConstants} from "../core/constants";
 
 const axios = require('axios');
 
-export function request(method: Method,
-                        url: string,
-                        body: object | null,
-                        onResponse: (response: any) => any,
-                        onError: (error: any) => any) {
-    axios({
+export async function request(method: Method,
+                              url: string,
+                              body: object | null,
+                              onResponse: (response: any) => any,
+                              onError: (error: any) => any) {
+    await axios({
         method: method,
         url: url,
         headers: {'Authorization': getData(UtilitiesConstants.TOKEN)},
@@ -27,43 +27,43 @@ export function request(method: Method,
 
 }
 
-export function httpGet(url: string,
-                        onResponse: (response: any) => any,
-                        onError: (response: any) => any) {
-    request("get",
+export async function httpGet(url: string,
+                              onResponse: (response: any) => any,
+                              onError: (response: any) => any) {
+    await request("get",
         url,
         null,
         (response: any) => onResponse(response),
         (response: any) => onError(response));
 }
 
-export function httpPost(url: string,
-                         body: object | null = null,
-                         onResponse: (response: any) => any,
-                         onError: (response: any) => any) {
-    request("post",
+export async function httpPost(url: string,
+                               body: object | null = null,
+                               onResponse: (response: any) => any,
+                               onError: (response: any) => any) {
+    await request("post",
         url,
         body,
         (response: any) => onResponse(response),
         (response: any) => onError(response));
 }
 
-export function httpPut(url: string,
-                        body: object | null = null,
-                        onResponse: (response: any) => any,
-                        onError: (response: any) => any) {
-    request("put",
+export async function httpPut(url: string,
+                              body: object | null = null,
+                              onResponse: (response: any) => any,
+                              onError: (response: any) => any) {
+    await request("put",
         url,
         body,
         (response: any) => onResponse(response),
         (response: any) => onError(response));
 }
 
-export function httpDelete(url: string,
-                           body: object | null = null,
-                           onResponse: (response: any) => any,
-                           onError: (response: any) => any) {
-    request("delete",
+export async function httpDelete(url: string,
+                                 body: object | null = null,
+                                 onResponse: (response: any) => any,
+                                 onError: (response: any) => any) {
+    await request("delete",
         url,
         body,
         (response: any) => onResponse(response),

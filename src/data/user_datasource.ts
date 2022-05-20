@@ -9,10 +9,10 @@ export class UserDataSource {
         this.baseUrl = baseUrl;
     }
 
-    getMobileVerificationCodeForLogin(body: object,
+    async getMobileVerificationCodeForLogin(body: object,
                                       onResponse: (response: UserReadDto) => any,
                                       onError: (response: Response) => any) {
-        httpPost(`${this.baseUrl}api/user/GetMobileVerificationCodeForLogin`,
+        await httpPost(`${this.baseUrl}api/user/GetMobileVerificationCodeForLogin`,
             body,
             response => onResponse(response),
             response => onError(response)
