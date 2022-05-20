@@ -20,3 +20,22 @@ export interface ProductReadDto {
     Votes?: VoteReadDto[];
 }
 
+export interface ProductCreateUpdateDto {
+    id?: string;
+    title?: string;
+    subtitle?: string;
+    description?: string;
+    subTitle?: string;
+    price?: number;
+    isForSale?: boolean;
+    enabled?: boolean;
+    address?: string;
+    startDate?: string;
+    endDate?: string;
+    locations?: number[];
+    categories?: string[];
+    reference?: string[];
+    brands?: string[];
+    specialties?: string[];
+    tags?: string[];
+}

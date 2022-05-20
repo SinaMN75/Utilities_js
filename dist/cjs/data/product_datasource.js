@@ -28,6 +28,11 @@ class ProductDataSource {
         this.baseUrl = baseUrl;
         this.type = type;
     }
+    create(params, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}api/${this.type.toString()}`, params, response => onResponse(response), response => onError(response));
+        });
+    }
     read(onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
             return yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}api/${this.type.toString()}`, response => onResponse(response), response => onError(response));

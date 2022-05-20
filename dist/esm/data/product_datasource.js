@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { httpGet } from "../utils/http_interceptor";
+import { httpGet, httpPost } from "../utils/http_interceptor";
 export var ProductDataSourceType;
 (function (ProductDataSourceType) {
     ProductDataSourceType["products"] = "Product";
@@ -24,6 +24,11 @@ export class ProductDataSource {
     constructor(baseUrl, type) {
         this.baseUrl = baseUrl;
         this.type = type;
+    }
+    create(params, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return yield httpPost(`${this.baseUrl}api/${this.type.toString()}`, params, response => onResponse(response), response => onError(response));
+        });
     }
     read(onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
