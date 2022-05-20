@@ -7,6 +7,7 @@ export interface ProductReadDto {
     Description?: string;
     Enabled?: boolean;
     IsForSale?: boolean;
+    UpdatedAt?:string;
     IsBookmarked?: boolean;
     Price?: number;
     VisitsCount?: number;
