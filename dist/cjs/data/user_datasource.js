@@ -17,7 +17,7 @@ class UserDataSource {
     }
     getMobileVerificationCodeForLogin(body, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            return yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}api/user/GetMobileVerificationCodeForLogin`, body, response => onResponse(response), response => onError(response));
+            (0, http_interceptor_1.httpPost)(`${this.baseUrl}api/user/GetMobileVerificationCodeForLogin`, body, response => onResponse(response), response => onError(response));
         });
     }
 }

@@ -11,8 +11,8 @@ export class UserDataSource {
 
     async getMobileVerificationCodeForLogin(body: object,
                                             onResponse: (response: UserReadDto) => any,
-                                            onError: (response: Response) => any): Promise<UserReadDto> {
-        return await httpPost(`${this.baseUrl}api/user/GetMobileVerificationCodeForLogin`,
+                                            onError: (response: Response) => any) {
+        httpPost(`${this.baseUrl}api/user/GetMobileVerificationCodeForLogin`,
             body,
             response => onResponse(response),
             response => onError(response)

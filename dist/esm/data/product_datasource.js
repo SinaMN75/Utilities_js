@@ -27,17 +27,17 @@ export class ProductDataSource {
     }
     create(params, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            return yield httpPost(`${this.baseUrl}api/${this.type.toString()}`, params, response => onResponse(response), response => onError(response));
+            httpPost(`${this.baseUrl}api/${this.type.toString()}`, params, response => onResponse(response), response => onError(response));
         });
     }
     read(onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            return yield httpGet(`${this.baseUrl}api/${this.type.toString()}`, response => onResponse(response), response => onError(response));
+            httpGet(`${this.baseUrl}api/${this.type.toString()}`, response => onResponse(response), response => onError(response));
         });
     }
     readById(id, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            return yield httpGet(`${this.baseUrl}api/${this.type.toString()}/${id}`, response => onResponse(response), response => onError(response));
+            httpGet(`${this.baseUrl}api/${this.type.toString()}/${id}`, response => onResponse(response), response => onError(response));
         });
     }
 }
