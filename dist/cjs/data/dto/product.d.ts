@@ -9,7 +9,8 @@ export interface ProductReadDto {
     IsBookmarked?: boolean;
     Price?: number;
     VisitsCount?: number;
-    CreatedAt?: string;
+    StartDate?: string;
+    EndDate?: string;
     User?: UserReadDto;
     Location?: LocationReadDto[];
     Media?: MediaReadDto[];
@@ -17,6 +18,9 @@ export interface ProductReadDto {
     Team?: IdTitleReadDto[];
     Tags?: IdTitleReadDto[];
     Votes?: VoteReadDto[];
+    Brands?: IdTitleReadDto[];
+    References?: IdTitleReadDto[];
+    Specialities?: IdTitleReadDto[];
 }
 export interface ProductCreateUpdateDto {
     id?: string;
