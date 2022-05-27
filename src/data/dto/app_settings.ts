@@ -1,16 +1,16 @@
 import {IdTitleReadDto} from "./id_title";
 
-export interface Result {
-    language?: IdTitleReadDto[];
-    colors?: IdTitleReadDto[];
-    favorites?: IdTitleReadDto[];
-    specialtyCategories?: IdTitleReadDto[];
-    specialties?: IdTitleReadDto[];
-    userRole?: IdTitleReadDto[];
-    geoList?: Category[];
-    categories?: Category[];
-    formFieldType?: IdTitleReadDto[];
-    idTitleUseCase?: IdTitleReadDto[];
+export interface AppSettingsReadDto {
+	language?: IdTitleReadDto[];
+	colors?: IdTitleReadDto[];
+	favorites?: IdTitleReadDto[];
+	specialtyCategories?: IdTitleReadDto[];
+	specialties?: IdTitleReadDto[];
+	userRole?: IdTitleReadDto[];
+	geoList?: Category[];
+	categories?: Category[];
+	formFieldType?: IdTitleReadDto[];
+	idTitleUseCase?: IdTitleReadDto[];
 }
 
 export interface Category {

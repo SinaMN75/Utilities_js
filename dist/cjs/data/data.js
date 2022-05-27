@@ -17,4 +17,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./dto/dto"), exports);
 __exportStar(require("./product_datasource"), exports);
 __exportStar(require("./user_datasource"), exports);
+__exportStar(require("./app_settings_datasource"), exports);
+__exportStar(require("./form_datasource"), exports);
+__exportStar(require("./id_title_datasource"), exports);
 //# sourceMappingURL=data.js.map

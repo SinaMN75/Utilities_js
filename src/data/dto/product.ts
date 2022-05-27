@@ -1,4 +1,4 @@
-import {IdTitleReadDto, LocationReadDto, MediaReadDto, UserReadDto, VoteReadDto} from "./dto";
+import {FormFieldDto, IdTitleReadDto, LocationReadDto, MediaReadDto, UserReadDto, VoteReadDto} from "./dto";
 
 export interface ProductReadDto {
     id?: string;
@@ -24,6 +24,7 @@ export interface ProductReadDto {
     brands?: IdTitleReadDto[];
     references?: IdTitleReadDto[];
     specialities?: IdTitleReadDto[];
+    forms?: FormFieldDto[];
 }
 
 export interface ProductCreateUpdateDto {

@@ -1,16 +1,16 @@
 import { IdTitleReadDto, MediaReadDto } from "./dto";
 export interface UserReadDto {
-    Token?: string;
-    Id?: string;
-    FullName?: string;
+    token?: string;
+    id?: string;
+    fullName?: string;
     phoneNumber?: string;
-    UserName?: string;
-    Bio?: string;
-    AppUserName?: string;
-    AppPhoneNumber?: string;
-    BirthDate?: string;
-    Media?: MediaReadDto[];
-    Colors?: IdTitleReadDto[];
-    Specialties?: IdTitleReadDto[];
-    Favorites?: IdTitleReadDto[];
+    userName?: string;
+    bio?: string;
+    appUserName?: string;
+    appPhoneNumber?: string;
+    birthDate?: string;
+    media?: MediaReadDto[];
+    colors?: IdTitleReadDto[];
+    specialties?: IdTitleReadDto[];
+    favorites?: IdTitleReadDto[];
 }

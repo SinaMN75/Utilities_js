@@ -1,4 +1,4 @@
 export interface VoteReadDto {
-    Title?: string;
-    Point?: number;
+    title?: string;
+    point?: number;
 }

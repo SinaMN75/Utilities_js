@@ -26,7 +26,7 @@ export class ProductDataSource {
                  onResponse: (response: GenericResponse<ProductReadDto>) => any,
                  onError: (response: Response) => any) {
         await httpPost(
-            `${this.baseUrl}api/${this.type.toString()}`,
+            `${this.baseUrl}${this.type.toString()}`,
             params,
             response => onResponse(response),
             response => onError(response)
@@ -35,16 +35,16 @@ export class ProductDataSource {
 
     async read(onResponse: (response: GenericResponse<ProductReadDto[]>) => any,
                onError: (response: Response) => any) {
-        await httpGet(`${this.baseUrl}api/${this.type.toString()}`,
+        await httpGet(`${this.baseUrl}${this.type.toString()}`,
             response => onResponse(response),
             response => onError(response)
         );
     }
 
     async readById(id: string,
-                   onResponse: (response: ProductReadDto) => any,
+                   onResponse: (response: GenericResponse<ProductReadDto>) => any,
                    onError: (response: Response) => any) {
-        await httpGet(`${this.baseUrl}api/${this.type.toString()}/${id}`,
+        await httpGet(`${this.baseUrl}${this.type.toString()}/${id}`,
             response => onResponse(response),
             response => onError(response)
         );

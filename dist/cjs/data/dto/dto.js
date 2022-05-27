@@ -21,4 +21,6 @@ __exportStar(require("./id_title"), exports);
 __exportStar(require("./location"), exports);
 __exportStar(require("./user"), exports);
 __exportStar(require("./response"), exports);
+__exportStar(require("./app_settings"), exports);
+__exportStar(require("./form"), exports);
 //# sourceMappingURL=dto.js.map
