@@ -10,7 +10,7 @@ export interface AppSettingsReadDto {
 	geoList?: Category[];
 	categories?: Category[];
 	formFieldType?: IdTitleReadDto[];
-	idTitleUseCase?: IdTitleReadDto[];
+	categoryUseCase?: IdTitleReadDto[];
 }
 
 export interface Category {
