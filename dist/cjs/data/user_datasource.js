@@ -20,6 +20,16 @@ class UserDataSource {
             yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}user/GetMobileVerificationCodeForLogin`, body, response => onResponse(response), response => onError(response));
         });
     }
+    verifyMobileForLogin(body, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}user/VerifyMobileForLogin`, body, response => onResponse(response), response => onError(response));
+        });
+    }
+    getProfile(onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}user/GetProfile`, response => onResponse(response), response => onError(response));
+        });
+    }
 }
 exports.UserDataSource = UserDataSource;
 //# sourceMappingURL=user_datasource.js.map

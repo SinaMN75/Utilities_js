@@ -14,3 +14,11 @@ export interface UserReadDto {
     specialties?: IdTitleReadDto[];
     favorites?: IdTitleReadDto[];
 }
+export interface GetMobileVerificationCodeForLoginDto {
+    mobile?: string;
+    sendSMS?: boolean;
+}
+export interface VerifyMobileForLoginDto {
+    mobile?: string;
+    verificationCode?: string;
+}

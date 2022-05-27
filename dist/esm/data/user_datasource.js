@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { httpPost } from "../utils/http_interceptor";
+import { httpGet, httpPost } from "../utils/http_interceptor";
 export class UserDataSource {
     constructor(baseUrl) {
         this.baseUrl = baseUrl;
@@ -15,6 +15,16 @@ export class UserDataSource {
     getMobileVerificationCodeForLogin(body, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
             yield httpPost(`${this.baseUrl}user/GetMobileVerificationCodeForLogin`, body, response => onResponse(response), response => onError(response));
+        });
+    }
+    verifyMobileForLogin(body, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield httpPost(`${this.baseUrl}user/VerifyMobileForLogin`, body, response => onResponse(response), response => onError(response));
+        });
+    }
+    getProfile(onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield httpGet(`${this.baseUrl}user/GetProfile`, response => onResponse(response), response => onError(response));
         });
     }
 }
