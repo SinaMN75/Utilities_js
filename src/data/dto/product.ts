@@ -1,29 +1,29 @@
 import {IdTitleReadDto, LocationReadDto, MediaReadDto, UserReadDto, VoteReadDto} from "./dto";
 
 export interface ProductReadDto {
-    Id?: string;
-    Title?: string;
-    Subtitle?: string;
-    Description?: string;
-    Enabled?: boolean;
-    IsForSale?: boolean;
-    UpdatedAt?:string;
-    IsBookmarked?: boolean;
-    Price?: number;
-    VisitsCount?: number;
-    StartDate?: string;
-    EndDate?: string;
-    User?: UserReadDto; 
-    CreatedAt?: string;
-    Location?: LocationReadDto[];
-    Media?: MediaReadDto[];
-    Categories?: IdTitleReadDto[];
-    Team?: IdTitleReadDto[];
-    Tags?: IdTitleReadDto[];
-    Votes?: VoteReadDto[];
-    Brands?: IdTitleReadDto[];
-    References?: IdTitleReadDto[];
-    Specialities?: IdTitleReadDto[];
+    id?: string;
+    title?: string;
+    subtitle?: string;
+    description?: string;
+    enabled?: boolean;
+    isForSale?: boolean;
+    updatedAt?:string;
+    isBookmarked?: boolean;
+    price?: number;
+    visitsCount?: number;
+    startDate?: string;
+    endDate?: string;
+    user?: UserReadDto;
+    createdAt?: string;
+    location?: LocationReadDto[];
+    media?: MediaReadDto[];
+    categories?: IdTitleReadDto[];
+    team?: IdTitleReadDto[];
+    tags?: IdTitleReadDto[];
+    votes?: VoteReadDto[];
+    brands?: IdTitleReadDto[];
+    references?: IdTitleReadDto[];
+    specialities?: IdTitleReadDto[];
 }
 
 export interface ProductCreateUpdateDto {

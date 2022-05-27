@@ -1,9 +1,12 @@
-import {MediaReadDto} from "./dto";
+import {FormBuilderFieldList, MediaReadDto} from "./dto";
 
 export interface IdTitleReadDto {
-    Id?: string;
-    Title?: string;
-    SubTitle?: string;
-    Media?: MediaReadDto[];
+    id?:                    string;
+    title?:                 string;
+    subtitle?:              string;
+    color?:                 string;
+    link?:                  string;
+    useCase?:               number;
+    formBuilderFieldLists?: FormBuilderFieldList[];
+    media?: MediaReadDto[];
 }
-
