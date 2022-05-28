@@ -14,7 +14,7 @@ export class AppSettingsDataSource {
     }
     getEnums(onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield httpGet(`${this.baseUrl}AppSettings/ReadAll`, response => onResponse(response), response => onError(response));
+            yield httpGet(`${this.baseUrl}AppSettings`, response => onResponse(response), response => onError(response));
         });
     }
 }

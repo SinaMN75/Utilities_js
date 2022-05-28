@@ -10,7 +10,7 @@ export class AppSettingsDataSource {
 
 	async getEnums(onResponse: (response: GenericResponse<AppSettingsReadDto>) => any,
 	               onError: (response: Response) => any) {
-		await httpGet(`${this.baseUrl}AppSettings/ReadAll`,
+		await httpGet(`${this.baseUrl}AppSettings`,
 			response => onResponse(response),
 			response => onError(response)
 		);
