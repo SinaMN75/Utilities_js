@@ -22,7 +22,7 @@ export class FormDataSource {
 	}
 
 	async readFormFields(categoryId: string,
-	                     onResponse: (response: GenericResponse<FormFieldDto>) => any,
+	                     onResponse: (response: GenericResponse<FormFieldDto[]>) => any,
 	                     onError: (response: Response) => any) {
 		await httpGet(
 			`${this.baseUrl}Form/${categoryId}`,
