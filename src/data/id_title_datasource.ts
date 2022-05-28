@@ -2,9 +2,6 @@ import {httpGet, httpPost} from "../utils/http_interceptor";
 import {
 	GenericResponse,
 	IdTitleCreateUpdateDto, IdTitleReadDto,
-	ProductCreateUpdateDto,
-	ProductDataSourceType,
-	ProductReadDto
 } from "./data";
 
 export enum IdTitleDataSourceType {
@@ -15,9 +12,9 @@ export enum IdTitleDataSourceType {
 
 export class IdTitleDataSource {
 	baseUrl: string;
-	type: ProductDataSourceType;
+	type: IdTitleDataSourceType;
 
-	constructor(baseUrl: string, type: ProductDataSourceType) {
+	constructor(baseUrl: string, type: IdTitleDataSourceType) {
 		this.baseUrl = baseUrl;
 		this.type = type;
 	}
