@@ -1,7 +1,7 @@
 import {MediaReadDto} from "./dto";
 
 export interface LocationReadDto {
-    id?: number;
+    id?: string;
     title?: string;
     parentId?: number;
     parent?: string;

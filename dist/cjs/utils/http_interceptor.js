@@ -21,6 +21,7 @@ function request(method, url, body, onResponse, onError) {
             headers: { 'Authorization': (0, local_storage_1.getData)(constants_1.UtilitiesConstants.TOKEN) },
             data: body,
             responseType: "json",
+            withCredentials: false,
         }).then(function (response) {
             onResponse(response.data);
             console.log("RESPOBNSE: ", response.data);
