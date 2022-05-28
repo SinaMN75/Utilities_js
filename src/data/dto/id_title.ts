@@ -1,4 +1,4 @@
-import {FormBuilderFieldList, MediaReadDto} from "./dto";
+import {MediaReadDto} from "./dto";
 
 export interface IdTitleReadDto {
     id?: string;
@@ -7,7 +7,8 @@ export interface IdTitleReadDto {
     color?: string;
     link?: string;
     useCase?: number;
-    formBuilderFieldLists?: FormBuilderFieldList[];
+    parent: IdTitleReadDto,
+    parentId: string
     media?: MediaReadDto[];
 }
 

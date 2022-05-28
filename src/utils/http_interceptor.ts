@@ -15,6 +15,7 @@ export async function request(method: Method,
         headers: {'Authorization': getData(UtilitiesConstants.TOKEN)},
         data: body,
         responseType: "json",
+        withCredentials: false,
     }).then(function (response: AxiosResponse) {
         onResponse(response.data);
         console.log("RESPOBNSE: ", response.data);

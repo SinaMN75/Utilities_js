@@ -1,3 +1,4 @@
+import { IdTitleCreateUpdateDto } from "./id_title";
 export interface FormFieldDto {
     id?: string;
     value?: string;
@@ -18,9 +19,5 @@ export interface FormCreateDto {
     tenderId?: string;
     serviceId?: string;
     magazineId?: string;
-    kvvm?: Kvvm[];
-}
-export interface Kvvm {
-    key?: string;
-    value?: string;
+    form?: IdTitleCreateUpdateDto[];
 }

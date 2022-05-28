@@ -7,25 +7,8 @@ export interface AppSettingsReadDto {
 	specialtyCategories?: IdTitleReadDto[];
 	specialties?: IdTitleReadDto[];
 	userRole?: IdTitleReadDto[];
-	geoList?: Category[];
-	categories?: Category[];
+	geoList?: IdTitleReadDto[];
+	categories?: IdTitleReadDto[];
 	formFieldType?: IdTitleReadDto[];
-	idTitleUseCase?: IdTitleReadDto[];
-}
-
-export interface Category {
-    key?: string;
-    value?: string;
-    image?: string;
-    childs?: string[];
-    parentId?: string;
-    parentTitle?: string;
-    languageId?: string;
-    categoryFor?: number;
-}
-
-export interface FormBuilderFieldList {
-    id?: string;
-    value?: string;
-    formFieldId?: string;
+	categoryUseCase?: IdTitleReadDto[];
 }

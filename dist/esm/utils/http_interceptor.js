@@ -18,6 +18,7 @@ export function request(method, url, body, onResponse, onError) {
             headers: { 'Authorization': getData(UtilitiesConstants.TOKEN) },
             data: body,
             responseType: "json",
+            withCredentials: false,
         }).then(function (response) {
             onResponse(response.data);
             console.log("RESPOBNSE: ", response.data);
