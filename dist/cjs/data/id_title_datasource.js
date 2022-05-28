@@ -37,6 +37,11 @@ class IdTitleDataSource {
             yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}${this.type.toString()}/${id}`, response => onResponse(response), response => onError(response));
         });
     }
+    readeByUseCase(id, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}${this.type.toString()}/${id}`, response => onResponse(response), response => onError(response));
+        });
+    }
 }
 exports.IdTitleDataSource = IdTitleDataSource;
 //# sourceMappingURL=id_title_datasource.js.map

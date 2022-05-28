@@ -1,4 +1,4 @@
-import {httpGet, httpPost} from "../utils/http_interceptor";
+import { httpGet, httpPost } from "../utils/http_interceptor";
 import {
 	GenericResponse,
 	IdTitleCreateUpdateDto, IdTitleReadDto,
@@ -20,8 +20,8 @@ export class IdTitleDataSource {
 	}
 
 	async create(params: IdTitleCreateUpdateDto,
-	             onResponse: (response: GenericResponse<IdTitleReadDto>) => any,
-	             onError: (response: Response) => any) {
+		onResponse: (response: GenericResponse<IdTitleReadDto>) => any,
+		onError: (response: Response) => any) {
 		await httpPost(
 			`${this.baseUrl}${this.type.toString()}`,
 			params,
@@ -31,7 +31,7 @@ export class IdTitleDataSource {
 	}
 
 	async read(onResponse: (response: GenericResponse<IdTitleReadDto[]>) => any,
-	           onError: (response: Response) => any) {
+		onError: (response: Response) => any) {
 		await httpGet(`${this.baseUrl}${this.type.toString()}`,
 			response => onResponse(response),
 			response => onError(response)
@@ -39,8 +39,16 @@ export class IdTitleDataSource {
 	}
 
 	async readById(id: string,
-	               onResponse: (response: GenericResponse<IdTitleReadDto[]>) => any,
-	               onError: (response: Response) => any) {
+		onResponse: (response: GenericResponse<IdTitleReadDto[]>) => any,
+		onError: (response: Response) => any) {
+		await httpGet(`${this.baseUrl}${this.type.toString()}/${id}`,
+			response => onResponse(response),
+			response => onError(response)
+		);
+	}
+	async readeByUseCase(id: string,
+		onResponse: (response: GenericResponse<IdTitleReadDto[]>) => any,
+		onError: (response: Response) => any) {
 		await httpGet(`${this.baseUrl}${this.type.toString()}/${id}`,
 			response => onResponse(response),
 			response => onError(response)
