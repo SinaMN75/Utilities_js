@@ -10,7 +10,6 @@ export class FormDataSource {
 	}
 
 	async createFormField(dto: FormFieldDto,
-	                      categoryId: string,
 	                      onResponse: (response: GenericResponse<FormFieldDto>) => any,
 	                      onError: (response: Response) => any) {
 		await httpPost(

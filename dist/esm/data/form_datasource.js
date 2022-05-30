@@ -12,7 +12,7 @@ export class FormDataSource {
     constructor(baseUrl) {
         this.baseUrl = baseUrl;
     }
-    createFormField(dto, categoryId, onResponse, onError) {
+    createFormField(dto, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
             yield httpPost(`${this.baseUrl}Form/CreateFormField`, dto, response => onResponse(response), response => onError(response));
         });

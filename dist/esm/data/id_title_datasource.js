@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { httpGet, httpPost } from "../utils/http_interceptor";
+import { httpDelete, httpGet, httpPost, httpPut } from "../utils/http_interceptor";
 export var IdTitleDataSourceType;
 (function (IdTitleDataSourceType) {
     IdTitleDataSourceType["brand"] = "Brand";
@@ -24,9 +24,19 @@ export class IdTitleDataSource {
             yield httpPost(`${this.baseUrl}${this.type.toString()}`, params, response => onResponse(response), response => onError(response));
         });
     }
+    edit(params, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield httpPut(`${this.baseUrl}${this.type.toString()}`, params, response => onResponse(response), response => onError(response));
+        });
+    }
     read(onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
             yield httpGet(`${this.baseUrl}${this.type.toString()}`, response => onResponse(response), response => onError(response));
+        });
+    }
+    delete(params, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield httpDelete(`${this.baseUrl}${this.type.toString()}`, params, response => onResponse(response), response => onError(response));
         });
     }
     readById(id, onResponse, onError) {

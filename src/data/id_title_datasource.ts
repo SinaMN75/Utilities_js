@@ -1,4 +1,4 @@
-import { httpGet, httpPost } from "../utils/http_interceptor";
+import { httpDelete, httpGet, httpPost, httpPut } from "../utils/http_interceptor";
 import {
 	GenericResponse,
 	IdTitleCreateUpdateDto, IdTitleReadDto,
@@ -29,10 +29,30 @@ export class IdTitleDataSource {
 			response => onError(response)
 		);
 	}
+	async edit(params: IdTitleCreateUpdateDto,
+		onResponse: (response: GenericResponse<IdTitleReadDto>) => any,
+		onError: (response: Response) => any) {
+		await httpPut(
+			`${this.baseUrl}${this.type.toString()}`,
+			params,
+			response => onResponse(response),
+			response => onError(response)
+		);
+	}
 
 	async read(onResponse: (response: GenericResponse<IdTitleReadDto[]>) => any,
 		onError: (response: Response) => any) {
 		await httpGet(`${this.baseUrl}${this.type.toString()}`,
+			response => onResponse(response),
+			response => onError(response)
+		);
+	}
+	async delete(params: IdTitleCreateUpdateDto,
+		onResponse: (response: GenericResponse<IdTitleReadDto>) => any,
+		onError: (response: Response) => any) {
+		await httpDelete(
+			`${this.baseUrl}${this.type.toString()}`,
+			params,
 			response => onResponse(response),
 			response => onError(response)
 		);
