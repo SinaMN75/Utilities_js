@@ -9,9 +9,9 @@ export declare class IdTitleDataSource {
     type: IdTitleDataSourceType;
     constructor(baseUrl: string, type: IdTitleDataSourceType);
     create(params: IdTitleCreateUpdateDto, onResponse: (response: GenericResponse<IdTitleReadDto>) => any, onError: (response: Response) => any): Promise<void>;
-    edit(params: IdTitleCreateUpdateDto, onResponse: (response: GenericResponse<IdTitleReadDto>) => any, onError: (response: Response) => any): Promise<void>;
+    edit(id: string, params: IdTitleCreateUpdateDto, onResponse: (response: GenericResponse<IdTitleReadDto>) => any, onError: (response: Response) => any): Promise<void>;
     read(onResponse: (response: GenericResponse<IdTitleReadDto[]>) => any, onError: (response: Response) => any): Promise<void>;
-    delete(params: IdTitleCreateUpdateDto, onResponse: (response: GenericResponse<IdTitleReadDto>) => any, onError: (response: Response) => any): Promise<void>;
+    delete(id: string, params: IdTitleCreateUpdateDto, onResponse: (response: GenericResponse<IdTitleReadDto>) => any, onError: (response: Response) => any): Promise<void>;
     readById(id: string, onResponse: (response: GenericResponse<IdTitleReadDto[]>) => any, onError: (response: Response) => any): Promise<void>;
     readeByUseCase(id: string, onResponse: (response: GenericResponse<IdTitleReadDto[]>) => any, onError: (response: Response) => any): Promise<void>;
 }

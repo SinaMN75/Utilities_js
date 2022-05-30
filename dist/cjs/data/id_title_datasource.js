@@ -27,9 +27,9 @@ class IdTitleDataSource {
             yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}${this.type.toString()}`, params, response => onResponse(response), response => onError(response));
         });
     }
-    edit(params, onResponse, onError) {
+    edit(id, params, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, http_interceptor_1.httpPut)(`${this.baseUrl}${this.type.toString()}`, params, response => onResponse(response), response => onError(response));
+            yield (0, http_interceptor_1.httpPut)(`${this.baseUrl}${this.type.toString()}/${id}`, params, response => onResponse(response), response => onError(response));
         });
     }
     read(onResponse, onError) {
@@ -37,9 +37,9 @@ class IdTitleDataSource {
             yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}${this.type.toString()}`, response => onResponse(response), response => onError(response));
         });
     }
-    delete(params, onResponse, onError) {
+    delete(id, params, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, http_interceptor_1.httpDelete)(`${this.baseUrl}${this.type.toString()}`, params, response => onResponse(response), response => onError(response));
+            yield (0, http_interceptor_1.httpDelete)(`${this.baseUrl}${this.type.toString()}/${id}`, params, response => onResponse(response), response => onError(response));
         });
     }
     readById(id, onResponse, onError) {

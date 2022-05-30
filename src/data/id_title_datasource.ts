@@ -29,11 +29,11 @@ export class IdTitleDataSource {
 			response => onError(response)
 		);
 	}
-	async edit(params: IdTitleCreateUpdateDto,
+	async edit(id: string,params: IdTitleCreateUpdateDto,
 		onResponse: (response: GenericResponse<IdTitleReadDto>) => any,
 		onError: (response: Response) => any) {
 		await httpPut(
-			`${this.baseUrl}${this.type.toString()}`,
+			`${this.baseUrl}${this.type.toString()}/${id}`,
 			params,
 			response => onResponse(response),
 			response => onError(response)
@@ -47,11 +47,11 @@ export class IdTitleDataSource {
 			response => onError(response)
 		);
 	}
-	async delete(params: IdTitleCreateUpdateDto,
+	async delete(id: string,params: IdTitleCreateUpdateDto,
 		onResponse: (response: GenericResponse<IdTitleReadDto>) => any,
 		onError: (response: Response) => any) {
 		await httpDelete(
-			`${this.baseUrl}${this.type.toString()}`,
+			`${this.baseUrl}${this.type.toString()}/${id}`,
 			params,
 			response => onResponse(response),
 			response => onError(response)
