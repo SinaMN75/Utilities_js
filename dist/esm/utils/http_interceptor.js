@@ -45,9 +45,9 @@ export function httpPut(url, body = null, onResponse, onError) {
         yield request("put", url, body, (response) => onResponse(response), (response) => onError(response));
     });
 }
-export function httpDelete(url, body = null, onResponse, onError) {
+export function httpDelete(url, onResponse, onError) {
     return __awaiter(this, void 0, void 0, function* () {
-        yield request("delete", url, body, (response) => onResponse(response), (response) => onError(response));
+        yield request("delete", url, null, (response) => onResponse(response), (response) => onError(response));
     });
 }
 //# sourceMappingURL=http_interceptor.js.map

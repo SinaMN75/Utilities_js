@@ -46,12 +46,9 @@ export class IdTitleDataSource {
 		);
 	}
 
-	async delete(id: string, params: IdTitleCreateUpdateDto,
-	             onResponse: (response: GenericResponse<IdTitleReadDto>) => any,
-		onError: (response: Response) => any) {
+	async delete(id: string, onResponse: (response: Response) => any, onError: (response: Response) => any) {
 		await httpDelete(
 			`${this.baseUrl}${this.type.toString()}/${id}`,
-			params,
 			response => onResponse(response),
 			response => onError(response)
 		);

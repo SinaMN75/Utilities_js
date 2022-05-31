@@ -34,9 +34,9 @@ export class IdTitleDataSource {
             yield httpPut(`${this.baseUrl}${this.type.toString()}`, params, response => onResponse(response), response => onError(response));
         });
     }
-    delete(id, params, onResponse, onError) {
+    delete(id, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield httpDelete(`${this.baseUrl}${this.type.toString()}/${id}`, params, response => onResponse(response), response => onError(response));
+            yield httpDelete(`${this.baseUrl}${this.type.toString()}/${id}`, response => onResponse(response), response => onError(response));
         });
     }
     readById(id, onResponse, onError) {

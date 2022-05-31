@@ -52,9 +52,9 @@ function httpPut(url, body = null, onResponse, onError) {
     });
 }
 exports.httpPut = httpPut;
-function httpDelete(url, body = null, onResponse, onError) {
+function httpDelete(url, onResponse, onError) {
     return __awaiter(this, void 0, void 0, function* () {
-        yield request("delete", url, body, (response) => onResponse(response), (response) => onError(response));
+        yield request("delete", url, null, (response) => onResponse(response), (response) => onError(response));
     });
 }
 exports.httpDelete = httpDelete;

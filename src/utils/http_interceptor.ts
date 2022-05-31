@@ -61,12 +61,11 @@ export async function httpPut(url: string,
 }
 
 export async function httpDelete(url: string,
-                                 body: object | null = null,
                                  onResponse: (response: any) => any,
                                  onError: (response: any) => any) {
     await request("delete",
         url,
-        body,
+        null,
         (response: any) => onResponse(response),
         (response: any) => onError(response));
 }

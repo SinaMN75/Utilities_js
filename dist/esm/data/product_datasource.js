@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { httpGet, httpPost } from "../utils/http_interceptor";
+import { httpDelete, httpGet, httpPost, httpPut } from "../utils/http_interceptor";
 export var ProductDataSourceType;
 (function (ProductDataSourceType) {
     ProductDataSourceType["products"] = "Product";
@@ -35,6 +35,11 @@ export class ProductDataSource {
             yield httpGet(`${this.baseUrl}${this.type.toString()}`, response => onResponse(response), response => onError(response));
         });
     }
+    update(dto, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield httpPut(`${this.baseUrl}${this.type.toString()}`, dto, response => onResponse(response), response => onError(response));
+        });
+    }
     filter(dto, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
             yield httpPost(`${this.baseUrl}${this.type.toString()}`, dto, response => onResponse(response), response => onError(response));
@@ -43,6 +48,11 @@ export class ProductDataSource {
     readById(id, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
             yield httpGet(`${this.baseUrl}${this.type.toString()}/${id}`, response => onResponse(response), response => onError(response));
+        });
+    }
+    delete(id, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield httpDelete(`${this.baseUrl}${this.type.toString()}/${id}`, response => onResponse(response), response => onError(response));
         });
     }
 }

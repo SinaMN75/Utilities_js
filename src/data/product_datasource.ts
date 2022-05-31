@@ -1,4 +1,4 @@
-import {httpGet, httpPost} from "../utils/http_interceptor";
+import {httpDelete, httpGet, httpPost, httpPut} from "../utils/http_interceptor";
 import {GenericResponse, ProductCreateUpdateDto, ProductFilterDto, ProductReadDto} from "./data";
 
 export enum ProductDataSourceType {
@@ -41,6 +41,17 @@ export class ProductDataSource {
         );
     }
 
+    async update(dto: ProductCreateUpdateDto,
+                 onResponse: (response: GenericResponse<ProductReadDto>) => any,
+                 onError: (response: Response) => any) {
+        await httpPut(
+            `${this.baseUrl}${this.type.toString()}`,
+            dto,
+            response => onResponse(response),
+            response => onError(response)
+        );
+    }
+
     async filter(dto: ProductFilterDto,
                  onResponse: (response: GenericResponse<ProductReadDto[]>) => any,
                  onError: (response: Response) => any) {
@@ -55,6 +66,14 @@ export class ProductDataSource {
                    onResponse: (response: GenericResponse<ProductReadDto>) => any,
                    onError: (response: Response) => any) {
         await httpGet(`${this.baseUrl}${this.type.toString()}/${id}`,
+            response => onResponse(response),
+            response => onError(response)
+        );
+    }
+
+    async delete(id: string, onResponse: (response: Response) => any, onError: (response: Response) => any) {
+        await httpDelete(
+            `${this.baseUrl}${this.type.toString()}/${id}`,
             response => onResponse(response),
             response => onError(response)
         );
