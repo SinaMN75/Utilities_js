@@ -7,14 +7,19 @@ export interface ProductReadDto {
     description?: string;
     enabled?: boolean;
     isForSale?: boolean;
-    updatedAt?:string;
+    updatedAt?: string;
+    author?: string,
+    phoneNumber?: string,
+    email?: string,
+    latitude?: number,
+    longitude?: number,
     isBookmarked?: boolean;
     price?: number;
     visitsCount?: number;
     startDate?: string;
     endDate?: string;
-    user?: UserReadDto;
     createdAt?: string;
+    user?: UserReadDto;
     location?: LocationReadDto[];
     media?: MediaReadDto[];
     categories?: IdTitleReadDto[];
@@ -39,6 +44,36 @@ export interface ProductCreateUpdateDto {
     address?: string;
     startDate?: string;
     endDate?: string;
+    author?: string,
+    phoneNumber?: string,
+    email?: string,
+    latitude?: number,
+    longitude?: number,
+    locations?: number[];
+    categories?: string[];
+    reference?: string[];
+    brands?: string[];
+    specialties?: string[];
+    tags?: string[];
+}
+
+export interface ProductFilterDto {
+    id?: string;
+    title?: string;
+    subtitle?: string;
+    description?: string;
+    subTitle?: string;
+    price?: number;
+    isForSale?: boolean;
+    enabled?: boolean;
+    address?: string;
+    startDate?: string;
+    endDate?: string;
+    author?: string,
+    phoneNumber?: string,
+    email?: string,
+    latitude?: number,
+    longitude?: number,
     locations?: number[];
     categories?: string[];
     reference?: string[];

@@ -28,14 +28,19 @@ class ProductDataSource {
         this.baseUrl = baseUrl;
         this.type = type;
     }
-    create(params, onResponse, onError) {
+    create(dto, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}${this.type.toString()}`, params, response => onResponse(response), response => onError(response));
+            yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}${this.type.toString()}`, dto, response => onResponse(response), response => onError(response));
         });
     }
     read(onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
             yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}${this.type.toString()}`, response => onResponse(response), response => onError(response));
+        });
+    }
+    filter(dto, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}${this.type.toString()}`, dto, response => onResponse(response), response => onError(response));
         });
     }
     readById(id, onResponse, onError) {

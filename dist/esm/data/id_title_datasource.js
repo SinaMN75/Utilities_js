@@ -24,14 +24,14 @@ export class IdTitleDataSource {
             yield httpPost(`${this.baseUrl}${this.type.toString()}`, params, response => onResponse(response), response => onError(response));
         });
     }
-    edit(id, params, onResponse, onError) {
-        return __awaiter(this, void 0, void 0, function* () {
-            yield httpPut(`${this.baseUrl}${this.type.toString()}/${id}`, params, response => onResponse(response), response => onError(response));
-        });
-    }
     read(onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
             yield httpGet(`${this.baseUrl}${this.type.toString()}`, response => onResponse(response), response => onError(response));
+        });
+    }
+    update(params, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield httpPut(`${this.baseUrl}${this.type.toString()}`, params, response => onResponse(response), response => onError(response));
         });
     }
     delete(id, params, onResponse, onError) {

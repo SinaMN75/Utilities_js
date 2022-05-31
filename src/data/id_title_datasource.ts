@@ -1,8 +1,5 @@
-import { httpDelete, httpGet, httpPost, httpPut } from "../utils/http_interceptor";
-import {
-	GenericResponse,
-	IdTitleCreateUpdateDto, IdTitleReadDto,
-} from "./data";
+import {httpDelete, httpGet, httpPost, httpPut} from "../utils/http_interceptor";
+import {GenericResponse, IdTitleCreateUpdateDto, IdTitleReadDto,} from "./data";
 
 export enum IdTitleDataSourceType {
 	brand = "Brand",
@@ -20,8 +17,8 @@ export class IdTitleDataSource {
 	}
 
 	async create(params: IdTitleCreateUpdateDto,
-		onResponse: (response: GenericResponse<IdTitleReadDto>) => any,
-		onError: (response: Response) => any) {
+	             onResponse: (response: GenericResponse<IdTitleReadDto>) => any,
+	             onError: (response: Response) => any) {
 		await httpPost(
 			`${this.baseUrl}${this.type.toString()}`,
 			params,
@@ -29,26 +26,28 @@ export class IdTitleDataSource {
 			response => onError(response)
 		);
 	}
-	async edit(id: string,params: IdTitleCreateUpdateDto,
-		onResponse: (response: GenericResponse<IdTitleReadDto>) => any,
-		onError: (response: Response) => any) {
+
+	async read(onResponse: (response: GenericResponse<IdTitleReadDto[]>) => any,
+	           onError: (response: Response) => any) {
+		await httpGet(`${this.baseUrl}${this.type.toString()}`,
+			response => onResponse(response),
+			response => onError(response)
+		);
+	}
+
+	async update(params: IdTitleCreateUpdateDto,
+	             onResponse: (response: GenericResponse<IdTitleReadDto>) => any,
+	             onError: (response: Response) => any) {
 		await httpPut(
-			`${this.baseUrl}${this.type.toString()}/${id}`,
+			`${this.baseUrl}${this.type.toString()}`,
 			params,
 			response => onResponse(response),
 			response => onError(response)
 		);
 	}
 
-	async read(onResponse: (response: GenericResponse<IdTitleReadDto[]>) => any,
-		onError: (response: Response) => any) {
-		await httpGet(`${this.baseUrl}${this.type.toString()}`,
-			response => onResponse(response),
-			response => onError(response)
-		);
-	}
-	async delete(id: string,params: IdTitleCreateUpdateDto,
-		onResponse: (response: GenericResponse<IdTitleReadDto>) => any,
+	async delete(id: string, params: IdTitleCreateUpdateDto,
+	             onResponse: (response: GenericResponse<IdTitleReadDto>) => any,
 		onError: (response: Response) => any) {
 		await httpDelete(
 			`${this.baseUrl}${this.type.toString()}/${id}`,

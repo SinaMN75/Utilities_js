@@ -1,5 +1,5 @@
 import {httpGet, httpPost} from "../utils/http_interceptor";
-import {GenericResponse, ProductCreateUpdateDto, ProductReadDto} from "./data";
+import {GenericResponse, ProductCreateUpdateDto, ProductFilterDto, ProductReadDto} from "./data";
 
 export enum ProductDataSourceType {
     products = "Product",
@@ -22,12 +22,12 @@ export class ProductDataSource {
         this.type = type;
     }
 
-    async create(params: ProductCreateUpdateDto,
+    async create(dto: ProductCreateUpdateDto,
                  onResponse: (response: GenericResponse<ProductReadDto>) => any,
                  onError: (response: Response) => any) {
         await httpPost(
             `${this.baseUrl}${this.type.toString()}`,
-            params,
+            dto,
             response => onResponse(response),
             response => onError(response)
         );
@@ -36,6 +36,16 @@ export class ProductDataSource {
     async read(onResponse: (response: GenericResponse<ProductReadDto[]>) => any,
                onError: (response: Response) => any) {
         await httpGet(`${this.baseUrl}${this.type.toString()}`,
+            response => onResponse(response),
+            response => onError(response)
+        );
+    }
+
+    async filter(dto: ProductFilterDto,
+                 onResponse: (response: GenericResponse<ProductReadDto[]>) => any,
+                 onError: (response: Response) => any) {
+        await httpPost(`${this.baseUrl}${this.type.toString()}`,
+            dto,
             response => onResponse(response),
             response => onError(response)
         );
