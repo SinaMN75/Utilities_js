@@ -20,4 +20,5 @@ __exportStar(require("./user_datasource"), exports);
 __exportStar(require("./app_settings_datasource"), exports);
 __exportStar(require("./form_datasource"), exports);
 __exportStar(require("./id_title_datasource"), exports);
+__exportStar(require("./bookmark_datasource"), exports);
 //# sourceMappingURL=data.js.map

@@ -23,4 +23,5 @@ __exportStar(require("./user"), exports);
 __exportStar(require("./response"), exports);
 __exportStar(require("./app_settings"), exports);
 __exportStar(require("./form"), exports);
+__exportStar(require("./bookmark"), exports);
 //# sourceMappingURL=dto.js.map
