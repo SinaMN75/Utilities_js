@@ -22,9 +22,9 @@ class IdTitleDataSource {
         this.baseUrl = baseUrl;
         this.type = type;
     }
-    create(params, onResponse, onError) {
+    create(dto, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}${this.type.toString()}`, params, response => onResponse(response), response => onError(response));
+            yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}${this.type.toString()}`, dto, response => onResponse(response), response => onError(response));
         });
     }
     read(onResponse, onError) {
@@ -32,9 +32,9 @@ class IdTitleDataSource {
             yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}${this.type.toString()}`, response => onResponse(response), response => onError(response));
         });
     }
-    update(params, onResponse, onError) {
+    update(dto, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, http_interceptor_1.httpPut)(`${this.baseUrl}${this.type.toString()}`, params, response => onResponse(response), response => onError(response));
+            yield (0, http_interceptor_1.httpPut)(`${this.baseUrl}${this.type.toString()}`, dto, response => onResponse(response), response => onError(response));
         });
     }
     delete(id, onResponse, onError) {

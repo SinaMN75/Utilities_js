@@ -1,5 +1,5 @@
 import {httpPost} from "../utils/http_interceptor";
-import {GenericResponse, IdTitleReadDto, ToggleBookmarkDto,} from "./data";
+import {GenericResponse, IdTitleReadDto, ToggleBookmarkDto} from "./data";
 
 export class BookmarkDataSource {
 	baseUrl: string;
@@ -8,12 +8,12 @@ export class BookmarkDataSource {
 		this.baseUrl = baseUrl;
 	}
 
-	async toggleBookmark(params: ToggleBookmarkDto,
+	async toggleBookmark(dto: ToggleBookmarkDto,
 	                     onResponse: (response: GenericResponse<IdTitleReadDto>) => any,
 	                     onError: (response: Response) => any) {
 		await httpPost(
 			`${this.baseUrl}Bookmark/ToggleBookmark`,
-			params,
+			dto,
 			response => onResponse(response),
 			response => onError(response)
 		);

@@ -19,9 +19,9 @@ export class IdTitleDataSource {
         this.baseUrl = baseUrl;
         this.type = type;
     }
-    create(params, onResponse, onError) {
+    create(dto, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield httpPost(`${this.baseUrl}${this.type.toString()}`, params, response => onResponse(response), response => onError(response));
+            yield httpPost(`${this.baseUrl}${this.type.toString()}`, dto, response => onResponse(response), response => onError(response));
         });
     }
     read(onResponse, onError) {
@@ -29,9 +29,9 @@ export class IdTitleDataSource {
             yield httpGet(`${this.baseUrl}${this.type.toString()}`, response => onResponse(response), response => onError(response));
         });
     }
-    update(params, onResponse, onError) {
+    update(dto, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield httpPut(`${this.baseUrl}${this.type.toString()}`, params, response => onResponse(response), response => onError(response));
+            yield httpPut(`${this.baseUrl}${this.type.toString()}`, dto, response => onResponse(response), response => onError(response));
         });
     }
     delete(id, onResponse, onError) {

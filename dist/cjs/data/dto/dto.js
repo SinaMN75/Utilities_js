@@ -24,4 +24,7 @@ __exportStar(require("./response"), exports);
 __exportStar(require("./app_settings"), exports);
 __exportStar(require("./form"), exports);
 __exportStar(require("./bookmark"), exports);
+__exportStar(require("./comment"), exports);
+__exportStar(require("./chat"), exports);
+__exportStar(require("./notification"), exports);
 //# sourceMappingURL=dto.js.map

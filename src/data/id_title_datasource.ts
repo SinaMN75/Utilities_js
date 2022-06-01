@@ -16,12 +16,12 @@ export class IdTitleDataSource {
 		this.type = type;
 	}
 
-	async create(params: IdTitleCreateUpdateDto,
+	async create(dto: IdTitleCreateUpdateDto,
 	             onResponse: (response: GenericResponse<IdTitleReadDto>) => any,
 	             onError: (response: Response) => any) {
 		await httpPost(
 			`${this.baseUrl}${this.type.toString()}`,
-			params,
+			dto,
 			response => onResponse(response),
 			response => onError(response)
 		);
@@ -35,12 +35,12 @@ export class IdTitleDataSource {
 		);
 	}
 
-	async update(params: IdTitleCreateUpdateDto,
+	async update(dto: IdTitleCreateUpdateDto,
 	             onResponse: (response: GenericResponse<IdTitleReadDto>) => any,
 	             onError: (response: Response) => any) {
 		await httpPut(
 			`${this.baseUrl}${this.type.toString()}`,
-			params,
+			dto,
 			response => onResponse(response),
 			response => onError(response)
 		);

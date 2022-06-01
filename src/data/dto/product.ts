@@ -5,20 +5,24 @@ export interface ProductReadDto {
     title?: string;
     subtitle?: string;
     description?: string;
-    enabled?: boolean;
+    details?: string;
+    address?: string;
+    author?: string;
+    phoneNumber?: string;
+    email?: string;
     isForSale?: boolean;
-    updatedAt?: string;
-    author?: string,
-    phoneNumber?: string,
-    email?: string,
-    latitude?: number,
-    longitude?: number,
+    enabled?: boolean;
     isBookmarked?: boolean;
-    price?: number;
+    latitude?: number;
+    longitude?: number;
     visitsCount?: number;
+    price?: number;
     startDate?: string;
     endDate?: string;
     createdAt?: string;
+    updatedAt?: string;
+    deletedAt?: string;
+    status?: number;
     user?: UserReadDto;
     location?: LocationReadDto[];
     media?: MediaReadDto[];
@@ -37,24 +41,30 @@ export interface ProductCreateUpdateDto {
     title?: string;
     subtitle?: string;
     description?: string;
-    subTitle?: string;
-    price?: number;
+    details?: string;
+    address?: string;
+    author?: string;
+    phoneNumber?: string;
+    email?: string;
     isForSale?: boolean;
     enabled?: boolean;
-    address?: string;
+    latitude?: number;
+    longitude?: number;
+    visitsCount?: number;
+    price?: number;
     startDate?: string;
     endDate?: string;
-    author?: string,
-    phoneNumber?: string,
-    email?: string,
-    latitude?: number,
-    longitude?: number,
+    status?: number;
     locations?: number[];
+    favorites?: string[];
     categories?: string[];
-    reference?: string[];
+    references?: string[];
     brands?: string[];
     specialties?: string[];
     tags?: string[];
+    forms?: string[];
+    voteFields?: string[];
+    reports?: string[];
 }
 
 export interface ProductFilterDto {

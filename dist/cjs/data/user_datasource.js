@@ -25,9 +25,34 @@ class UserDataSource {
             yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}user/VerifyMobileForLogin`, body, response => onResponse(response), response => onError(response));
         });
     }
+    loginWithEmailPassword(body, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}user/LoginWithEmail`, body, response => onResponse(response), response => onError(response));
+        });
+    }
+    delete(id, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield (0, http_interceptor_1.httpDelete)(`${this.baseUrl}user`, response => onResponse(response), response => onError(response));
+        });
+    }
+    create(dto, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}user`, dto, response => onResponse(response), response => onError(response));
+        });
+    }
     getProfile(onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
             yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}user/GetProfile`, response => onResponse(response), response => onError(response));
+        });
+    }
+    read(onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}user`, response => onResponse(response), response => onError(response));
+        });
+    }
+    readById(id, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}user/${id}`, response => onResponse(response), response => onError(response));
         });
     }
 }

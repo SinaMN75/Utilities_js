@@ -15,9 +15,9 @@ class BookmarkDataSource {
     constructor(baseUrl) {
         this.baseUrl = baseUrl;
     }
-    toggleBookmark(params, onResponse, onError) {
+    toggleBookmark(dto, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}Bookmark/ToggleBookmark`, params, response => onResponse(response), response => onError(response));
+            yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}Bookmark/ToggleBookmark`, dto, response => onResponse(response), response => onError(response));
         });
     }
 }
