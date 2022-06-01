@@ -10,6 +10,7 @@ export enum ProductDataSourceType {
     magazine = "Magazine",
     ads = "Ad",
     dailyPrice = "DailyPrice",
+    service = "DailyPrice",
     job = "Job",
 }
 

@@ -17,11 +17,12 @@ export async function request(method: Method,
         responseType: "json",
         withCredentials: false,
     }).then(function (response: AxiosResponse) {
-        onResponse(response.data);
-        console.log("RESPOBNSE: ", response.data);
+        if (response.status >= 200 || response.status <= 299) onResponse(response.data);
+        else onError(response.data);
+        console.log(`${method} ${url}`, response.data);
     }).catch(function (response: any) {
         onError(response);
-        console.log("ERROR: ", response.data);
+        console.log(`${method} ${url}`, response.data);
     }).then(function () {
         console.log("WTF");
     });

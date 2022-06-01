@@ -21,6 +21,7 @@ var ProductDataSourceType;
     ProductDataSourceType["magazine"] = "Magazine";
     ProductDataSourceType["ads"] = "Ad";
     ProductDataSourceType["dailyPrice"] = "DailyPrice";
+    ProductDataSourceType["service"] = "DailyPrice";
     ProductDataSourceType["job"] = "Job";
 })(ProductDataSourceType = exports.ProductDataSourceType || (exports.ProductDataSourceType = {}));
 class ProductDataSource {
