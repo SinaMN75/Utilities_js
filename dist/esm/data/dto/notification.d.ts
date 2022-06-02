@@ -1,6 +1,6 @@
 import { MediaReadDto } from "./media";
 export interface NotificationReadDto {
-    id?: number;
+    id?: string;
     title?: string;
     message?: string;
     link?: string;
