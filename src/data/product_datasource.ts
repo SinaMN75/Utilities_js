@@ -56,7 +56,7 @@ export class ProductDataSource {
     async filter(dto: ProductFilterDto,
                  onResponse: (response: GenericResponse<ProductReadDto[]>) => any,
                  onError: (response: Response) => any) {
-        await httpPost(`${this.baseUrl}${this.type.toString()}`,
+        await httpPost(`${this.baseUrl}${this.type.toString()}/filter`,
             dto,
             response => onResponse(response),
             response => onError(response)

@@ -33,16 +33,17 @@ export interface LoginWithEmailPasswordDto {
 }
 
 export interface UserCreateUpdateDto {
-    fullName?: string;
-    bio?: string;
-    headline?: string;
-    website?: string;
-    appUserName?: string;
-    appPhoneNumber?: string;
-    appEmail?: string;
-    colors?: string[];
-    specialties?: string[];
-    favorites?: string[];
-    locations?: number[];
-    birthDate?: string;
+    fullName?:           string;
+    bio?:                string;
+    headline?:           string;
+    website?:            string;
+    password?:           string;
+    appUserName?:        string;
+    appPhoneNumber?:     string;
+    appEmail?:           string;
+    colors?:             string[];
+    specialties?:        string[];
+    favorites?:          string[];
+    locations?:          number[];
+    birthDate?:          string;
 }
