@@ -8,7 +8,7 @@ export declare enum ProductDataSourceType {
     magazine = "Magazine",
     ads = "Ad",
     dailyPrice = "DailyPrice",
-    service = "DailyPrice",
+    service = "Service",
     job = "Job"
 }
 export declare class ProductDataSource {

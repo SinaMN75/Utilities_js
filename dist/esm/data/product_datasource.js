@@ -18,7 +18,7 @@ export var ProductDataSourceType;
     ProductDataSourceType["magazine"] = "Magazine";
     ProductDataSourceType["ads"] = "Ad";
     ProductDataSourceType["dailyPrice"] = "DailyPrice";
-    ProductDataSourceType["service"] = "DailyPrice";
+    ProductDataSourceType["service"] = "Service";
     ProductDataSourceType["job"] = "Job";
 })(ProductDataSourceType || (ProductDataSourceType = {}));
 export class ProductDataSource {
