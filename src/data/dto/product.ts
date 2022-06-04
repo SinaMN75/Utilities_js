@@ -9,6 +9,8 @@ export interface ProductReadDto {
     address?: string;
     author?: string;
     phoneNumber?: string;
+    link?: string;
+    website?: string;
     email?: string;
     isForSale?: boolean;
     enabled?: boolean;
@@ -22,14 +24,13 @@ export interface ProductReadDto {
     createdAt?: string;
     updatedAt?: string;
     deletedAt?: string;
-    status?: number;
     user?: UserReadDto;
+    status?: number;
     location?: LocationReadDto[];
     media?: MediaReadDto[];
     categories?: IdTitleReadDto[];
     team?: IdTitleReadDto[];
     tags?: IdTitleReadDto[];
-    votes?: VoteReadDto[];
     brands?: IdTitleReadDto[];
     references?: IdTitleReadDto[];
     specialities?: IdTitleReadDto[];
@@ -45,6 +46,8 @@ export interface ProductCreateUpdateDto {
     address?: string;
     author?: string;
     phoneNumber?: string;
+    link?: string;
+    website?: string;
     email?: string;
     isForSale?: boolean;
     enabled?: boolean;
@@ -68,26 +71,32 @@ export interface ProductCreateUpdateDto {
 }
 
 export interface ProductFilterDto {
-    id?: string;
     title?: string;
-    subtitle?: string;
-    description?: string;
     subTitle?: string;
-    price?: number;
-    isForSale?: boolean;
+    description?: string;
+    details?: string;
+    startPriceRange?: number;
+    endPriceRange?: number;
     enabled?: boolean;
+    isForSale?: boolean;
+    link?: string;
+    website?: string;
+    isBookmarked?: boolean;
+    visitsCount?: number;
     address?: string;
+    author?: string;
+    phoneNumber?: string;
+    email?: string;
+    status?: number;
     startDate?: string;
     endDate?: string;
-    author?: string,
-    phoneNumber?: string,
-    email?: string,
-    latitude?: number,
-    longitude?: number,
     locations?: number[];
     categories?: string[];
-    reference?: string[];
     brands?: string[];
-    specialties?: string[];
+    references?: string[];
     tags?: string[];
+    specialities?: string[];
+    filterOrder?: number;
+    pageSize?: number;
+    pageNumber?: number;
 }

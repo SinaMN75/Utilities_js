@@ -43,7 +43,7 @@ export class ProductDataSource {
     }
     filter(dto, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield httpPost(`${this.baseUrl}${this.type.toString()}`, dto, response => onResponse(response), response => onError(response));
+            yield httpPost(`${this.baseUrl}${this.type.toString()}/filter`, dto, response => onResponse(response), response => onError(response));
         });
     }
     readById(id, onResponse, onError) {

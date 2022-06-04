@@ -32,6 +32,7 @@ export interface UserCreateUpdateDto {
     bio?: string;
     headline?: string;
     website?: string;
+    password?: string;
     appUserName?: string;
     appPhoneNumber?: string;
     appEmail?: string;

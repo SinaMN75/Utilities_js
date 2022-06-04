@@ -4,3 +4,18 @@ export interface MediaReadDto {
     useCase?: string;
     link?: string;
 }
+export interface MediaCreateUpdateDto {
+    UserId?: string;
+    ProductId?: string;
+    ProjectId?: string;
+    TutorialId?: string;
+    EventId?: string;
+    PostId?: string;
+    AdId?: string;
+    CompanyId?: string;
+    TenderId?: string;
+    ServiceId?: string;
+    MagazineId?: string;
+    Files?: any[];
+    Links?: string[];
+}
