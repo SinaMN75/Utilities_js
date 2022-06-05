@@ -14,7 +14,7 @@ export class BookmarkDataSource {
     }
     toggleBookmark(dto, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield httpPost(`${this.baseUrl}Bookmark/ToggleBookmark`, dto, response => onResponse(response), response => onError(response));
+            yield httpPost(`${this.baseUrl}Bookmark`, dto, response => onResponse(response), response => onError(response));
         });
     }
 }
