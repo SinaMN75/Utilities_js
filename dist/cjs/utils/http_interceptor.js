@@ -9,16 +9,19 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.httpDelete = exports.httpPut = exports.httpPost = exports.httpGet = exports.request = void 0;
+exports.httpDelete = exports.httpPut = exports.httpPostMultiPart = exports.httpPost = exports.httpGet = exports.request = void 0;
 const local_storage_1 = require("./local_storage");
 const constants_1 = require("../core/constants");
 const axios = require('axios');
-function request(method, url, body, onResponse, onError) {
+function request(method, url, body, isFile = false, onResponse, onError) {
     return __awaiter(this, void 0, void 0, function* () {
         yield axios({
             method: method,
             url: url,
-            headers: { 'Authorization': (0, local_storage_1.getData)(constants_1.UtilitiesConstants.TOKEN) },
+            headers: {
+                'Authorization': (0, local_storage_1.getData)(constants_1.UtilitiesConstants.TOKEN),
+                "Content-TYpe": isFile ? "multipart/form-data" : "application/json"
+            },
             data: body,
             responseType: "json",
             withCredentials: false,
@@ -39,25 +42,31 @@ function request(method, url, body, onResponse, onError) {
 exports.request = request;
 function httpGet(url, onResponse, onError) {
     return __awaiter(this, void 0, void 0, function* () {
-        yield request("get", url, null, (response) => onResponse(response), (response) => onError(response));
+        yield request("get", url, null, false, (response) => onResponse(response), (response) => onError(response));
     });
 }
 exports.httpGet = httpGet;
 function httpPost(url, body = null, onResponse, onError) {
     return __awaiter(this, void 0, void 0, function* () {
-        yield request("post", url, body, (response) => onResponse(response), (response) => onError(response));
+        yield request("post", url, body, false, (response) => onResponse(response), (response) => onError(response));
     });
 }
 exports.httpPost = httpPost;
+function httpPostMultiPart(url, body = null, onResponse, onError) {
+    return __awaiter(this, void 0, void 0, function* () {
+        yield request("post", url, body, true, (response) => onResponse(response), (response) => onError(response));
+    });
+}
+exports.httpPostMultiPart = httpPostMultiPart;
 function httpPut(url, body = null, onResponse, onError) {
     return __awaiter(this, void 0, void 0, function* () {
-        yield request("put", url, body, (response) => onResponse(response), (response) => onError(response));
+        yield request("put", url, body, false, (response) => onResponse(response), (response) => onError(response));
     });
 }
 exports.httpPut = httpPut;
 function httpDelete(url, onResponse, onError) {
     return __awaiter(this, void 0, void 0, function* () {
-        yield request("delete", url, null, (response) => onResponse(response), (response) => onError(response));
+        yield request("delete", url, null, false, (response) => onResponse(response), (response) => onError(response));
     });
 }
 exports.httpDelete = httpDelete;
