@@ -8,3 +8,4 @@ export * from "./bookmark_datasource";
 export * from "./chat_datasource";
 export * from "./comment_datasource";
 export * from "./notification_datasource";
+export * from "./media_datasource";
