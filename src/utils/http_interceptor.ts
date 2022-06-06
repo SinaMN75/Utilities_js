@@ -7,12 +7,16 @@ const axios = require('axios');
 export async function request(method: Method,
                               url: string,
                               body: object | null,
+                              isFile: boolean = false,
                               onResponse: (response: any) => any,
                               onError: (error: any) => any) {
     await axios({
         method: method,
         url: url,
-        headers: {'Authorization': getData(UtilitiesConstants.TOKEN)},
+        headers: {
+            'Authorization': getData(UtilitiesConstants.TOKEN),
+            "Content-TYpe": isFile ? "multipart/form-data" : "application/json"
+        },
         data: body,
         responseType: "json",
         withCredentials: false,
@@ -35,6 +39,7 @@ export async function httpGet(url: string,
     await request("get",
         url,
         null,
+        false,
         (response: any) => onResponse(response),
         (response: any) => onError(response));
 }
@@ -46,6 +51,19 @@ export async function httpPost(url: string,
     await request("post",
         url,
         body,
+        false,
+        (response: any) => onResponse(response),
+        (response: any) => onError(response));
+}
+
+export async function httpPostMultiPart(url: string,
+                                        body: object | null = null,
+                                        onResponse: (response: any) => any,
+                                        onError: (response: any) => any) {
+    await request("post",
+        url,
+        body,
+        true,
         (response: any) => onResponse(response),
         (response: any) => onError(response));
 }
@@ -57,6 +75,7 @@ export async function httpPut(url: string,
     await request("put",
         url,
         body,
+        false,
         (response: any) => onResponse(response),
         (response: any) => onError(response));
 }
@@ -67,6 +86,7 @@ export async function httpDelete(url: string,
     await request("delete",
         url,
         null,
+        false,
         (response: any) => onResponse(response),
         (response: any) => onError(response));
 }
