@@ -10,7 +10,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MediaDataSource = void 0;
-const http_interceptor_1 = require("../utils/http_interceptor");
+const index_1 = require("../index");
+const axios = require('axios');
 class MediaDataSource {
     constructor(baseUrl) {
         this.baseUrl = baseUrl;
@@ -41,7 +42,15 @@ class MediaDataSource {
                 data.append('ServiceId', dto.ServiceId);
             if (dto.TutorialId != null)
                 data.append('TutorialId', dto.TutorialId);
-            yield (0, http_interceptor_1.httpPostMultiPart)(`${this.baseUrl}Media`, data, response => onResponse(response), response => onError(response));
+            axios.post(`${this.baseUrl}Media`, data, { headers: { 'Authorization': (0, index_1.getData)(index_1.UtilitiesConstants.TOKEN) } })
+                .then(function () {
+                console.log('SUCCESS!!');
+                onResponse();
+            })
+                .catch(function () {
+                console.log('FAILURE!!');
+                onError();
+            });
         });
     }
 }

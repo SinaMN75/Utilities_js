@@ -15,7 +15,7 @@ export async function request(method: Method,
         url: url,
         headers: {
             'Authorization': getData(UtilitiesConstants.TOKEN),
-            "Content-TYpe": isFile ? "multipart/form-data" : "application/json"
+            "Accept": "text/plain"
         },
         data: body,
         responseType: "json",

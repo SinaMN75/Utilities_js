@@ -20,7 +20,7 @@ function request(method, url, body, isFile = false, onResponse, onError) {
             url: url,
             headers: {
                 'Authorization': (0, local_storage_1.getData)(constants_1.UtilitiesConstants.TOKEN),
-                "Content-TYpe": isFile ? "multipart/form-data" : "application/json"
+                "Accept": "text/plain"
             },
             data: body,
             responseType: "json",

@@ -7,7 +7,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { httpPostMultiPart } from "../utils/http_interceptor";
+import { getData, UtilitiesConstants } from "../index";
+const axios = require('axios');
 export class MediaDataSource {
     constructor(baseUrl) {
         this.baseUrl = baseUrl;
@@ -38,7 +39,15 @@ export class MediaDataSource {
                 data.append('ServiceId', dto.ServiceId);
             if (dto.TutorialId != null)
                 data.append('TutorialId', dto.TutorialId);
-            yield httpPostMultiPart(`${this.baseUrl}Media`, data, response => onResponse(response), response => onError(response));
+            axios.post(`${this.baseUrl}Media`, data, { headers: { 'Authorization': getData(UtilitiesConstants.TOKEN) } })
+                .then(function () {
+                console.log('SUCCESS!!');
+                onResponse();
+            })
+                .catch(function () {
+                console.log('FAILURE!!');
+                onError();
+            });
         });
     }
 }
