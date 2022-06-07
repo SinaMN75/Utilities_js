@@ -10,12 +10,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { getData } from "./local_storage";
 import { UtilitiesConstants } from "../core/constants";
 const axios = require('axios');
-export function request(method, url, body, onResponse, onError) {
+export function request(method, url, body, isFile = false, onResponse, onError) {
     return __awaiter(this, void 0, void 0, function* () {
         yield axios({
             method: method,
             url: url,
-            headers: { 'Authorization': getData(UtilitiesConstants.TOKEN) },
+            headers: {
+                'Authorization': getData(UtilitiesConstants.TOKEN),
+                "Content-TYpe": isFile ? "multipart/form-data" : "application/json"
+            },
             data: body,
             responseType: "json",
             withCredentials: false,
@@ -35,22 +38,27 @@ export function request(method, url, body, onResponse, onError) {
 }
 export function httpGet(url, onResponse, onError) {
     return __awaiter(this, void 0, void 0, function* () {
-        yield request("get", url, null, (response) => onResponse(response), (response) => onError(response));
+        yield request("get", url, null, false, (response) => onResponse(response), (response) => onError(response));
     });
 }
 export function httpPost(url, body = null, onResponse, onError) {
     return __awaiter(this, void 0, void 0, function* () {
-        yield request("post", url, body, (response) => onResponse(response), (response) => onError(response));
+        yield request("post", url, body, false, (response) => onResponse(response), (response) => onError(response));
+    });
+}
+export function httpPostMultiPart(url, body = null, onResponse, onError) {
+    return __awaiter(this, void 0, void 0, function* () {
+        yield request("post", url, body, true, (response) => onResponse(response), (response) => onError(response));
     });
 }
 export function httpPut(url, body = null, onResponse, onError) {
     return __awaiter(this, void 0, void 0, function* () {
-        yield request("put", url, body, (response) => onResponse(response), (response) => onError(response));
+        yield request("put", url, body, false, (response) => onResponse(response), (response) => onError(response));
     });
 }
 export function httpDelete(url, onResponse, onError) {
     return __awaiter(this, void 0, void 0, function* () {
-        yield request("delete", url, null, (response) => onResponse(response), (response) => onError(response));
+        yield request("delete", url, null, false, (response) => onResponse(response), (response) => onError(response));
     });
 }
 //# sourceMappingURL=http_interceptor.js.map
