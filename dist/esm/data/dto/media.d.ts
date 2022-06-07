@@ -16,6 +16,7 @@ export interface MediaCreateUpdateDto {
     TenderId?: string;
     ServiceId?: string;
     MagazineId?: string;
+    UseCase?: string;
     Files?: File[];
     Links?: string[];
 }
