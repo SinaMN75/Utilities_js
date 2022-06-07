@@ -1,4 +1,4 @@
-import {httpDelete, httpGet, httpPost} from "../utils/http_interceptor";
+import { httpDelete, httpGet, httpPost, httpPut } from "../utils/http_interceptor";
 import {
 	GenericResponse,
 	GetMobileVerificationCodeForLoginDto,
@@ -16,8 +16,8 @@ export class UserDataSource {
 	}
 
 	async getMobileVerificationCodeForLogin(body: GetMobileVerificationCodeForLoginDto,
-	                                        onResponse: (response: GenericResponse<string>) => any,
-	                                        onError: (response: Response) => any) {
+		onResponse: (response: GenericResponse<string>) => any,
+		onError: (response: Response) => any) {
 		await httpPost(`${this.baseUrl}user/GetMobileVerificationCodeForLogin`,
 			body,
 			response => onResponse(response),
@@ -26,8 +26,8 @@ export class UserDataSource {
 	}
 
 	async verifyMobileForLogin(body: VerifyMobileForLoginDto,
-	                           onResponse: (response: GenericResponse<UserReadDto>) => any,
-	                           onError: (response: Response) => any) {
+		onResponse: (response: GenericResponse<UserReadDto>) => any,
+		onError: (response: Response) => any) {
 		await httpPost(`${this.baseUrl}user/VerifyMobileForLogin`,
 			body,
 			response => onResponse(response),
@@ -36,8 +36,8 @@ export class UserDataSource {
 	}
 
 	async loginWithEmailPassword(body: LoginWithEmailPasswordDto,
-	                             onResponse: (response: GenericResponse<UserReadDto>) => any,
-	                             onError: (response: Response) => any) {
+		onResponse: (response: GenericResponse<UserReadDto>) => any,
+		onError: (response: Response) => any) {
 		await httpPost(`${this.baseUrl}user/LoginWithEmail`,
 			body,
 			response => onResponse(response),
@@ -46,8 +46,8 @@ export class UserDataSource {
 	}
 
 	async delete(id: string,
-	             onResponse: (response: GenericResponse<UserReadDto>) => any,
-	             onError: (response: Response) => any) {
+		onResponse: (response: GenericResponse<UserReadDto>) => any,
+		onError: (response: Response) => any) {
 		await httpDelete(`${this.baseUrl}user`,
 			response => onResponse(response),
 			response => onError(response)
@@ -55,8 +55,8 @@ export class UserDataSource {
 	}
 
 	async create(dto: UserCreateUpdateDto,
-	             onResponse: (response: GenericResponse<UserReadDto>) => any,
-	             onError: (response: Response) => any) {
+		onResponse: (response: GenericResponse<UserReadDto>) => any,
+		onError: (response: Response) => any) {
 		await httpPost(`${this.baseUrl}user`,
 			dto,
 			response => onResponse(response),
@@ -65,7 +65,7 @@ export class UserDataSource {
 	}
 
 	async getProfile(onResponse: (response: GenericResponse<UserReadDto>) => any,
-	                 onError: (response: Response) => any) {
+		onError: (response: Response) => any) {
 		await httpGet(`${this.baseUrl}user/GetProfile`,
 			response => onResponse(response),
 			response => onError(response)
@@ -73,7 +73,7 @@ export class UserDataSource {
 	}
 
 	async read(onResponse: (response: GenericResponse<UserReadDto[]>) => any,
-	           onError: (response: Response) => any) {
+		onError: (response: Response) => any) {
 		await httpGet(`${this.baseUrl}user`,
 			response => onResponse(response),
 			response => onError(response)
@@ -81,8 +81,19 @@ export class UserDataSource {
 	}
 
 	async readById(id: string, onResponse: (response: GenericResponse<UserReadDto>) => any,
-	               onError: (response: Response) => any) {
+		onError: (response: Response) => any) {
 		await httpGet(`${this.baseUrl}user/${id}`,
+			response => onResponse(response),
+			response => onError(response)
+		);
+	}
+
+	async updateProfile(dto: UserCreateUpdateDto,
+		onResponse: (response: Response) => any,
+		onError: (response: Response) => any) {
+		await httpPut(
+			`${this.baseUrl}UpdateProfile`,
+			dto,
 			response => onResponse(response),
 			response => onError(response)
 		);

@@ -10,4 +10,5 @@ export declare class UserDataSource {
     getProfile(onResponse: (response: GenericResponse<UserReadDto>) => any, onError: (response: Response) => any): Promise<void>;
     read(onResponse: (response: GenericResponse<UserReadDto[]>) => any, onError: (response: Response) => any): Promise<void>;
     readById(id: string, onResponse: (response: GenericResponse<UserReadDto>) => any, onError: (response: Response) => any): Promise<void>;
+    updateProfile(dto: UserCreateUpdateDto, onResponse: (response: Response) => any, onError: (response: Response) => any): Promise<void>;
 }

@@ -55,6 +55,11 @@ class UserDataSource {
             yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}user/${id}`, response => onResponse(response), response => onError(response));
         });
     }
+    updateProfile(dto, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield (0, http_interceptor_1.httpPut)(`${this.baseUrl}UpdateProfile`, dto, response => onResponse(response), response => onError(response));
+        });
+    }
 }
 exports.UserDataSource = UserDataSource;
 //# sourceMappingURL=user_datasource.js.map
