@@ -2,9 +2,10 @@ import {httpDelete, httpGet, httpPost, httpPut} from "../utils/http_interceptor"
 import {GenericResponse, IdTitleCreateUpdateDto, IdTitleReadDto,} from "./data";
 
 export enum IdTitleDataSourceType {
-	brand = "Brand",
-	category = "Category",
-	reference = "Reference"
+	brand = "brand",
+	category = "category",
+	reference = "reference",
+	speciality = "speciality"
 }
 
 export class IdTitleDataSource {
@@ -20,7 +21,7 @@ export class IdTitleDataSource {
 	             onResponse: (response: GenericResponse<IdTitleReadDto>) => any,
 	             onError: (response: Response) => any) {
 		await httpPost(
-			`${this.baseUrl}${this.type.toString()}`,
+			`${this.baseUrl}IdTitle/${this.type.toString()}`,
 			dto,
 			response => onResponse(response),
 			response => onError(response)
@@ -29,7 +30,7 @@ export class IdTitleDataSource {
 
 	async read(onResponse: (response: GenericResponse<IdTitleReadDto[]>) => any,
 	           onError: (response: Response) => any) {
-		await httpGet(`${this.baseUrl}${this.type.toString()}`,
+		await httpGet(`${this.baseUrl}IdTitle/${this.type.toString()}`,
 			response => onResponse(response),
 			response => onError(response)
 		);
@@ -39,7 +40,7 @@ export class IdTitleDataSource {
 	             onResponse: (response: GenericResponse<IdTitleReadDto>) => any,
 	             onError: (response: Response) => any) {
 		await httpPut(
-			`${this.baseUrl}${this.type.toString()}`,
+			`${this.baseUrl}IdTitle/${this.type.toString()}`,
 			dto,
 			response => onResponse(response),
 			response => onError(response)
@@ -48,24 +49,25 @@ export class IdTitleDataSource {
 
 	async delete(id: string, onResponse: (response: Response) => any, onError: (response: Response) => any) {
 		await httpDelete(
-			`${this.baseUrl}${this.type.toString()}/${id}`,
+			`${this.baseUrl}IdTitle/${this.type.toString()}/${id}`,
 			response => onResponse(response),
 			response => onError(response)
 		);
 	}
 
 	async readById(id: string,
-		onResponse: (response: GenericResponse<IdTitleReadDto[]>) => any,
-		onError: (response: Response) => any) {
-		await httpGet(`${this.baseUrl}${this.type.toString()}/${id}`,
+	               onResponse: (response: GenericResponse<IdTitleReadDto[]>) => any,
+	               onError: (response: Response) => any) {
+		await httpGet(`${this.baseUrl}IdTitle/${this.type.toString()}/${id}`,
 			response => onResponse(response),
 			response => onError(response)
 		);
 	}
+
 	async readeByUseCase(id: string,
-		onResponse: (response: GenericResponse<IdTitleReadDto[]>) => any,
-		onError: (response: Response) => any) {
-		await httpGet(`${this.baseUrl}${this.type.toString()}/${id}`,
+	                     onResponse: (response: GenericResponse<IdTitleReadDto[]>) => any,
+	                     onError: (response: Response) => any) {
+		await httpGet(`${this.baseUrl}IdTitle/${this.type.toString()}/${id}`,
 			response => onResponse(response),
 			response => onError(response)
 		);

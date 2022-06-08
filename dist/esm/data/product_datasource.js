@@ -10,16 +10,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { httpDelete, httpGet, httpPost, httpPut } from "../utils/http_interceptor";
 export var ProductDataSourceType;
 (function (ProductDataSourceType) {
-    ProductDataSourceType["products"] = "Product";
-    ProductDataSourceType["tutorials"] = "Tutorial";
-    ProductDataSourceType["projects"] = "Project";
-    ProductDataSourceType["companies"] = "Company";
-    ProductDataSourceType["tenders"] = "Tender";
-    ProductDataSourceType["magazine"] = "Magazine";
-    ProductDataSourceType["ads"] = "Ad";
-    ProductDataSourceType["dailyPrice"] = "DailyPrice";
-    ProductDataSourceType["service"] = "Service";
-    ProductDataSourceType["job"] = "Job";
+    ProductDataSourceType["product"] = "product";
+    ProductDataSourceType["tutorial"] = "tutorial";
+    ProductDataSourceType["project"] = "project";
+    ProductDataSourceType["company"] = "company";
+    ProductDataSourceType["tender"] = "tender";
+    ProductDataSourceType["magazine"] = "magazine";
+    ProductDataSourceType["ad"] = "ad";
+    ProductDataSourceType["dailyPrice"] = "dailyPrice";
+    ProductDataSourceType["service"] = "service";
 })(ProductDataSourceType || (ProductDataSourceType = {}));
 export class ProductDataSource {
     constructor(baseUrl, type) {
@@ -28,32 +27,32 @@ export class ProductDataSource {
     }
     create(dto, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield httpPost(`${this.baseUrl}${this.type.toString()}`, dto, response => onResponse(response), response => onError(response));
+            yield httpPost(`${this.baseUrl}product/${this.type.toString()}`, dto, response => onResponse(response), response => onError(response));
         });
     }
     read(onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield httpGet(`${this.baseUrl}${this.type.toString()}`, response => onResponse(response), response => onError(response));
+            yield httpGet(`${this.baseUrl}product/${this.type.toString()}`, response => onResponse(response), response => onError(response));
         });
     }
     update(dto, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield httpPut(`${this.baseUrl}${this.type.toString()}`, dto, response => onResponse(response), response => onError(response));
+            yield httpPut(`${this.baseUrl}product/${this.type.toString()}`, dto, response => onResponse(response), response => onError(response));
         });
     }
     filter(dto, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield httpPost(`${this.baseUrl}${this.type.toString()}/filter`, dto, response => onResponse(response), response => onError(response));
+            yield httpPost(`${this.baseUrl}product/${this.type.toString()}/filter`, dto, response => onResponse(response), response => onError(response));
         });
     }
     readById(id, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield httpGet(`${this.baseUrl}${this.type.toString()}/${id}`, response => onResponse(response), response => onError(response));
+            yield httpGet(`${this.baseUrl}product/${this.type.toString()}/${id}`, response => onResponse(response), response => onError(response));
         });
     }
     delete(id, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield httpDelete(`${this.baseUrl}${this.type.toString()}/${id}`, response => onResponse(response), response => onError(response));
+            yield httpDelete(`${this.baseUrl}product/${this.type.toString()}/${id}`, response => onResponse(response), response => onError(response));
         });
     }
 }

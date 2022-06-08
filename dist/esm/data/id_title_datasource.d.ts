@@ -1,8 +1,9 @@
 import { GenericResponse, IdTitleCreateUpdateDto, IdTitleReadDto } from "./data";
 export declare enum IdTitleDataSourceType {
-    brand = "Brand",
-    category = "Category",
-    reference = "Reference"
+    brand = "brand",
+    category = "category",
+    reference = "reference",
+    speciality = "speciality"
 }
 export declare class IdTitleDataSource {
     baseUrl: string;

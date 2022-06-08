@@ -1,7 +1,8 @@
-import {FormFieldDto, IdTitleReadDto, LocationReadDto, MediaReadDto, UserReadDto, VoteReadDto} from "./dto";
+import {FormFieldDto, IdTitleReadDto, LocationReadDto, MediaReadDto, UserReadDto} from "./dto";
 
 export interface ProductReadDto {
     id?: string;
+    userId?: string;
     title?: string;
     subtitle?: string;
     description?: string;
@@ -12,6 +13,7 @@ export interface ProductReadDto {
     link?: string;
     website?: string;
     email?: string;
+    type?: string;
     isForSale?: boolean;
     enabled?: boolean;
     isBookmarked?: boolean;
@@ -24,8 +26,8 @@ export interface ProductReadDto {
     createdAt?: string;
     updatedAt?: string;
     deletedAt?: string;
-    user?: UserReadDto;
     status?: number;
+    user?: UserReadDto;
     location?: LocationReadDto[];
     media?: MediaReadDto[];
     categories?: IdTitleReadDto[];
@@ -49,6 +51,7 @@ export interface ProductCreateUpdateDto {
     link?: string;
     website?: string;
     email?: string;
+    type?: string;
     isForSale?: boolean;
     enabled?: boolean;
     latitude?: number;
@@ -87,6 +90,7 @@ export interface ProductFilterDto {
     author?: string;
     phoneNumber?: string;
     email?: string;
+    type?: string;
     status?: number;
     startDate?: string;
     endDate?: string;

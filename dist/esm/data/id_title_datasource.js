@@ -10,9 +10,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { httpDelete, httpGet, httpPost, httpPut } from "../utils/http_interceptor";
 export var IdTitleDataSourceType;
 (function (IdTitleDataSourceType) {
-    IdTitleDataSourceType["brand"] = "Brand";
-    IdTitleDataSourceType["category"] = "Category";
-    IdTitleDataSourceType["reference"] = "Reference";
+    IdTitleDataSourceType["brand"] = "brand";
+    IdTitleDataSourceType["category"] = "category";
+    IdTitleDataSourceType["reference"] = "reference";
+    IdTitleDataSourceType["speciality"] = "speciality";
 })(IdTitleDataSourceType || (IdTitleDataSourceType = {}));
 export class IdTitleDataSource {
     constructor(baseUrl, type) {
@@ -21,32 +22,32 @@ export class IdTitleDataSource {
     }
     create(dto, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield httpPost(`${this.baseUrl}${this.type.toString()}`, dto, response => onResponse(response), response => onError(response));
+            yield httpPost(`${this.baseUrl}IdTitle/${this.type.toString()}`, dto, response => onResponse(response), response => onError(response));
         });
     }
     read(onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield httpGet(`${this.baseUrl}${this.type.toString()}`, response => onResponse(response), response => onError(response));
+            yield httpGet(`${this.baseUrl}IdTitle/${this.type.toString()}`, response => onResponse(response), response => onError(response));
         });
     }
     update(dto, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield httpPut(`${this.baseUrl}${this.type.toString()}`, dto, response => onResponse(response), response => onError(response));
+            yield httpPut(`${this.baseUrl}IdTitle/${this.type.toString()}`, dto, response => onResponse(response), response => onError(response));
         });
     }
     delete(id, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield httpDelete(`${this.baseUrl}${this.type.toString()}/${id}`, response => onResponse(response), response => onError(response));
+            yield httpDelete(`${this.baseUrl}IdTitle/${this.type.toString()}/${id}`, response => onResponse(response), response => onError(response));
         });
     }
     readById(id, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield httpGet(`${this.baseUrl}${this.type.toString()}/${id}`, response => onResponse(response), response => onError(response));
+            yield httpGet(`${this.baseUrl}IdTitle/${this.type.toString()}/${id}`, response => onResponse(response), response => onError(response));
         });
     }
     readeByUseCase(id, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield httpGet(`${this.baseUrl}${this.type.toString()}/${id}`, response => onResponse(response), response => onError(response));
+            yield httpGet(`${this.baseUrl}IdTitle/${this.type.toString()}/${id}`, response => onResponse(response), response => onError(response));
         });
     }
 }

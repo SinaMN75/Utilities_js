@@ -1,15 +1,14 @@
 import { GenericResponse, ProductCreateUpdateDto, ProductFilterDto, ProductReadDto } from "./data";
 export declare enum ProductDataSourceType {
-    products = "Product",
-    tutorials = "Tutorial",
-    projects = "Project",
-    companies = "Company",
-    tenders = "Tender",
-    magazine = "Magazine",
-    ads = "Ad",
-    dailyPrice = "DailyPrice",
-    service = "Service",
-    job = "Job"
+    product = "product",
+    tutorial = "tutorial",
+    project = "project",
+    company = "company",
+    tender = "tender",
+    magazine = "magazine",
+    ad = "ad",
+    dailyPrice = "dailyPrice",
+    service = "service"
 }
 export declare class ProductDataSource {
     baseUrl: string;

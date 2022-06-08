@@ -13,9 +13,10 @@ exports.IdTitleDataSource = exports.IdTitleDataSourceType = void 0;
 const http_interceptor_1 = require("../utils/http_interceptor");
 var IdTitleDataSourceType;
 (function (IdTitleDataSourceType) {
-    IdTitleDataSourceType["brand"] = "Brand";
-    IdTitleDataSourceType["category"] = "Category";
-    IdTitleDataSourceType["reference"] = "Reference";
+    IdTitleDataSourceType["brand"] = "brand";
+    IdTitleDataSourceType["category"] = "category";
+    IdTitleDataSourceType["reference"] = "reference";
+    IdTitleDataSourceType["speciality"] = "speciality";
 })(IdTitleDataSourceType = exports.IdTitleDataSourceType || (exports.IdTitleDataSourceType = {}));
 class IdTitleDataSource {
     constructor(baseUrl, type) {
@@ -24,32 +25,32 @@ class IdTitleDataSource {
     }
     create(dto, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}${this.type.toString()}`, dto, response => onResponse(response), response => onError(response));
+            yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}IdTitle/${this.type.toString()}`, dto, response => onResponse(response), response => onError(response));
         });
     }
     read(onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}${this.type.toString()}`, response => onResponse(response), response => onError(response));
+            yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}IdTitle/${this.type.toString()}`, response => onResponse(response), response => onError(response));
         });
     }
     update(dto, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, http_interceptor_1.httpPut)(`${this.baseUrl}${this.type.toString()}`, dto, response => onResponse(response), response => onError(response));
+            yield (0, http_interceptor_1.httpPut)(`${this.baseUrl}IdTitle/${this.type.toString()}`, dto, response => onResponse(response), response => onError(response));
         });
     }
     delete(id, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, http_interceptor_1.httpDelete)(`${this.baseUrl}${this.type.toString()}/${id}`, response => onResponse(response), response => onError(response));
+            yield (0, http_interceptor_1.httpDelete)(`${this.baseUrl}IdTitle/${this.type.toString()}/${id}`, response => onResponse(response), response => onError(response));
         });
     }
     readById(id, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}${this.type.toString()}/${id}`, response => onResponse(response), response => onError(response));
+            yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}IdTitle/${this.type.toString()}/${id}`, response => onResponse(response), response => onError(response));
         });
     }
     readeByUseCase(id, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}${this.type.toString()}/${id}`, response => onResponse(response), response => onError(response));
+            yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}IdTitle/${this.type.toString()}/${id}`, response => onResponse(response), response => onError(response));
         });
     }
 }

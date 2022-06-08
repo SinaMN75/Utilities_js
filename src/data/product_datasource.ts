@@ -2,16 +2,15 @@ import {httpDelete, httpGet, httpPost, httpPut} from "../utils/http_interceptor"
 import {GenericResponse, ProductCreateUpdateDto, ProductFilterDto, ProductReadDto} from "./data";
 
 export enum ProductDataSourceType {
-    products = "Product",
-    tutorials = "Tutorial",
-    projects = "Project",
-    companies = "Company",
-    tenders = "Tender",
-    magazine = "Magazine",
-    ads = "Ad",
-    dailyPrice = "DailyPrice",
-    service = "Service",
-    job = "Job",
+    product = "product",
+    tutorial = "tutorial",
+    project = "project",
+    company = "company",
+    tender = "tender",
+    magazine = "magazine",
+    ad = "ad",
+    dailyPrice = "dailyPrice",
+    service = "service",
 }
 
 export class ProductDataSource {
@@ -27,7 +26,7 @@ export class ProductDataSource {
                  onResponse: (response: GenericResponse<ProductReadDto>) => any,
                  onError: (response: Response) => any) {
         await httpPost(
-            `${this.baseUrl}${this.type.toString()}`,
+            `${this.baseUrl}product/${this.type.toString()}`,
             dto,
             response => onResponse(response),
             response => onError(response)
@@ -36,7 +35,7 @@ export class ProductDataSource {
 
     async read(onResponse: (response: GenericResponse<ProductReadDto[]>) => any,
                onError: (response: Response) => any) {
-        await httpGet(`${this.baseUrl}${this.type.toString()}`,
+        await httpGet(`${this.baseUrl}product/${this.type.toString()}`,
             response => onResponse(response),
             response => onError(response)
         );
@@ -46,7 +45,7 @@ export class ProductDataSource {
                  onResponse: (response: GenericResponse<ProductReadDto>) => any,
                  onError: (response: Response) => any) {
         await httpPut(
-            `${this.baseUrl}${this.type.toString()}`,
+            `${this.baseUrl}product/${this.type.toString()}`,
             dto,
             response => onResponse(response),
             response => onError(response)
@@ -56,7 +55,7 @@ export class ProductDataSource {
     async filter(dto: ProductFilterDto,
                  onResponse: (response: GenericResponse<ProductReadDto[]>) => any,
                  onError: (response: Response) => any) {
-        await httpPost(`${this.baseUrl}${this.type.toString()}/filter`,
+        await httpPost(`${this.baseUrl}product/${this.type.toString()}/filter`,
             dto,
             response => onResponse(response),
             response => onError(response)
@@ -66,7 +65,7 @@ export class ProductDataSource {
     async readById(id: string,
                    onResponse: (response: GenericResponse<ProductReadDto>) => any,
                    onError: (response: Response) => any) {
-        await httpGet(`${this.baseUrl}${this.type.toString()}/${id}`,
+        await httpGet(`${this.baseUrl}product/${this.type.toString()}/${id}`,
             response => onResponse(response),
             response => onError(response)
         );
@@ -74,7 +73,7 @@ export class ProductDataSource {
 
     async delete(id: string, onResponse: (response: Response) => any, onError: (response: Response) => any) {
         await httpDelete(
-            `${this.baseUrl}${this.type.toString()}/${id}`,
+            `${this.baseUrl}product/${this.type.toString()}/${id}`,
             response => onResponse(response),
             response => onError(response)
         );
