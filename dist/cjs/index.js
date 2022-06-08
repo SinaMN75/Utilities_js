@@ -14,7 +14,10 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.axios = void 0;
 __exportStar(require("./utils/utils"), exports);
 __exportStar(require("./data/data"), exports);
 __exportStar(require("./core/core"), exports);
+__exportStar(require("axios"), exports);
+exports.axios = require('axios');
 //# sourceMappingURL=index.js.map

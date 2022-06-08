@@ -1,5 +1,7 @@
-import {httpPostMultiPart} from "../utils/http_interceptor";
 import {MediaCreateUpdateDto} from "./data";
+import {getData, UtilitiesConstants} from "../index";
+
+const axios = require('axios');
 
 export class MediaDataSource {
     baseUrl: string;
@@ -9,8 +11,8 @@ export class MediaDataSource {
     }
 
     async create(dto: MediaCreateUpdateDto,
-                 onResponse: (response: Response) => any,
-                 onError: (response: Response) => any) {
+                 onResponse: () => any,
+                 onError: () => any) {
         let data = new FormData();
 
         dto.Files?.forEach(i => data.append('Files', i, Date.now().toString()));
@@ -27,12 +29,19 @@ export class MediaDataSource {
         if (dto.ServiceId != null) data.append('ServiceId', dto.ServiceId);
         if (dto.TutorialId != null) data.append('TutorialId', dto.TutorialId);
 
-        await httpPostMultiPart(
+        axios.post(
             `${this.baseUrl}Media`,
             data,
-            response => onResponse(response),
-            response => onError(response)
-        );
+            {headers: {'Authorization': getData(UtilitiesConstants.TOKEN)}},
+        )
+             .then(function () {
+                 console.log('SUCCESS!!');
+                 onResponse();
+             })
+             .catch(function () {
+                 console.log('FAILURE!!');
+                 onError();
+             });
     }
 
 }
