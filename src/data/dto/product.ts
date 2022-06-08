@@ -26,6 +26,7 @@ export interface ProductReadDto {
     createdAt?: string;
     updatedAt?: string;
     deletedAt?: string;
+    type?: string;
     status?: number;
     user?: UserReadDto;
     location?: LocationReadDto[];
