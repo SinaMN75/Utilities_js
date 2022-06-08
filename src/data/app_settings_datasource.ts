@@ -1,5 +1,5 @@
 import {httpGet} from "../utils/http_interceptor";
-import {AppSettingsReadDto, GenericResponse} from "./data";
+import {AppSettingsReadDto, GenericResponse, LocationReadDto} from "./data";
 
 export class AppSettingsDataSource {
 	baseUrl: string;
@@ -11,6 +11,14 @@ export class AppSettingsDataSource {
 	async getEnums(onResponse: (response: GenericResponse<AppSettingsReadDto>) => any,
 	               onError: (response: Response) => any) {
 		await httpGet(`${this.baseUrl}AppSettings`,
+			response => onResponse(response),
+			response => onError(response)
+		);
+	}
+
+	async readLocation(onResponse: (response: GenericResponse<LocationReadDto>) => any,
+	               onError: (response: Response) => any) {
+		await httpGet(`${this.baseUrl}ReadLocation`,
 			response => onResponse(response),
 			response => onError(response)
 		);

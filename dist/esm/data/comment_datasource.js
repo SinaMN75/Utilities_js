@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { httpDelete, httpGet, httpPost, httpPut } from "../utils/http_interceptor";
+import { httpDelete, httpPost, httpPut } from "../utils/http_interceptor";
 export class CommentDataSource {
     constructor(baseUrl) {
         this.baseUrl = baseUrl;
@@ -15,12 +15,6 @@ export class CommentDataSource {
     create(dto, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
             yield httpPost(`${this.baseUrl}Comment`, dto, response => onResponse(response), response => onError(response));
-        });
-    }
-    //TODO
-    read(onResponse, onError) {
-        return __awaiter(this, void 0, void 0, function* () {
-            yield httpGet(`${this.baseUrl}Comment`, response => onResponse(response), response => onError(response));
         });
     }
     update(dto, onResponse, onError) {

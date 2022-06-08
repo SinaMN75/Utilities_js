@@ -19,16 +19,6 @@ export class CommentDataSource {
 		);
 	}
 
-	//TODO
-	async read(onResponse: (response: Response) => any,
-	           onError: (response: Response) => any) {
-		await httpGet(
-			`${this.baseUrl}Comment`,
-			response => onResponse(response),
-			response => onError(response)
-		);
-	}
-
 	async update(dto: CommentCreateUpdateDto,
 	             onResponse: (response: Response) => any,
 	             onError: (response: Response) => any) {

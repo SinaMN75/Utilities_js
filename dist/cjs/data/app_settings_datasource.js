@@ -20,6 +20,11 @@ class AppSettingsDataSource {
             yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}AppSettings`, response => onResponse(response), response => onError(response));
         });
     }
+    readLocation(onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}ReadLocation`, response => onResponse(response), response => onError(response));
+        });
+    }
 }
 exports.AppSettingsDataSource = AppSettingsDataSource;
 //# sourceMappingURL=app_settings_datasource.js.map

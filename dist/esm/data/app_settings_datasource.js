@@ -17,5 +17,10 @@ export class AppSettingsDataSource {
             yield httpGet(`${this.baseUrl}AppSettings`, response => onResponse(response), response => onError(response));
         });
     }
+    readLocation(onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield httpGet(`${this.baseUrl}ReadLocation`, response => onResponse(response), response => onError(response));
+        });
+    }
 }
 //# sourceMappingURL=app_settings_datasource.js.map

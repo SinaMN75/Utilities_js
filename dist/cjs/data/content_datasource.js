@@ -9,27 +9,37 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CommentDataSource = void 0;
+exports.ProductDataSource = void 0;
 const http_interceptor_1 = require("../utils/http_interceptor");
-class CommentDataSource {
+class ProductDataSource {
     constructor(baseUrl) {
         this.baseUrl = baseUrl;
     }
     create(dto, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}Comment`, dto, response => onResponse(response), response => onError(response));
+            yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}content`, dto, response => onResponse(response), response => onError(response));
+        });
+    }
+    read(onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}content`, response => onResponse(response), response => onError(response));
         });
     }
     update(dto, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, http_interceptor_1.httpPut)(`${this.baseUrl}Comment`, dto, response => onResponse(response), response => onError(response));
+            yield (0, http_interceptor_1.httpPut)(`${this.baseUrl}content`, dto, response => onResponse(response), response => onError(response));
+        });
+    }
+    readById(id, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}content`, response => onResponse(response), response => onError(response));
         });
     }
     delete(id, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, http_interceptor_1.httpDelete)(`${this.baseUrl}Comment/${id}`, response => onResponse(response), response => onError(response));
+            yield (0, http_interceptor_1.httpDelete)(`${this.baseUrl}content`, response => onResponse(response), response => onError(response));
         });
     }
 }
-exports.CommentDataSource = CommentDataSource;
-//# sourceMappingURL=comment_datasource.js.map
+exports.ProductDataSource = ProductDataSource;
+//# sourceMappingURL=content_datasource.js.map
