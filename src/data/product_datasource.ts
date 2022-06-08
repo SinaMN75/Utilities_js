@@ -41,6 +41,14 @@ export class ProductDataSource {
         );
     }
 
+    async readMine(onResponse: (response: GenericResponse<ProductReadDto[]>) => any,
+               onError: (response: Response) => any) {
+        await httpGet(`${this.baseUrl}product/${this.type.toString()}/Mine`,
+            response => onResponse(response),
+            response => onError(response)
+        );
+    }
+
     async update(dto: ProductCreateUpdateDto,
                  onResponse: (response: GenericResponse<ProductReadDto>) => any,
                  onError: (response: Response) => any) {

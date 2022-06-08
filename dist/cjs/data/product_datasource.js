@@ -38,6 +38,11 @@ class ProductDataSource {
             yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}product/${this.type.toString()}`, response => onResponse(response), response => onError(response));
         });
     }
+    readMine(onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}product/${this.type.toString()}/Mine`, response => onResponse(response), response => onError(response));
+        });
+    }
     update(dto, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
             yield (0, http_interceptor_1.httpPut)(`${this.baseUrl}product/${this.type.toString()}`, dto, response => onResponse(response), response => onError(response));
