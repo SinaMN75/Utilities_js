@@ -18,5 +18,6 @@ export interface IdTitleCreateUpdateDto {
     subtitle?: string;
     color?: string;
     link?: string;
+    parentId?: string
     useCase?: number;
 }
