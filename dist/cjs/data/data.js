@@ -25,4 +25,5 @@ __exportStar(require("./chat_datasource"), exports);
 __exportStar(require("./comment_datasource"), exports);
 __exportStar(require("./notification_datasource"), exports);
 __exportStar(require("./media_datasource"), exports);
+__exportStar(require("./report_datasource"), exports);
 //# sourceMappingURL=data.js.map

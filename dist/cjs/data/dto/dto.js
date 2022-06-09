@@ -27,4 +27,5 @@ __exportStar(require("./bookmark"), exports);
 __exportStar(require("./comment"), exports);
 __exportStar(require("./chat"), exports);
 __exportStar(require("./notification"), exports);
+__exportStar(require("./report"), exports);
 //# sourceMappingURL=dto.js.map

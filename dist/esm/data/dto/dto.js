@@ -11,4 +11,5 @@ export * from "./bookmark";
 export * from "./comment";
 export * from "./chat";
 export * from "./notification";
+export * from "./report";
 //# sourceMappingURL=dto.js.map
