@@ -6,7 +6,7 @@ class ReportDatasource {
 
 	baseUrl: string;
 
-	constructor(baseUrl: string, type: ProductDataSourceType) {
+	constructor(baseUrl: string) {
 		this.baseUrl = baseUrl;
 	}
 

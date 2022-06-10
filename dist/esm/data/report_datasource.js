@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { httpPost } from "../utils/http_interceptor";
 class ReportDatasource {
-    constructor(baseUrl, type) {
+    constructor(baseUrl) {
         this.baseUrl = baseUrl;
     }
     create(dto, onResponse, onError) {

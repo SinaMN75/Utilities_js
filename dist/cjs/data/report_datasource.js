@@ -11,7 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const http_interceptor_1 = require("../utils/http_interceptor");
 class ReportDatasource {
-    constructor(baseUrl, type) {
+    constructor(baseUrl) {
         this.baseUrl = baseUrl;
     }
     create(dto, onResponse, onError) {
