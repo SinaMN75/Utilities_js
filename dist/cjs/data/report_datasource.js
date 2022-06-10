@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ReportDatasource = void 0;
 const http_interceptor_1 = require("../utils/http_interceptor");
 class ReportDatasource {
     constructor(baseUrl, type) {
@@ -20,4 +21,5 @@ class ReportDatasource {
         });
     }
 }
+exports.ReportDatasource = ReportDatasource;
 //# sourceMappingURL=report_datasource.js.map

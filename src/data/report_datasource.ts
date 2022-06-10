@@ -2,7 +2,7 @@ import {ReportCreateUpdateDto} from "./dto/report";
 import {ProductDataSourceType} from "./product_datasource";
 import {httpPost} from "../utils/http_interceptor";
 
-class ReportDatasource {
+export class ReportDatasource {
 
 	baseUrl: string;
 
