@@ -19,7 +19,7 @@ export class AppSettingsDataSource {
     }
     readLocation(onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield httpGet(`${this.baseUrl}ReadLocation`, response => onResponse(response), response => onError(response));
+            yield httpGet(`${this.baseUrl}AppSettings/ReadLocation`, response => onResponse(response), response => onError(response));
         });
     }
 }
