@@ -54,7 +54,7 @@ export class UserDataSource {
     }
     updateProfile(dto, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield httpPut(`${this.baseUrl}UpdateProfile`, dto, response => onResponse(response), response => onError(response));
+            yield httpPut(`${this.baseUrl}user/UpdateProfile`, dto, response => onResponse(response), response => onError(response));
         });
     }
 }

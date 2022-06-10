@@ -8,6 +8,7 @@ export interface UserReadDto {
     bio?: string;
     isAdmin?: boolean;
     appUserName?: string;
+    appEmail?: string;
     appPhoneNumber?: string;
     birthDate?: string;
     media?: MediaReadDto[];

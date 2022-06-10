@@ -92,7 +92,7 @@ export class UserDataSource {
 		onResponse: (response: Response) => any,
 		onError: (response: Response) => any) {
 		await httpPut(
-			`${this.baseUrl}UpdateProfile`,
+			`${this.baseUrl}user/UpdateProfile`,
 			dto,
 			response => onResponse(response),
 			response => onError(response)
