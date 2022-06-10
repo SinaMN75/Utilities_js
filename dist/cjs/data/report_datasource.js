@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ReportDatasource = void 0;
 const http_interceptor_1 = require("../utils/http_interceptor");
 class ReportDatasource {
-    constructor(baseUrl, type) {
+    constructor(baseUrl) {
         this.baseUrl = baseUrl;
     }
     create(dto, onResponse, onError) {
