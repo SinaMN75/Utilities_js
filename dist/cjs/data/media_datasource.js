@@ -42,6 +42,8 @@ class MediaDataSource {
                 data.append('ServiceId', dto.ServiceId);
             if (dto.TutorialId != null)
                 data.append('TutorialId', dto.TutorialId);
+            if (dto.UseCase != null)
+                data.append('UseCase', dto.UseCase);
             axios.post(`${this.baseUrl}Media`, data, { headers: { 'Authorization': (0, index_1.getData)(index_1.UtilitiesConstants.TOKEN) } })
                 .then(function () {
                 console.log('SUCCESS!!');
