@@ -18,7 +18,7 @@ export class AppSettingsDataSource {
 
 	async readLocation(onResponse: (response: GenericResponse<LocationReadDto>) => any,
 	               onError: (response: Response) => any) {
-		await httpGet(`${this.baseUrl}ReadLocation`,
+		await httpGet(`${this.baseUrl}AppSettings/ReadLocation`,
 			response => onResponse(response),
 			response => onError(response)
 		);
