@@ -28,7 +28,9 @@ export class MediaDataSource {
         if (dto.ProjectId != null) data.append('ProjectId', dto.ProjectId);
         if (dto.ServiceId != null) data.append('ServiceId', dto.ServiceId);
         if (dto.TutorialId != null) data.append('TutorialId', dto.TutorialId);
+        if (dto.TenderId != null) data.append('TenderId', dto.TenderId);
        if(dto.UseCase != null)  data.append('UseCase', dto.UseCase);
+       
 
         axios.post(
             `${this.baseUrl}Media`,
