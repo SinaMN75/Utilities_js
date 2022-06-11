@@ -12,3 +12,17 @@ export interface ToggleBookmarkDto {
 	specialityId?: string;
 	colorId?:      string;
 }
+
+
+export interface ToggleBookmarkReadDto {
+    products?:    any[];
+    dailyPrices?: any[];
+    projects?:    any[];
+    tutorials?:   any[];
+    ads?:         any[];
+    companies?:   any[];
+    tenders?:     any[];
+    services?:    any[];
+    magazines?:   any[];
+}
+
