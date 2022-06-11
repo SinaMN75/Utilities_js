@@ -29,9 +29,29 @@ export class IdTitleDataSource {
 	}
 
 	async read(onResponse: (response: GenericResponse<IdTitleReadDto[]>) => any,
+	           viewModel: (viewModel: IdTitleViewModel[]) => any,
 	           onError: (response: Response) => any) {
 		await httpGet(`${this.baseUrl}IdTitle/${this.type.toString()}`,
-			response => onResponse(response),
+			response => {
+				let res = response as GenericResponse<IdTitleReadDto[]>
+				let list: IdTitleViewModel[] = []
+				res.result?.forEach(x => {
+					if (x.parent == null) {
+						list.push({id: x.id ?? "", title: x.title ?? ""})
+					}
+				});
+
+				res.result?.forEach(x => {
+					list.forEach(y => {
+						if (x.parent != null) {
+							y.children?.push({id: x.id ?? "", title: x.title ?? ""})
+						}
+					});
+				});
+
+				onResponse(response);
+				viewModel(list);
+			},
 			response => onError(response)
 		);
 	}
