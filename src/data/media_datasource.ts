@@ -35,7 +35,8 @@ export class MediaDataSource {
         axios.post(
             `${this.baseUrl}Media`,
             data,
-            {headers: {'Authorization': getData(UtilitiesConstants.TOKEN)}},
+            {headers: {'Authorization': getData(UtilitiesConstants.TOKEN) ,
+            'Content-type': "multipart/form-data"}},
         )
              .then(function () {
                  console.log('SUCCESS!!');
