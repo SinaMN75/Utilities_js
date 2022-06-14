@@ -11,7 +11,8 @@ export interface MediaCreateUpdateDto {
     TutorialId?: string;
     EventId?: string;
     PostId?: string;
-    AdId?: string;
+    AdsId?: string;
+    DailyPriceId?: string;
     CompanyId?: string;
     TenderId?: string;
     ServiceId?: string;

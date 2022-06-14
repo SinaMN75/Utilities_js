@@ -25,9 +25,29 @@ export class IdTitleDataSource {
             yield httpPost(`${this.baseUrl}IdTitle/${this.type.toString()}`, dto, response => onResponse(response), response => onError(response));
         });
     }
-    read(onResponse, onError) {
+    read(onResponse, viewModel, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield httpGet(`${this.baseUrl}IdTitle/${this.type.toString()}`, response => onResponse(response), response => onError(response));
+            yield httpGet(`${this.baseUrl}IdTitle/${this.type.toString()}`, response => {
+                var _a, _b;
+                let res = response;
+                let list = [];
+                (_a = res.result) === null || _a === void 0 ? void 0 : _a.forEach(x => {
+                    var _a, _b;
+                    if (x.parent == null) {
+                        list.push({ id: (_a = x.id) !== null && _a !== void 0 ? _a : "", title: (_b = x.title) !== null && _b !== void 0 ? _b : "" });
+                    }
+                });
+                (_b = res.result) === null || _b === void 0 ? void 0 : _b.forEach(x => {
+                    list.forEach(y => {
+                        var _a, _b, _c;
+                        if (x.parent != null) {
+                            (_a = y.children) === null || _a === void 0 ? void 0 : _a.push({ id: (_b = x.id) !== null && _b !== void 0 ? _b : "", title: (_c = x.title) !== null && _c !== void 0 ? _c : "" });
+                        }
+                    });
+                });
+                onResponse(response);
+                viewModel(list);
+            }, response => onError(response));
         });
     }
     update(dto, onResponse, onError) {

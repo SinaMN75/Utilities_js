@@ -21,8 +21,8 @@ export class MediaDataSource {
             (_b = dto.Links) === null || _b === void 0 ? void 0 : _b.forEach(i => data.append('Links', i));
             if (dto.UserId != null)
                 data.append('UserId', dto.UserId);
-            if (dto.AdId != null)
-                data.append('AdId', dto.AdId);
+            if (dto.AdsId != null)
+                data.append('AdId', dto.AdsId);
             if (dto.EventId != null)
                 data.append('EventId', dto.EventId);
             if (dto.CompanyId != null)
@@ -41,6 +41,8 @@ export class MediaDataSource {
                 data.append('TutorialId', dto.TutorialId);
             if (dto.TenderId != null)
                 data.append('TenderId', dto.TenderId);
+            if (dto.DailyPriceId != null)
+                data.append('DailyPriceId', dto.DailyPriceId);
             if (dto.UseCase != null)
                 data.append('UseCase', dto.UseCase);
             axios.post(`${this.baseUrl}Media`, data, { headers: { 'Authorization': getData(UtilitiesConstants.TOKEN),

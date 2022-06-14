@@ -19,7 +19,7 @@ export class MediaDataSource {
         dto.Links?.forEach(i => data.append('Links', i));
 
         if (dto.UserId != null) data.append('UserId', dto.UserId);
-        if (dto.AdId != null) data.append('AdId', dto.AdId);
+        if (dto.AdsId != null) data.append('AdId', dto.AdsId);
         if (dto.EventId != null) data.append('EventId', dto.EventId);
         if (dto.CompanyId != null) data.append('CompanyId', dto.CompanyId);
         if (dto.MagazineId != null) data.append('MagazineId', dto.MagazineId);
@@ -29,7 +29,10 @@ export class MediaDataSource {
         if (dto.ServiceId != null) data.append('ServiceId', dto.ServiceId);
         if (dto.TutorialId != null) data.append('TutorialId', dto.TutorialId);
         if (dto.TenderId != null) data.append('TenderId', dto.TenderId);
+        if (dto.DailyPriceId != null) data.append('DailyPriceId', dto.DailyPriceId);
        if(dto.UseCase != null)  data.append('UseCase', dto.UseCase);
+
+       
        
 
         axios.post(
