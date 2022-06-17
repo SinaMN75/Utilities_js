@@ -11,8 +11,10 @@ export class MediaDataSource {
     }
 
     async create(dto: MediaCreateUpdateDto,
-                 onResponse: () => any,
-                 onError: () => any) {
+        onResponse: (response: Response) => any,
+	             onError: (response: Response) => any) {
+                //  onResponse: () => any,
+                //  onError: () => any) {
         let data = new FormData();
 
         dto.Files?.forEach(i => data.append('Files', i));
@@ -41,13 +43,13 @@ export class MediaDataSource {
             {headers: {'Authorization': getData(UtilitiesConstants.TOKEN) ,
             'Content-type': "multipart/form-data"}},
         )
-             .then(function () {
+             .then(function (response: any) {
                  console.log('SUCCESS!!');
-                 onResponse();
+                 onError(response.data);
              })
-             .catch(function () {
+             .catch(function (response: any)  {
                  console.log('FAILURE!!');
-                 onError();
+                 onError(response);
              });
     }
 

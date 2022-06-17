@@ -16,6 +16,8 @@ export class MediaDataSource {
     create(dto, onResponse, onError) {
         var _a, _b;
         return __awaiter(this, void 0, void 0, function* () {
+            //  onResponse: () => any,
+            //  onError: () => any) {
             let data = new FormData();
             (_a = dto.Files) === null || _a === void 0 ? void 0 : _a.forEach(i => data.append('Files', i));
             (_b = dto.Links) === null || _b === void 0 ? void 0 : _b.forEach(i => data.append('Links', i));
@@ -47,13 +49,13 @@ export class MediaDataSource {
                 data.append('UseCase', dto.UseCase);
             axios.post(`${this.baseUrl}Media`, data, { headers: { 'Authorization': getData(UtilitiesConstants.TOKEN),
                     'Content-type': "multipart/form-data" } })
-                .then(function () {
+                .then(function (response) {
                 console.log('SUCCESS!!');
-                onResponse();
+                onError(response.data);
             })
-                .catch(function () {
+                .catch(function (response) {
                 console.log('FAILURE!!');
-                onError();
+                onError(response);
             });
         });
     }
