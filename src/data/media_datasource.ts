@@ -15,7 +15,7 @@ export class MediaDataSource {
                  onError: () => any) {
         let data = new FormData();
 
-        dto.Files?.forEach(i => data.append('Files', i, Date.now().toString()));
+        dto.Files?.forEach(i => data.append('Files', i));
         dto.Links?.forEach(i => data.append('Links', i));
 
         if (dto.UserId != null) data.append('UserId', dto.UserId);

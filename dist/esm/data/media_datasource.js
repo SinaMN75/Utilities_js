@@ -17,7 +17,7 @@ export class MediaDataSource {
         var _a, _b;
         return __awaiter(this, void 0, void 0, function* () {
             let data = new FormData();
-            (_a = dto.Files) === null || _a === void 0 ? void 0 : _a.forEach(i => data.append('Files', i, Date.now().toString()));
+            (_a = dto.Files) === null || _a === void 0 ? void 0 : _a.forEach(i => data.append('Files', i));
             (_b = dto.Links) === null || _b === void 0 ? void 0 : _b.forEach(i => data.append('Links', i));
             if (dto.UserId != null)
                 data.append('UserId', dto.UserId);
