@@ -21,7 +21,7 @@ export class CategoryDataSource {
 
 	async read(onResponse: (response: GenericResponse<CategoryReadDto[]>) => any,
 	           onError: (response: Response) => any) {
-		await httpGet(`${this.baseUrl}Category}`,
+		await httpGet(`${this.baseUrl}Category`,
 			response => onResponse(response),
 			response => onError(response));
 	}
