@@ -14,5 +14,5 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-__exportStar(require("../id_title_datasource"), exports);
+__exportStar(require("../category_datasource"), exports);
 //# sourceMappingURL=view_models.js.map

@@ -1,13 +1,8 @@
-import { IdTitleReadDto } from "./id_title";
+import { CategoryReadDto } from "./category";
 export interface AppSettingsReadDto {
-    language?: IdTitleReadDto[];
-    colors?: IdTitleReadDto[];
-    favorites?: IdTitleReadDto[];
-    specialtyCategories?: IdTitleReadDto[];
-    specialties?: IdTitleReadDto[];
-    userRole?: IdTitleReadDto[];
-    geoList?: IdTitleReadDto[];
-    categories?: IdTitleReadDto[];
-    formFieldType?: IdTitleReadDto[];
-    categoryUseCase?: IdTitleReadDto[];
+    userRole?: CategoryReadDto[];
+    geoList?: CategoryReadDto[];
+    categories?: CategoryReadDto[];
+    formFieldType?: CategoryReadDto[];
+    categoryUseCase?: CategoryReadDto[];
 }

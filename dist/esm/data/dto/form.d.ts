@@ -1,8 +1,8 @@
-import { IdTitleCreateUpdateDto } from "./id_title";
+import { CategoryCreateUpdateDto } from "./category";
 export interface FormFieldDto {
     id?: string;
-    value?: string;
     label?: string;
+    title?: string;
     isRequired?: boolean;
     optionList?: string;
     type?: number;
@@ -11,13 +11,5 @@ export interface FormFieldDto {
 export interface FormCreateDto {
     userId?: string;
     productId?: string;
-    projectId?: string;
-    tutorialId?: string;
-    eventId?: string;
-    adId?: string;
-    companyId?: string;
-    tenderId?: string;
-    serviceId?: string;
-    magazineId?: string;
-    form?: IdTitleCreateUpdateDto[];
+    form?: CategoryCreateUpdateDto[];
 }

@@ -1,5 +1,5 @@
 import { httpPost } from "../utils/http_interceptor";
-import { GenericResponse, IdTitleReadDto, ToggleBookmarkDto,ToggleBookmarkReadDto } from "./data";
+import { GenericResponse, CategoryReadDto, ToggleBookmarkDto,BookmarkReadDto } from "./data";
 
 export class BookmarkDataSource {
 	baseUrl: string;
@@ -9,7 +9,7 @@ export class BookmarkDataSource {
 	}
 
 	async toggleBookmark(dto: ToggleBookmarkDto,
-		onResponse: (response: GenericResponse<IdTitleReadDto>) => any,
+		onResponse: (response: GenericResponse<CategoryReadDto>) => any,
 		onError: (response: Response) => any) {
 		await httpPost(
 			`${this.baseUrl}FollowBookmark/ToggleBookmark/ToggleBookmark`,
@@ -19,7 +19,7 @@ export class BookmarkDataSource {
 		);
 	}
 	async readToggleBookmark(
-		onResponse: (response: GenericResponse<ToggleBookmarkReadDto>) => any,
+		onResponse: (response: GenericResponse<BookmarkReadDto>) => any,
 		onError: (response: Response) => any) {
 		await httpPost(
 			`${this.baseUrl}FollowBookmark/ReadBookmarks/ReadBookmarks`,

@@ -1,4 +1,4 @@
-import { IdTitleReadDto, MediaReadDto } from "./dto";
+import { CategoryReadDto, GenderReadDto, MediaReadDto } from "./dto";
 export interface UserReadDto {
     token?: string;
     id?: string;
@@ -6,15 +6,26 @@ export interface UserReadDto {
     phoneNumber?: string;
     userName?: string;
     bio?: string;
-    isAdmin?: boolean;
     appUserName?: string;
-    appEmail?: string;
     appPhoneNumber?: string;
+    appEmail?: string;
+    type?: string;
+    firstName?: string;
+    lastName?: string;
+    headline?: string;
+    website?: string;
+    region?: string;
+    activity?: string;
+    wallet?: number;
+    showContactInfo?: boolean;
+    isAdmin?: boolean;
+    suspend?: boolean;
     birthDate?: string;
+    gender?: GenderReadDto;
     media?: MediaReadDto[];
-    colors?: IdTitleReadDto[];
-    specialties?: IdTitleReadDto[];
-    favorites?: IdTitleReadDto[];
+    colors?: CategoryReadDto[];
+    specialties?: CategoryReadDto[];
+    favorites?: CategoryReadDto[];
 }
 export interface GetMobileVerificationCodeForLoginDto {
     mobile?: string;
@@ -37,9 +48,7 @@ export interface UserCreateUpdateDto {
     appUserName?: string;
     appPhoneNumber?: string;
     appEmail?: string;
-    colors?: string[];
-    specialties?: string[];
-    favorites?: string[];
+    categories?: string[];
     locations?: number[];
     birthDate?: string;
 }

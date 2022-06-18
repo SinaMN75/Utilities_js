@@ -1,2 +1,2 @@
-export * from "../id_title_datasource";
+export * from "../category_datasource";
 //# sourceMappingURL=view_models.js.map

@@ -1,5 +1,4 @@
 import {ReportCreateUpdateDto} from "./dto/report";
-import {ProductDataSourceType} from "./product_datasource";
 import {httpPost} from "../utils/http_interceptor";
 
 export class ReportDatasource {

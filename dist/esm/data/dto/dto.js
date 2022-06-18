@@ -1,7 +1,7 @@
 export * from "./media";
 export * from "./vote";
 export * from "./product";
-export * from "./id_title";
+export * from "./category";
 export * from "./location";
 export * from "./user";
 export * from "./response";
@@ -12,4 +12,5 @@ export * from "./comment";
 export * from "./chat";
 export * from "./notification";
 export * from "./report";
+export * from "./gender";
 //# sourceMappingURL=dto.js.map

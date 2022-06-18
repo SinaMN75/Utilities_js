@@ -6,7 +6,6 @@ export interface ContentCreateUpdateDto {
 	subTitle?: string;
 	description?: string;
 	useCase?: number;
-	approvalStatus?: number;
 }
 
 export interface ContentReadDto {

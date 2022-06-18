@@ -17,7 +17,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./media"), exports);
 __exportStar(require("./vote"), exports);
 __exportStar(require("./product"), exports);
-__exportStar(require("./id_title"), exports);
+__exportStar(require("./category"), exports);
 __exportStar(require("./location"), exports);
 __exportStar(require("./user"), exports);
 __exportStar(require("./response"), exports);
@@ -28,4 +28,5 @@ __exportStar(require("./comment"), exports);
 __exportStar(require("./chat"), exports);
 __exportStar(require("./notification"), exports);
 __exportStar(require("./report"), exports);
+__exportStar(require("./gender"), exports);
 //# sourceMappingURL=dto.js.map

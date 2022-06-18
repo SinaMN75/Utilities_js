@@ -1,18 +1,21 @@
 import {MediaReadDto} from "./dto";
 
-export interface IdTitleReadDto {
+export interface CategoryReadDto {
     id?: string;
+    secondaryId?: number;
     title?: string;
+    titleTr1?: string;
     subtitle?: string;
     color?: string;
     link?: string;
-    useCase?: number;
-    parent: IdTitleReadDto,
-    parentId: string
+    useCase?: string;
+    type?: string;
+    parentId?: string;
+    parent: CategoryReadDto,
     media?: MediaReadDto[];
 }
 
-export interface IdTitleCreateUpdateDto {
+export interface CategoryCreateUpdateDto {
     id?: string;
     title?: string;
     subtitle?: string;
