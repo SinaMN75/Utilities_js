@@ -17,10 +17,11 @@ export interface CategoryReadDto {
 
 export interface CategoryCreateUpdateDto {
     id?: string;
+    parentId?: string
     title?: string;
     subtitle?: string;
-    color?: string;
     link?: string;
-    parentId?: string
-    useCase?: number;
+    color?: string;
+    useCase?: string;
+    type?: string;
 }
