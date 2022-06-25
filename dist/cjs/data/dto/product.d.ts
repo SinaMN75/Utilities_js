@@ -59,8 +59,8 @@ export interface ProductCreateUpdateDto {
     longitude?: number;
     visitsCount?: number;
     price?: number;
-    startDate?: string;
-    endDate?: string;
+    startDate?: Date;
+    endDate?: Date;
     length?: number;
     width?: number;
     height?: number;
@@ -101,8 +101,8 @@ export interface ProductFilterDto {
     minOrder?: number;
     maxOrder?: number;
     status?: number;
-    startDate?: string;
-    endDate?: string;
+    startDate?: Date;
+    endDate?: Date;
     locations?: number[];
     categories?: string[];
     filterOrder?: number;
