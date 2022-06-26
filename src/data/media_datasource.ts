@@ -1,5 +1,6 @@
 import {MediaCreateUpdateDto} from "./data";
 import {getData, UtilitiesConstants} from "../index";
+import {httpDelete} from "../utils/http_interceptor";
 
 const axios = require('axios');
 
@@ -38,6 +39,14 @@ export class MediaDataSource {
                  console.log('FAILURE!!');
                  onError(response);
              });
+    }
+
+    async delete(id: string, onResponse: (response: Response) => any, onError: (response: Response) => any) {
+        await httpDelete(
+            `${this.baseUrl}Media/${id}`,
+            response => onResponse(response),
+            response => onError(response)
+        );
     }
 
 }

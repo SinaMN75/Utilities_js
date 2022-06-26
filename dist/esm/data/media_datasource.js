@@ -8,6 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { getData, UtilitiesConstants } from "../index";
+import { httpDelete } from "../utils/http_interceptor";
 const axios = require('axios');
 export class MediaDataSource {
     constructor(baseUrl) {
@@ -37,6 +38,11 @@ export class MediaDataSource {
                 console.log('FAILURE!!');
                 onError(response);
             });
+        });
+    }
+    delete(id, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield httpDelete(`${this.baseUrl}Media/${id}`, response => onResponse(response), response => onError(response));
         });
     }
 }

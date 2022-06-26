@@ -11,6 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MediaDataSource = void 0;
 const index_1 = require("../index");
+const http_interceptor_1 = require("../utils/http_interceptor");
 const axios = require('axios');
 class MediaDataSource {
     constructor(baseUrl) {
@@ -40,6 +41,11 @@ class MediaDataSource {
                 console.log('FAILURE!!');
                 onError(response);
             });
+        });
+    }
+    delete(id, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield (0, http_interceptor_1.httpDelete)(`${this.baseUrl}Media/${id}`, response => onResponse(response), response => onError(response));
         });
     }
 }
