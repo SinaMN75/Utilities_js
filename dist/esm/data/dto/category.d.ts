@@ -11,6 +11,7 @@ export interface CategoryReadDto {
     type?: string;
     parentId?: string;
     parent: CategoryReadDto;
+    children?: Array<any>;
     media?: MediaReadDto[];
 }
 export interface CategoryCreateUpdateDto {
