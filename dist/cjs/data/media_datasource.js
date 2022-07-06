@@ -20,8 +20,6 @@ class MediaDataSource {
     create(dto, onResponse, onError) {
         var _a, _b;
         return __awaiter(this, void 0, void 0, function* () {
-            //  onResponse: () => any,
-            //  onError: () => any) {
             let data = new FormData();
             (_a = dto.Files) === null || _a === void 0 ? void 0 : _a.forEach(i => data.append('Files', i));
             (_b = dto.Links) === null || _b === void 0 ? void 0 : _b.forEach(i => data.append('Links', i));
@@ -35,7 +33,7 @@ class MediaDataSource {
                     'Content-type': "multipart/form-data" } })
                 .then(function (response) {
                 console.log('SUCCESS!!');
-                onError(response.data);
+                onResponse(response.data);
             })
                 .catch(function (response) {
                 console.log('FAILURE!!');
