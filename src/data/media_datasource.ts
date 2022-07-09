@@ -14,8 +14,6 @@ export class MediaDataSource {
     async create(dto: MediaCreateUpdateDto,
         onResponse: (response: Response) => any,
 	             onError: (response: Response) => any) {
-                //  onResponse: () => any,
-                //  onError: () => any) {
         let data = new FormData();
 
         dto.Files?.forEach(i => data.append('Files', i));
@@ -33,7 +31,7 @@ export class MediaDataSource {
         )
              .then(function (response: any) {
                  console.log('SUCCESS!!');
-                 onError(response.data);
+                 onResponse(response.data);
              })
              .catch(function (response: any)  {
                  console.log('FAILURE!!');
