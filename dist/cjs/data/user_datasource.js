@@ -32,7 +32,7 @@ class UserDataSource {
     }
     delete(id, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, http_interceptor_1.httpDelete)(`${this.baseUrl}user`, response => onResponse(response), response => onError(response));
+            yield (0, http_interceptor_1.httpDelete)(`${this.baseUrl}user/${id}`, response => onResponse(response), response => onError(response));
         });
     }
     create(dto, onResponse, onError) {

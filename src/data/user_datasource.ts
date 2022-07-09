@@ -48,7 +48,7 @@ export class UserDataSource {
 	async delete(id: string,
 		onResponse: (response: GenericResponse<UserReadDto>) => any,
 		onError: (response: Response) => any) {
-		await httpDelete(`${this.baseUrl}user`,
+		await httpDelete(`${this.baseUrl}user/${id}`,
 			response => onResponse(response),
 			response => onError(response)
 		);
