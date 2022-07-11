@@ -57,5 +57,10 @@ export class UserDataSource {
             yield httpPut(`${this.baseUrl}user/UpdateProfile`, dto, response => onResponse(response), response => onError(response));
         });
     }
+    updateUser(dto, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield httpPut(`${this.baseUrl}user`, dto, response => onResponse(response), response => onError(response));
+        });
+    }
 }
 //# sourceMappingURL=user_datasource.js.map

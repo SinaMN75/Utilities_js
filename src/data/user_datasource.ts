@@ -98,4 +98,14 @@ export class UserDataSource {
 			response => onError(response)
 		);
 	}
+	async updateUser(dto: UserCreateUpdateDto,
+		onResponse: (response: Response) => any,
+		onError: (response: Response) => any) {
+		await httpPut(
+			`${this.baseUrl}user`,
+			dto,
+			response => onResponse(response),
+			response => onError(response)
+		);
+	}
 }

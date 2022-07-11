@@ -60,6 +60,11 @@ class UserDataSource {
             yield (0, http_interceptor_1.httpPut)(`${this.baseUrl}user/UpdateProfile`, dto, response => onResponse(response), response => onError(response));
         });
     }
+    updateUser(dto, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield (0, http_interceptor_1.httpPut)(`${this.baseUrl}user`, dto, response => onResponse(response), response => onError(response));
+        });
+    }
 }
 exports.UserDataSource = UserDataSource;
 //# sourceMappingURL=user_datasource.js.map
