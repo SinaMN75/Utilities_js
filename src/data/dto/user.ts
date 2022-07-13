@@ -57,3 +57,17 @@ export interface UserCreateUpdateDto {
     locations?: number[];
     birthDate?: string;
 }
+
+
+export interface UserFilterDto {
+    userId?:           string;
+    userName?:         string;
+    showGender?:       boolean;
+    showMedia?:        boolean;
+    showCategories?:   boolean;
+    showLocations?:    boolean;
+    showForms?:        boolean;
+    showProducts?:     boolean;
+    showTransactions?: boolean;
+    showFollowings?:   boolean;
+}

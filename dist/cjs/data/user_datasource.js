@@ -40,11 +40,6 @@ class UserDataSource {
             yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}user`, dto, response => onResponse(response), response => onError(response));
         });
     }
-    getProfile(onResponse, onError) {
-        return __awaiter(this, void 0, void 0, function* () {
-            yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}user/GetProfile`, response => onResponse(response), response => onError(response));
-        });
-    }
     read(onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
             yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}user`, response => onResponse(response), response => onError(response));
@@ -55,14 +50,14 @@ class UserDataSource {
             yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}user/${id}`, response => onResponse(response), response => onError(response));
         });
     }
-    updateProfile(dto, onResponse, onError) {
-        return __awaiter(this, void 0, void 0, function* () {
-            yield (0, http_interceptor_1.httpPut)(`${this.baseUrl}user/UpdateProfile`, dto, response => onResponse(response), response => onError(response));
-        });
-    }
     updateUser(dto, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
             yield (0, http_interceptor_1.httpPut)(`${this.baseUrl}user`, dto, response => onResponse(response), response => onError(response));
+        });
+    }
+    userFilter(dto, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}user/Filter`, dto, response => onResponse(response), response => onError(response));
         });
     }
 }

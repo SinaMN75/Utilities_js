@@ -5,6 +5,7 @@ import {
 	LoginWithEmailPasswordDto,
 	UserCreateUpdateDto,
 	UserReadDto,
+	UserFilterDto,
 	VerifyMobileForLoginDto
 } from "./data";
 
@@ -64,13 +65,7 @@ export class UserDataSource {
 		);
 	}
 
-	async getProfile(onResponse: (response: GenericResponse<UserReadDto>) => any,
-		onError: (response: Response) => any) {
-		await httpGet(`${this.baseUrl}user/GetProfile`,
-			response => onResponse(response),
-			response => onError(response)
-		);
-	}
+
 
 	async read(onResponse: (response: GenericResponse<UserReadDto[]>) => any,
 		onError: (response: Response) => any) {
@@ -88,21 +83,20 @@ export class UserDataSource {
 		);
 	}
 
-	async updateProfile(dto: UserCreateUpdateDto,
-		onResponse: (response: Response) => any,
-		onError: (response: Response) => any) {
-		await httpPut(
-			`${this.baseUrl}user/UpdateProfile`,
-			dto,
-			response => onResponse(response),
-			response => onError(response)
-		);
-	}
 	async updateUser(dto: UserCreateUpdateDto,
 		onResponse: (response: Response) => any,
 		onError: (response: Response) => any) {
 		await httpPut(
 			`${this.baseUrl}user`,
+			dto,
+			response => onResponse(response),
+			response => onError(response)
+		);
+	}
+	async userFilter(dto: UserFilterDto,
+		onResponse: (response: GenericResponse<UserReadDto>) => any,
+		onError: (response: Response) => any) {
+		await httpPost(`${this.baseUrl}user/Filter`,
 			dto,
 			response => onResponse(response),
 			response => onError(response)
