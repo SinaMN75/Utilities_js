@@ -27,11 +27,11 @@ export interface UserReadDto {
     specialties?: CategoryReadDto[];
     favorites?: CategoryReadDto[];
 }
-export interface GetMobileVerificationCodeForLoginDto {
+export interface GetVerificationCodeForLoginDto {
     mobile?: string;
     sendSMS?: boolean;
 }
-export interface VerifyMobileForLoginDto {
+export interface VerifyForLoginDto {
     mobile?: string;
     verificationCode?: string;
 }
