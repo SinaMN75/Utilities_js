@@ -23,7 +23,7 @@ export class ReportDatasource {
 	async filter(dto: ReportFilterDto,
 		onResponse: (response: GenericResponse<ReportReadDto[]>) => any,
 		onError: (response: Response) => any) {
-		await httpPost(`${this.baseUrl}Product/filter`,
+		await httpPost(`${this.baseUrl}Report/filter`,
 			dto,
 			response => onResponse(response),
 			response => onError(response)
