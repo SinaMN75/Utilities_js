@@ -12,7 +12,7 @@ export class BookmarkDataSource {
 		onResponse: (response: GenericResponse<CategoryReadDto>) => any,
 		onError: (response: Response) => any) {
 		await httpPost(
-			`${this.baseUrl}FollowBookmark/ToggleBookmark/ToggleBookmark`,
+			`${this.baseUrl}FollowBookmark/ToggleBookmark`,
 			dto,
 			response => onResponse(response),
 			response => onError(response)
@@ -22,7 +22,7 @@ export class BookmarkDataSource {
 		onResponse: (response: GenericResponse<BookmarkReadDto>) => any,
 		onError: (response: Response) => any) {
 		await httpPost(
-			`${this.baseUrl}FollowBookmark/ReadBookmarks/ReadBookmarks`,
+			`${this.baseUrl}FollowBookmark/ReadBookmarks`,
 			null,
 			response => onResponse(response),
 			response => onError(response)
