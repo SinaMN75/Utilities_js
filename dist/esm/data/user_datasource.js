@@ -57,5 +57,10 @@ export class UserDataSource {
             yield httpPost(`${this.baseUrl}user/Filter`, dto, response => onResponse(response), response => onError(response));
         });
     }
+    userRegister(dto, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield httpPost(`${this.baseUrl}user/Register`, dto, response => onResponse(response), response => onError(response));
+        });
+    }
 }
 //# sourceMappingURL=user_datasource.js.map

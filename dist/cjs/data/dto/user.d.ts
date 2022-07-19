@@ -64,3 +64,10 @@ export interface UserFilterDto {
     showTransactions?: boolean;
     showFollowings?: boolean;
 }
+export interface UserRegisterDto {
+    userName?: string;
+    email?: string;
+    phoneNumber?: string;
+    password?: string;
+    sendSMS?: boolean;
+}

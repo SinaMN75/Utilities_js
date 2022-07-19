@@ -1,4 +1,4 @@
-import { GenericResponse, GetVerificationCodeForLoginDto, LoginWithEmailPasswordDto, UserCreateUpdateDto, UserReadDto, UserFilterDto, VerifyForLoginDto } from "./data";
+import { GenericResponse, GetVerificationCodeForLoginDto, LoginWithEmailPasswordDto, UserCreateUpdateDto, UserReadDto, UserFilterDto, VerifyForLoginDto, UserRegisterDto } from "./data";
 export declare class UserDataSource {
     baseUrl: string;
     constructor(baseUrl: string);
@@ -11,4 +11,5 @@ export declare class UserDataSource {
     readById(id: string, onResponse: (response: GenericResponse<UserReadDto>) => any, onError: (response: Response) => any): Promise<void>;
     updateUser(dto: UserCreateUpdateDto, onResponse: (response: Response) => any, onError: (response: Response) => any): Promise<void>;
     userFilter(dto: UserFilterDto, onResponse: (response: GenericResponse<UserReadDto[]>) => any, onError: (response: Response) => any): Promise<void>;
+    userRegister(dto: UserRegisterDto, onResponse: (response: GenericResponse<UserReadDto>) => any, onError: (response: Response) => any): Promise<void>;
 }
