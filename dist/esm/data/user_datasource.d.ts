@@ -11,5 +11,5 @@ export declare class UserDataSource {
     readById(id: string, onResponse: (response: GenericResponse<UserReadDto>) => any, onError: (response: Response) => any): Promise<void>;
     updateUser(dto: UserCreateUpdateDto, onResponse: (response: Response) => any, onError: (response: Response) => any): Promise<void>;
     userFilter(dto: UserFilterDto, onResponse: (response: GenericResponse<UserReadDto[]>) => any, onError: (response: Response) => any): Promise<void>;
-    userRegister(dto: UserRegisterDto, onResponse: (response: GenericResponse<UserReadDto>) => any, onError: (response: Response) => any): Promise<void>;
+    userRegister(dto: UserRegisterDto, onResponse: (response: GenericResponse<UserReadDto>) => any, onError: (response: any) => any): Promise<void>;
 }

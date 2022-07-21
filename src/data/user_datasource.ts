@@ -105,7 +105,7 @@ export class UserDataSource {
 	}
 	async userRegister(dto: UserRegisterDto,
 		onResponse: (response: GenericResponse<UserReadDto>) => any,
-		onError: (response: Response) => any) {
+		onError: (response:any) => any) {
 		await httpPost(`${this.baseUrl}user/Register`,
 			dto,
 			response => onResponse(response),
