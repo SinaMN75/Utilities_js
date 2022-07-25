@@ -10,4 +10,5 @@ export * from "./comment_datasource";
 export * from "./notification_datasource";
 export * from "./media_datasource";
 export * from "./report_datasource";
+export * from "../data/dto/response";
 //# sourceMappingURL=data.js.map

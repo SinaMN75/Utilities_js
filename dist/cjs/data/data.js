@@ -26,4 +26,5 @@ __exportStar(require("./comment_datasource"), exports);
 __exportStar(require("./notification_datasource"), exports);
 __exportStar(require("./media_datasource"), exports);
 __exportStar(require("./report_datasource"), exports);
+__exportStar(require("../data/dto/response"), exports);
 //# sourceMappingURL=data.js.map
