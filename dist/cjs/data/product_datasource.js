@@ -42,7 +42,7 @@ class ProductDataSource {
     }
     filterV2(dto, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}Product/filter/v2`, dto, response => onResponse(response), response => onError(response));
+            yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}Product/FilterV2`, dto, response => onResponse(response), response => onError(response));
         });
     }
     readById(id, onResponse, onError) {
