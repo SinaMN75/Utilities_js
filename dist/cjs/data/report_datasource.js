@@ -20,6 +20,11 @@ class ReportDatasource {
             yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}Report`, dto, response => onResponse(response), response => onError(response));
         });
     }
+    filter(dto, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}Report/filter`, dto, response => onResponse(response), response => onError(response));
+        });
+    }
 }
 exports.ReportDatasource = ReportDatasource;
 //# sourceMappingURL=report_datasource.js.map

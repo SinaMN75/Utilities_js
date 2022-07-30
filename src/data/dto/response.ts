@@ -11,3 +11,8 @@ export interface Response {
     status?: number;
     message?: string;
 }
+
+export interface ResponseErr {
+    status?: number;
+    message?: string;
+}

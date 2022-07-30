@@ -15,14 +15,14 @@ class UserDataSource {
     constructor(baseUrl) {
         this.baseUrl = baseUrl;
     }
-    getMobileVerificationCodeForLogin(body, onResponse, onError) {
+    getVerificationCodeForLogin(body, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}user/GetMobileVerificationCodeForLogin`, body, response => onResponse(response), response => onError(response));
+            yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}user/GetVerificationCodeForLogin`, body, response => onResponse(response), response => onError(response));
         });
     }
-    verifyMobileForLogin(body, onResponse, onError) {
+    verifyForLogin(body, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}user/VerifyMobileForLogin`, body, response => onResponse(response), response => onError(response));
+            yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}user/VerifyCodeForLogin`, body, response => onResponse(response), response => onError(response));
         });
     }
     loginWithEmailPassword(body, onResponse, onError) {
@@ -32,17 +32,12 @@ class UserDataSource {
     }
     delete(id, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, http_interceptor_1.httpDelete)(`${this.baseUrl}user`, response => onResponse(response), response => onError(response));
+            yield (0, http_interceptor_1.httpDelete)(`${this.baseUrl}user/${id}`, response => onResponse(response), response => onError(response));
         });
     }
     create(dto, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
             yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}user`, dto, response => onResponse(response), response => onError(response));
-        });
-    }
-    getProfile(onResponse, onError) {
-        return __awaiter(this, void 0, void 0, function* () {
-            yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}user/GetProfile`, response => onResponse(response), response => onError(response));
         });
     }
     read(onResponse, onError) {
@@ -55,9 +50,19 @@ class UserDataSource {
             yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}user/${id}`, response => onResponse(response), response => onError(response));
         });
     }
-    updateProfile(dto, onResponse, onError) {
+    updateUser(dto, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, http_interceptor_1.httpPut)(`${this.baseUrl}user/UpdateProfile`, dto, response => onResponse(response), response => onError(response));
+            yield (0, http_interceptor_1.httpPut)(`${this.baseUrl}user`, dto, response => onResponse(response), response => onError(response));
+        });
+    }
+    userFilter(dto, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}user/Filter`, dto, response => onResponse(response), response => onError(response));
+        });
+    }
+    userRegister(dto, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}user/Register`, dto, response => onResponse(response), response => onError(response));
         });
     }
 }

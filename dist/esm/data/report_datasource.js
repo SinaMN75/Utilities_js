@@ -17,5 +17,10 @@ export class ReportDatasource {
             yield httpPost(`${this.baseUrl}Report`, dto, response => onResponse(response), response => onError(response));
         });
     }
+    filter(dto, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield httpPost(`${this.baseUrl}Report/filter`, dto, response => onResponse(response), response => onError(response));
+        });
+    }
 }
 //# sourceMappingURL=report_datasource.js.map

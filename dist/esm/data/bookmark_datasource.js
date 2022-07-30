@@ -14,12 +14,12 @@ export class BookmarkDataSource {
     }
     toggleBookmark(dto, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield httpPost(`${this.baseUrl}FollowBookmark/ToggleBookmark/ToggleBookmark`, dto, response => onResponse(response), response => onError(response));
+            yield httpPost(`${this.baseUrl}FollowBookmark/ToggleBookmark`, dto, response => onResponse(response), response => onError(response));
         });
     }
     readToggleBookmark(onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield httpPost(`${this.baseUrl}FollowBookmark/ReadBookmarks/ReadBookmarks`, null, response => onResponse(response), response => onError(response));
+            yield httpPost(`${this.baseUrl}FollowBookmark/ReadBookmarks`, null, response => onResponse(response), response => onError(response));
         });
     }
 }

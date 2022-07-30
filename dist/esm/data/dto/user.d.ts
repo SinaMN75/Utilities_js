@@ -27,11 +27,11 @@ export interface UserReadDto {
     specialties?: CategoryReadDto[];
     favorites?: CategoryReadDto[];
 }
-export interface GetMobileVerificationCodeForLoginDto {
+export interface GetVerificationCodeForLoginDto {
     mobile?: string;
     sendSMS?: boolean;
 }
-export interface VerifyMobileForLoginDto {
+export interface VerifyForLoginDto {
     mobile?: string;
     verificationCode?: string;
 }
@@ -51,4 +51,23 @@ export interface UserCreateUpdateDto {
     categories?: string[];
     locations?: number[];
     birthDate?: string;
+}
+export interface UserFilterDto {
+    userId?: string;
+    userName?: string;
+    showGender?: boolean;
+    showMedia?: boolean;
+    showCategories?: boolean;
+    showLocations?: boolean;
+    showForms?: boolean;
+    showProducts?: boolean;
+    showTransactions?: boolean;
+    showFollowings?: boolean;
+}
+export interface UserRegisterDto {
+    userName?: string;
+    email?: string;
+    phoneNumber?: string;
+    password?: string;
+    sendSMS?: boolean;
 }
