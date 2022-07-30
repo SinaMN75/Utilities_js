@@ -7,7 +7,8 @@ import {
 	UserReadDto,
 	UserFilterDto,
 	VerifyForLoginDto,
-	UserRegisterDto
+	UserRegisterDto,
+	ResponseErr
 } from "./data";
 
 export class UserDataSource {
@@ -105,7 +106,7 @@ export class UserDataSource {
 	}
 	async userRegister(dto: UserRegisterDto,
 		onResponse: (response: GenericResponse<UserReadDto>) => any,
-		onError: (response: Response) => any) {
+		onError: (response:ResponseErr) => any) {
 		await httpPost(`${this.baseUrl}user/Register`,
 			dto,
 			response => onResponse(response),

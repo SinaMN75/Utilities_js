@@ -1,5 +1,5 @@
-import {httpDelete, httpGet, httpPost, httpPut} from "../utils/http_interceptor";
-import {GenericResponse, ProductCreateUpdateDto, ProductFilterDto, ProductReadDto} from "./data";
+import { httpDelete, httpGet, httpPost, httpPut } from "../utils/http_interceptor";
+import { GenericResponse, ProductCreateUpdateDto, ProductFilterDto, ProductReadDto } from "./data";
 
 export class ProductDataSource {
     baseUrl: string;
@@ -9,8 +9,8 @@ export class ProductDataSource {
     }
 
     async create(dto: ProductCreateUpdateDto,
-                 onResponse: (response: GenericResponse<ProductReadDto>) => any,
-                 onError: (response: Response) => any) {
+        onResponse: (response: GenericResponse<ProductReadDto>) => any,
+        onError: (response: Response) => any) {
         await httpPost(
             `${this.baseUrl}Product`,
             dto,
@@ -20,7 +20,7 @@ export class ProductDataSource {
     }
 
     async read(onResponse: (response: GenericResponse<ProductReadDto[]>) => any,
-               onError: (response: Response) => any) {
+        onError: (response: Response) => any) {
         await httpGet(`${this.baseUrl}Product`,
             response => onResponse(response),
             response => onError(response)
@@ -28,7 +28,7 @@ export class ProductDataSource {
     }
 
     async readMine(onResponse: (response: GenericResponse<ProductReadDto[]>) => any,
-               onError: (response: Response) => any) {
+        onError: (response: Response) => any) {
         await httpGet(`${this.baseUrl}Product/Mine`,
             response => onResponse(response),
             response => onError(response)
@@ -36,8 +36,8 @@ export class ProductDataSource {
     }
 
     async update(dto: ProductCreateUpdateDto,
-                 onResponse: (response: GenericResponse<ProductReadDto>) => any,
-                 onError: (response: Response) => any) {
+        onResponse: (response: GenericResponse<ProductReadDto>) => any,
+        onError: (response: Response) => any) {
         await httpPut(
             `${this.baseUrl}Product`,
             dto,
@@ -47,8 +47,8 @@ export class ProductDataSource {
     }
 
     async filter(dto: ProductFilterDto,
-                 onResponse: (response: GenericResponse<ProductReadDto[]>) => any,
-                 onError: (response: Response) => any) {
+        onResponse: (response: GenericResponse<ProductReadDto[]>) => any,
+        onError: (response: Response) => any) {
         await httpPost(`${this.baseUrl}Product/filter`,
             dto,
             response => onResponse(response),
@@ -56,9 +56,19 @@ export class ProductDataSource {
         );
     }
 
+    async filterV2(dto: ProductFilterDto,
+        onResponse: (response: GenericResponse<ProductReadDto[]>) => any,
+        onError: (response: Response) => any) {
+        await httpPost(`${this.baseUrl}Product/FilterV2`,
+            dto,
+            response => onResponse(response),
+            response => onError(response)
+        );
+    }
+
     async readById(id: string,
-                   onResponse: (response: GenericResponse<ProductReadDto>) => any,
-                   onError: (response: Response) => any) {
+        onResponse: (response: GenericResponse<ProductReadDto>) => any,
+        onError: (response: Response) => any) {
         await httpGet(`${this.baseUrl}Product/${id}`,
             response => onResponse(response),
             response => onError(response)
