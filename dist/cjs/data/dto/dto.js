@@ -29,4 +29,5 @@ __exportStar(require("./chat"), exports);
 __exportStar(require("./notification"), exports);
 __exportStar(require("./report"), exports);
 __exportStar(require("./gender"), exports);
+__exportStar(require("./top_product"), exports);
 //# sourceMappingURL=dto.js.map
