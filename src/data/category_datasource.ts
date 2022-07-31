@@ -1,5 +1,5 @@
-import {httpDelete, httpGet, httpPost, httpPut} from "../utils/http_interceptor";
-import {CategoryCreateUpdateDto, CategoryReadDto, GenericResponse,} from "./data";
+import { httpDelete, httpGet, httpPost, httpPut } from "../utils/http_interceptor";
+import { CategoryCreateUpdateDto, CategoryReadDto, GenericResponse, } from "./data";
 
 export class CategoryDataSource {
 	baseUrl: string;
@@ -9,8 +9,8 @@ export class CategoryDataSource {
 	}
 
 	async create(dto: CategoryCreateUpdateDto,
-	             onResponse: (response: GenericResponse<CategoryReadDto>) => any,
-	             onError: (response: Response) => any) {
+		onResponse: (response: GenericResponse<CategoryReadDto>) => any,
+		onError: (response: Response) => any) {
 		await httpPost(
 			`${this.baseUrl}Category`,
 			dto,
@@ -20,15 +20,15 @@ export class CategoryDataSource {
 	}
 
 	async read(onResponse: (response: GenericResponse<CategoryReadDto[]>) => any,
-	           onError: (response: Response) => any) {
+		onError: (response: Response) => any) {
 		await httpGet(`${this.baseUrl}Category`,
 			response => onResponse(response),
 			response => onError(response));
 	}
 
 	async update(dto: CategoryCreateUpdateDto,
-	             onResponse: (response: GenericResponse<CategoryReadDto>) => any,
-	             onError: (response: Response) => any) {
+		onResponse: (response: GenericResponse<CategoryReadDto>) => any,
+		onError: (response: Response) => any) {
 		await httpPut(
 			`${this.baseUrl}Category`,
 			dto,
