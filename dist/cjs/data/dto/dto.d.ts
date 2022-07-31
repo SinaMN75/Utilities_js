@@ -13,3 +13,4 @@ export * from "./chat";
 export * from "./notification";
 export * from "./report";
 export * from "./gender";
+export * from "./top_product";

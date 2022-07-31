@@ -27,4 +27,5 @@ __exportStar(require("./notification_datasource"), exports);
 __exportStar(require("./media_datasource"), exports);
 __exportStar(require("./report_datasource"), exports);
 __exportStar(require("../data/dto/response"), exports);
+__exportStar(require("../data/top_product_datasource"), exports);
 //# sourceMappingURL=data.js.map
