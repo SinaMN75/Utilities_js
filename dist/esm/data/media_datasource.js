@@ -26,8 +26,12 @@ export class MediaDataSource {
                 data.append('ProductId', dto.ProductId);
             if (dto.UseCase != null)
                 data.append('UseCase', dto.UseCase);
-            axios.post(`${this.baseUrl}Media`, data, { headers: { 'Authorization': getData(UtilitiesConstants.TOKEN),
-                    'Content-type': "multipart/form-data" } })
+            axios.post(`${this.baseUrl}Media`, data, {
+                headers: {
+                    'Authorization': getData(UtilitiesConstants.TOKEN),
+                    'Content-type': "multipart/form-data"
+                }
+            })
                 .then(function (response) {
                 console.log('SUCCESS!!');
                 onResponse(response.data);

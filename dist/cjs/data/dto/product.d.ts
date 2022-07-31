@@ -37,18 +37,6 @@ export interface ProductReadDto {
     team?: CategoryReadDto[];
     tags?: CategoryReadDto[];
     forms?: FormFieldDto[];
-    capacity1?: number,
-    capacity2?: number,
-    capacity3?: number,
-    capacity4?: number,
-    capacity5?: number,
-    capacity6?: number,
-    capacity7?: number,
-    capacity8?: number,
-    capacity9?: number,
-    capacity10?: number,
-    capacity11?: number,
-    capacity12?: number,
 }
 export interface ProductCreateUpdateDto {
     id?: string;
