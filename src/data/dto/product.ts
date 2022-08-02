@@ -38,19 +38,19 @@ export interface ProductReadDto {
     team?: CategoryReadDto[];
     tags?: CategoryReadDto[];
     forms?: FormFieldDto[];
-    capacity: number,
-    capacity1: number,
-    capacity2: number,
-    capacity3: number,
-    capacity4: number,
-    capacity5: number,
-    capacity6: number,
-    capacity7: number,
-    capacity8: number,
-    capacity9: number,
-    capacity10: number,
-    capacity11: number,
-    capacity12: number,
+    value: string,
+    value1: string,
+    value2: string,
+    value3: string,
+    value4: string,
+    value5: string,
+    value6: string,
+    value7: string,
+    value8: string,
+    value9: string,
+    value10: string,
+    value11: string,
+    value12: string,
 }
 
 export interface ProductCreateUpdateDto {
