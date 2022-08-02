@@ -9,6 +9,7 @@ export interface MediaReadDto {
 export interface MediaCreateUpdateDto {
     UserId?: string;
     ProductId?: string;
+    CategoryId?:string;
     UseCase?: string;
     Files?: File[];
     Links?: string[];

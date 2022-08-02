@@ -25,6 +25,8 @@ class MediaDataSource {
             (_b = dto.Links) === null || _b === void 0 ? void 0 : _b.forEach(i => data.append('Links', i));
             if (dto.UserId != null)
                 data.append('UserId', dto.UserId);
+            if (dto.CategoryId != null)
+                data.append('CategoryId', dto.CategoryId);
             if (dto.ProductId != null)
                 data.append('ProductId', dto.ProductId);
             if (dto.UseCase != null)
