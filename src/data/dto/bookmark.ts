@@ -4,6 +4,6 @@ export interface ToggleBookmarkDto {
 }
 
 export interface BookmarkReadDto {
-	products?: any[];
+	product?: any[];
 }
 
