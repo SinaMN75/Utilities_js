@@ -19,7 +19,7 @@ export class BookmarkDataSource {
 		);
 	}
 	async readToggleBookmark(
-		onResponse: (response: GenericResponse<BookmarkReadDto>) => any,
+		onResponse: (response: GenericResponse<BookmarkReadDto[]>) => any,
 		onError: (response: Response) => any) {
 		await httpPost(
 			`${this.baseUrl}FollowBookmark/ReadBookmarks`,
