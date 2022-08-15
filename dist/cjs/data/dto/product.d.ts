@@ -50,6 +50,7 @@ export interface ProductReadDto {
     value10: string;
     value11: string;
     value12: string;
+    state: string;
 }
 export interface ProductCreateUpdateDto {
     id?: string;
