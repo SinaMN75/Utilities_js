@@ -4,6 +4,9 @@ export interface ProductReadDto {
     userId?: string;
     title?: string;
     subtitle?: string;
+    pageNumber: 1;
+    pageSize: 20;
+    pageCount?: number;
     description?: string;
     details?: string;
     address?: string;
