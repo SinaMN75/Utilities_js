@@ -128,4 +128,5 @@ export interface ProductFilterDto {
     filterOrder?: number;
     pageSize?: number;
     pageNumber?: number;
+    pageCount?: number,
 }
