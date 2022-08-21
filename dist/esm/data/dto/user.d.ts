@@ -25,6 +25,7 @@ export interface UserReadDto {
     media?: MediaReadDto[];
     colors?: CategoryReadDto[];
     specialties?: CategoryReadDto[];
+    categories?: CategoryReadDto[];
     favorites?: CategoryReadDto[];
 }
 export interface GetVerificationCodeForLoginDto {
