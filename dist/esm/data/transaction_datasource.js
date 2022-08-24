@@ -14,7 +14,7 @@ export class TransactionDataSource {
     }
     read(onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield httpGet(`${this.baseUrl}content`, response => onResponse(response), response => onError(response));
+            yield httpGet(`${this.baseUrl}Transaction`, response => onResponse(response), response => onError(response));
         });
     }
 }
