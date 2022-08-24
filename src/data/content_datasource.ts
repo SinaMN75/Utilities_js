@@ -42,7 +42,7 @@ export class ContentDataSource {
 	async readById(id: string,
 	               onResponse: (response: GenericResponse<ContentReadDto>) => any,
 	               onError: (response: Response) => any) {
-		await httpGet(`${this.baseUrl}content`,
+		await httpGet(`${this.baseUrl}content/${id}`,
 			response => onResponse(response),
 			response => onError(response)
 		);

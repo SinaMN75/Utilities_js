@@ -32,7 +32,7 @@ class ContentDataSource {
     }
     readById(id, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}content`, response => onResponse(response), response => onError(response));
+            yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}content/${id}`, response => onResponse(response), response => onError(response));
         });
     }
     delete(id, onResponse, onError) {
