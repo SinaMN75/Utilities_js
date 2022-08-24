@@ -13,7 +13,7 @@ export class TransactionDataSource {
 
 	async read(onResponse: (response: GenericResponse<TransactionReadDto[]>) => any,
 	           onError: (response: Response) => any) {
-		await httpGet(`${this.baseUrl}content`,
+		await httpGet(`${this.baseUrl}Transaction`,
 			response => onResponse(response),
 			response => onError(response)
 		);
