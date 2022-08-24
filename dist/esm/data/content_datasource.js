@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { httpDelete, httpGet, httpPost, httpPut } from "../utils/http_interceptor";
-export class ProductDataSource {
+export class ContentDataSource {
     constructor(baseUrl) {
         this.baseUrl = baseUrl;
     }

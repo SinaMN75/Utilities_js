@@ -9,9 +9,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProductDataSource = void 0;
+exports.ContentDataSource = void 0;
 const http_interceptor_1 = require("../utils/http_interceptor");
-class ProductDataSource {
+class ContentDataSource {
     constructor(baseUrl) {
         this.baseUrl = baseUrl;
     }
@@ -41,5 +41,5 @@ class ProductDataSource {
         });
     }
 }
-exports.ProductDataSource = ProductDataSource;
+exports.ContentDataSource = ContentDataSource;
 //# sourceMappingURL=content_datasource.js.map

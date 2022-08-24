@@ -2,7 +2,7 @@ import {httpDelete, httpGet, httpPost, httpPut} from "../utils/http_interceptor"
 import {GenericResponse, ProductCreateUpdateDto, ProductReadDto} from "./data";
 import {ContentCreateUpdateDto, ContentReadDto} from "./dto/content";
 
-export class ProductDataSource {
+export class ContentDataSource {
 	baseUrl: string;
 
 	constructor(baseUrl: string) {
@@ -10,7 +10,7 @@ export class ProductDataSource {
 	}
 
 	async create(dto: ContentCreateUpdateDto,
-	             onResponse: (response: GenericResponse<ProductReadDto>) => any,
+	             onResponse: (response: GenericResponse<ContentReadDto>) => any,
 	             onError: (response: Response) => any) {
 		await httpPost(
 			`${this.baseUrl}content`,
