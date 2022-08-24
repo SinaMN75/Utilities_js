@@ -1,5 +1,6 @@
 export * from "./dto/dto";
 export * from "./product_datasource";
+export * from "./content_datasource";
 export * from "./productV2_datasource";
 export * from "./user_datasource";
 export * from "./app_settings_datasource";
