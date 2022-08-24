@@ -12,5 +12,6 @@ export * from "./comment_datasource";
 export * from "./notification_datasource";
 export * from "./media_datasource";
 export * from "./report_datasource";
+export * from "./transaction_datasource";
 export * from "../data/dto/response";
 export * from "../data/top_product_datasource";

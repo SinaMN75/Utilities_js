@@ -14,4 +14,5 @@ export * from "./notification";
 export * from "./report";
 export * from "./gender";
 export * from "./top_product";
+export * from "./transaction";
 //# sourceMappingURL=dto.js.map
