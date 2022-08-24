@@ -34,7 +34,7 @@ export class ContentDataSource {
     }
     delete(id, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield httpDelete(`${this.baseUrl}content`, response => onResponse(response), response => onError(response));
+            yield httpDelete(`${this.baseUrl}content/${id}`, response => onResponse(response), response => onError(response));
         });
     }
 }

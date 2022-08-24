@@ -50,7 +50,7 @@ export class ContentDataSource {
 
 	async delete(id: string, onResponse: (response: Response) => any, onError: (response: Response) => any) {
 		await httpDelete(
-			`${this.baseUrl}content`,
+			`${this.baseUrl}content/${id}`,
 			response => onResponse(response),
 			response => onError(response)
 		);
