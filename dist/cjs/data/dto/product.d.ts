@@ -26,6 +26,8 @@ export interface ProductReadDto {
     visitsCount?: number;
     minOrder?: number;
     maxOrder?: number;
+    minPrice?: number;
+    maxPrice?: number;
     price?: number;
     startDate?: string;
     endDate?: string;
@@ -84,6 +86,8 @@ export interface ProductCreateUpdateDto {
     weight?: number;
     minOrder?: number;
     maxOrder?: number;
+    minPrice?: number;
+    maxPrice?: number;
     status?: number;
     locations?: number[];
     categories?: string[];
@@ -117,6 +121,8 @@ export interface ProductFilterDto {
     weight?: number;
     minOrder?: number;
     maxOrder?: number;
+    minPrice?: number;
+    maxPrice?: number;
     status?: number;
     startDate?: string;
     endDate?: string;
@@ -167,6 +173,8 @@ export interface ProductV2FilterDto {
     weight?: number;
     minOrder?: number;
     maxOrder?: number;
+    minPrice?: number;
+    maxPrice?: number;
     startPriceRange?: number;
     endPriceRange?: number;
     enabled?: boolean;
