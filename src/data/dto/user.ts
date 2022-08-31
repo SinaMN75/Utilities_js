@@ -1,4 +1,4 @@
-import {CategoryReadDto, GenderReadDto, MediaReadDto , LocationReadDto} from "./dto";
+import { CategoryReadDto, GenderReadDto, MediaReadDto, LocationReadDto } from "./dto";
 
 export interface UserReadDto {
     token?: string;
@@ -26,8 +26,8 @@ export interface UserReadDto {
     media?: MediaReadDto[];
     colors?: CategoryReadDto[];
     specialties?: CategoryReadDto[];
-    location?:LocationReadDto[];
-    categories?:CategoryReadDto[];
+    location?: LocationReadDto[];
+    categories?: CategoryReadDto[];
     favorites?: CategoryReadDto[];
 }
 
@@ -62,21 +62,25 @@ export interface UserCreateUpdateDto {
 
 
 export interface UserFilterDto {
-    userId?:           string;
-    userName?:         string;
-    showGender?:       boolean;
-    showMedia?:        boolean;
-    showCategories?:   boolean;
-    showLocations?:    boolean;
-    showForms?:        boolean;
-    showProducts?:     boolean;
+    userId?: string;
+    userName?: string;
+    showGender?: boolean;
+    showMedia?: boolean;
+    showCategories?: boolean;
+    showLocations?: boolean;
+    showForms?: boolean;
+    showProducts?: boolean;
     showTransactions?: boolean;
-    showFollowings?:   boolean;
+    showFollowings?: boolean;
 }
 export interface UserRegisterDto {
-    userName?:    string;
-    email?:       string;
+    userName?: string;
+    firstName?: string,
+    lastName?: string,
+    email?: string;
     phoneNumber?: string;
-    password?:    string;
-    sendSMS?:     boolean;
+    password?: string;
+    sendSMS?: boolean;
 }
+
+

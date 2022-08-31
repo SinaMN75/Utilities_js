@@ -68,6 +68,8 @@ export interface UserFilterDto {
 }
 export interface UserRegisterDto {
     userName?: string;
+    firstName?: string;
+    lastName?: string;
     email?: string;
     phoneNumber?: string;
     password?: string;
