@@ -1,4 +1,4 @@
-import {FormFieldDto, CategoryReadDto, LocationReadDto, MediaReadDto, UserReadDto} from "./dto";
+import { FormFieldDto, CategoryReadDto, LocationReadDto, MediaReadDto, UserReadDto } from "./dto";
 
 export interface ProductReadDto {
     id?: string;
@@ -24,8 +24,10 @@ export interface ProductReadDto {
     visitsCount?: number;
     minOrder?: number;
     maxOrder?: number;
+    maxPrice?: number | string,
+    minPrice?: number | string,
     price?: number;
-     startDate?: string;
+    startDate?: string;
     endDate?: string;
     createdAt?: string;
     updatedAt?: string;
