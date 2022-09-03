@@ -1,5 +1,5 @@
 import { httpDelete, httpGet, httpPost, httpPut } from "../utils/http_interceptor";
-import { GenericResponse, ProductCreateUpdateDto, ProductFilterDto, ProductReadDto } from "./data";
+import { GenericResponse, ProductCreateUpdateDto, ProductV2FilterDto, ProductReadDto } from "./data";
 
 export class ProductV2DataSource {
     baseUrl: string;
@@ -30,7 +30,7 @@ export class ProductV2DataSource {
         );
     }
 
-    async filter(dto: ProductFilterDto,
+    async filter(dto: ProductV2FilterDto,
         onResponse: (response: GenericResponse<ProductReadDto[]>) => any,
         onError: (response: Response) => any) {
         await httpPost(`${this.baseUrl}ProductV2/filter`,

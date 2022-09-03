@@ -29,6 +29,8 @@ class MediaDataSource {
                 data.append('CategoryId', dto.CategoryId);
             if (dto.ProductId != null)
                 data.append('ProductId', dto.ProductId);
+            if (dto.ContentId != null)
+                data.append('ContentId', dto.ContentId);
             if (dto.UseCase != null)
                 data.append('UseCase', dto.UseCase);
             axios.post(`${this.baseUrl}Media`, data, {

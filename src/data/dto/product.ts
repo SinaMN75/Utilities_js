@@ -24,10 +24,8 @@ export interface ProductReadDto {
     visitsCount?: number;
     minOrder?: number;
     maxOrder?: number;
-    maxPrice?: number | string,
-    minPrice?: number | string,
-    price?: number;
-    startDate?: string;
+    maxPrice?: number,
+    minPrice?: number;
     endDate?: string;
     createdAt?: string;
     updatedAt?: string;

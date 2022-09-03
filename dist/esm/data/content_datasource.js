@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { httpDelete, httpGet, httpPost, httpPut } from "../utils/http_interceptor";
-export class ProductDataSource {
+export class ContentDataSource {
     constructor(baseUrl) {
         this.baseUrl = baseUrl;
     }
@@ -29,12 +29,12 @@ export class ProductDataSource {
     }
     readById(id, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield httpGet(`${this.baseUrl}content`, response => onResponse(response), response => onError(response));
+            yield httpGet(`${this.baseUrl}content/${id}`, response => onResponse(response), response => onError(response));
         });
     }
     delete(id, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield httpDelete(`${this.baseUrl}content`, response => onResponse(response), response => onError(response));
+            yield httpDelete(`${this.baseUrl}content/${id}`, response => onResponse(response), response => onError(response));
         });
     }
 }

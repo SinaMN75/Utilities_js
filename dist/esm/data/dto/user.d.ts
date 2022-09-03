@@ -1,4 +1,4 @@
-import { CategoryReadDto, GenderReadDto, MediaReadDto } from "./dto";
+import { CategoryReadDto, GenderReadDto, MediaReadDto, LocationReadDto } from "./dto";
 export interface UserReadDto {
     token?: string;
     id?: string;
@@ -25,6 +25,8 @@ export interface UserReadDto {
     media?: MediaReadDto[];
     colors?: CategoryReadDto[];
     specialties?: CategoryReadDto[];
+    location?: LocationReadDto[];
+    categories?: CategoryReadDto[];
     favorites?: CategoryReadDto[];
 }
 export interface GetVerificationCodeForLoginDto {
@@ -66,6 +68,8 @@ export interface UserFilterDto {
 }
 export interface UserRegisterDto {
     userName?: string;
+    firstName?: string;
+    lastName?: string;
     email?: string;
     phoneNumber?: string;
     password?: string;

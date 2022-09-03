@@ -2,7 +2,7 @@ import {httpDelete, httpGet, httpPost, httpPut} from "../utils/http_interceptor"
 import {GenericResponse, ProductCreateUpdateDto, ProductReadDto} from "./data";
 import {ContentCreateUpdateDto, ContentReadDto} from "./dto/content";
 
-export class ProductDataSource {
+export class ContentDataSource {
 	baseUrl: string;
 
 	constructor(baseUrl: string) {
@@ -10,7 +10,7 @@ export class ProductDataSource {
 	}
 
 	async create(dto: ContentCreateUpdateDto,
-	             onResponse: (response: GenericResponse<ProductReadDto>) => any,
+	             onResponse: (response: GenericResponse<ContentReadDto>) => any,
 	             onError: (response: Response) => any) {
 		await httpPost(
 			`${this.baseUrl}content`,
@@ -42,7 +42,7 @@ export class ProductDataSource {
 	async readById(id: string,
 	               onResponse: (response: GenericResponse<ContentReadDto>) => any,
 	               onError: (response: Response) => any) {
-		await httpGet(`${this.baseUrl}content`,
+		await httpGet(`${this.baseUrl}content/${id}`,
 			response => onResponse(response),
 			response => onError(response)
 		);
@@ -50,7 +50,7 @@ export class ProductDataSource {
 
 	async delete(id: string, onResponse: (response: Response) => any, onError: (response: Response) => any) {
 		await httpDelete(
-			`${this.baseUrl}content`,
+			`${this.baseUrl}content/${id}`,
 			response => onResponse(response),
 			response => onError(response)
 		);
