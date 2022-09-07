@@ -5,9 +5,6 @@ export interface ProductReadDto {
     userId?: string;
     title?: string;
     subtitle?: string;
-    pageNumber: 1,
-    pageSize: 20,
-    pageCount?: number,
     description?: string;
     details?: string;
     address?: string;
@@ -27,10 +24,10 @@ export interface ProductReadDto {
     visitsCount?: number;
     minOrder?: number;
     maxOrder?: number;
-    minPrice?: number;
-    maxPrice?: number;
+    maxPrice?: number,
     price?: number;
     startDate?: string;
+    minPrice?: number;
     endDate?: string;
     createdAt?: string;
     updatedAt?: string;
@@ -88,8 +85,6 @@ export interface ProductCreateUpdateDto {
     weight?: number;
     minOrder?: number;
     maxOrder?: number;
-    minPrice?: number;
-    maxPrice?: number;
     status?: number;
     locations?: number[];
     categories?: string[];
@@ -124,8 +119,6 @@ export interface ProductFilterDto {
     weight?: number;
     minOrder?: number;
     maxOrder?: number;
-    minPrice?: number;
-    maxPrice?: number;
     status?: number;
     startDate?: string;
     endDate?: string;
