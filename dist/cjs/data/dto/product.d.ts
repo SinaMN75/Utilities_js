@@ -200,4 +200,11 @@ export interface ProductV2FilterDto {
     locations?: number[];
     categories?: string[];
     filterOrder?: number;
+    orderByVotes?: boolean;
+    orderByAtoZ?: boolean;
+    orderByZtoA?: boolean;
+    orderByPriceAccending?: boolean;
+    orderByPriceDecending?: boolean;
+    orderByCreatedDate?: boolean;
+    orderByCreaedDateDecending?: boolean;
 }
