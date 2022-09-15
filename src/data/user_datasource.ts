@@ -41,7 +41,7 @@ export class UserDataSource {
 	async loginWithEmailPassword(body: LoginWithEmailPasswordDto,
 		onResponse: (response: GenericResponse<UserReadDto>) => any,
 		onError: (response: Response) => any) {
-		await httpPost(`${this.baseUrl}user/LoginWithEmail`,
+		await httpPost(`${this.baseUrl}user/LoginWithPassword`,
 			body,
 			response => onResponse(response),
 			response => onError(response)

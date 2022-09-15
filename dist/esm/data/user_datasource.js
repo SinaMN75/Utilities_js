@@ -24,7 +24,7 @@ export class UserDataSource {
     }
     loginWithEmailPassword(body, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield httpPost(`${this.baseUrl}user/LoginWithEmail`, body, response => onResponse(response), response => onError(response));
+            yield httpPost(`${this.baseUrl}user/LoginWithPassword`, body, response => onResponse(response), response => onError(response));
         });
     }
     delete(id, onResponse, onError) {
