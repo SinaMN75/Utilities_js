@@ -53,6 +53,10 @@ export interface ProductReadDto {
     value11: string;
     value12: string;
     state: string;
+    relatedIds?: string;
+    responseTime?: number;
+    onTimeDelivery?: number;
+    discountPercent?: number;
 }
 export interface ProductCreateUpdateDto {
     id?: string;
@@ -89,6 +93,10 @@ export interface ProductCreateUpdateDto {
     forms?: string[];
     voteFields?: string[];
     reports?: string[];
+    relatedIds?: string;
+    responseTime?: number;
+    onTimeDelivery?: number;
+    discountPercent?: number;
 }
 export interface ProductFilterDto {
     title?: string;
@@ -200,4 +208,8 @@ export interface ProductV2FilterDto {
     orderByPriceDecending?: boolean;
     orderByCreatedDate?: boolean;
     orderByCreaedDateDecending?: boolean;
+    relatedIds?: string;
+    responseTime?: number;
+    onTimeDelivery?: number;
+    discountPercent?: number;
 }
