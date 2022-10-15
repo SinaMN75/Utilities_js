@@ -1,5 +1,5 @@
 import {httpDelete, httpGet, httpPost, httpPut} from "../utils/http_interceptor";
-import {CommentCreateUpdateDto, Response , GenericResponse, ProductReadDto} from "./data";
+import {CommentCreateUpdateDto, Response , GenericResponse, ProductReadDto , CommentFilterDto} from "./data";
 
 export class CommentDataSource {
 	baseUrl: string;
@@ -37,11 +37,22 @@ export class CommentDataSource {
 			response => onError(response)
 		);
 	}
-	async getByUser(id: string, onResponse: (response: GenericResponse<ProductReadDto>) => any, onError: (response: Response) => any) {
+	async getByUser(id: string, onResponse: (response: GenericResponse<ProductReadDto[]>) => any, onError: (response: Response) => any) {
 		await httpGet(
 			`${this.baseUrl}Comment/${id}`,
 			response => onResponse(response),
 			response => onError(response)
 		);
 	}
+	
+
+	async filter(dto: CommentFilterDto,
+        onResponse: (response: GenericResponse<ProductReadDto[]>) => any,
+        onError: (response: Response) => any) {
+        await httpPost(`${this.baseUrl}Comment/Filter`,
+            dto,
+            response => onResponse(response),
+            response => onError(response)
+        );
+    }
 }

@@ -15,3 +15,9 @@ export interface CommentCreateUpdateDto {
     userId?: string;
     productId?: string;
 }
+export interface CommentFilterDto {
+    userId?: string;
+    productId?: string;
+    categoryId?: string;
+    showProducts?: boolean;
+}

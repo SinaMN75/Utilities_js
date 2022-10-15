@@ -35,6 +35,11 @@ class CommentDataSource {
             yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}Comment/${id}`, response => onResponse(response), response => onError(response));
         });
     }
+    filter(dto, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}Comment/Filter`, dto, response => onResponse(response), response => onError(response));
+        });
+    }
 }
 exports.CommentDataSource = CommentDataSource;
 //# sourceMappingURL=comment_datasource.js.map
