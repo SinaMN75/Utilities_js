@@ -23,6 +23,7 @@ export class MediaDataSource {
         if (dto.CategoryId != null) data.append('CategoryId', dto.CategoryId);
         if (dto.ProductId != null) data.append('ProductId', dto.ProductId);
         if (dto.ContentId != null) data.append('ContentId', dto.ContentId);
+        if (dto.GroupChatId != null) data.append('GroupChatId', dto.GroupChatId);
         if (dto.UseCase != null) data.append('UseCase', dto.UseCase);
 
         axios.post(

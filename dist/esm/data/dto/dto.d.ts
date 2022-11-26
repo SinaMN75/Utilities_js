@@ -15,3 +15,4 @@ export * from "./report";
 export * from "./gender";
 export * from "./top_product";
 export * from "./transaction";
+export * from "./order";

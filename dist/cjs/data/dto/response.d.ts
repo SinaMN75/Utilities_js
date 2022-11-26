@@ -13,4 +13,5 @@ export interface Response {
 export interface ResponseErr {
     status?: number;
     message?: string;
+    response?: any;
 }

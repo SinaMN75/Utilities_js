@@ -40,24 +40,33 @@ export interface ProductReadDto {
     team?: CategoryReadDto[];
     tags?: CategoryReadDto[];
     forms?: FormFieldDto[];
-    value: string,
-    value1: string,
-    value2: string,
-    value3: string,
-    value4: string,
-    value5: string,
-    value6: string,
-    value7: string,
-    value8: string,
-    value9: string,
-    value10: string,
-    value11: string,
-    value12: string,
-    state: string,
-    relatedIds?:string,
-    responseTime?: number,
-    onTimeDelivery?: number,
-  discountPercent?: number,
+    value: string;
+    value1: string;
+    value2: string;
+    value3: string;
+    value4: string;
+    value5: string;
+    value6: string;
+    value7: string;
+    value8: string;
+    value9: string;
+    value10: string;
+    value11: string;
+    value12: string;
+    state: string;
+    relatedIds?:string;
+    responseTime?: number;
+    onTimeDelivery?: number;
+  discountPercent?: number;
+  keyValues1?:string;
+  keyValues2?: string;
+  length?: number;
+  width?: number;
+  height?: number;
+  weight?: number;
+  packaging?: string;
+    port?: string;
+    shipping?: string;
 }
 
 export interface ProductCreateUpdateDto {
@@ -95,10 +104,11 @@ export interface ProductCreateUpdateDto {
     forms?: string[];
     voteFields?: string[];
     reports?: string[];
-    relatedIds?:string,
-    responseTime?: number,
-    onTimeDelivery?: number,
-  discountPercent?: number,
+    relatedIds?:string;
+    responseTime?: number;
+    onTimeDelivery?: number;
+  discountPercent?: number;
+  
 }
 
 export interface ProductFilterDto {

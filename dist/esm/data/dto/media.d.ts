@@ -10,6 +10,7 @@ export interface MediaCreateUpdateDto {
     ProductId?: string;
     CategoryId?: string;
     ContentId?: string;
+    GroupChatId?: string;
     UseCase?: string;
     Files?: File[];
     Links?: string[];

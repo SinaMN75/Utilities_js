@@ -57,6 +57,15 @@ export interface ProductReadDto {
     responseTime?: number;
     onTimeDelivery?: number;
     discountPercent?: number;
+    keyValues1?: string;
+    keyValues2?: string;
+    length?: number;
+    width?: number;
+    height?: number;
+    weight?: number;
+    packaging?: string;
+    port?: string;
+    shipping?: string;
 }
 export interface ProductCreateUpdateDto {
     id?: string;

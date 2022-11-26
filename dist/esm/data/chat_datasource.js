@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { httpGet, httpPost } from "../utils/http_interceptor";
+import { httpGet, httpPost, httpPut } from "../utils/http_interceptor";
 export class ChatDataSource {
     constructor(baseUrl) {
         this.baseUrl = baseUrl;
@@ -15,6 +15,21 @@ export class ChatDataSource {
     create(dto, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
             yield httpPost(`${this.baseUrl}Chat`, dto, response => onResponse(response), response => onError(response));
+        });
+    }
+    CreateGroupChatMessage(dto, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield httpPost(`${this.baseUrl}Chat/CreateGroupChatMessage`, dto, response => onResponse(response), response => onError(response));
+        });
+    }
+    CreateGroupChat(dto, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield httpPost(`${this.baseUrl}Chat/CreateGroupChat`, dto, response => onResponse(response), response => onError(response));
+        });
+    }
+    UpdateGroupChatMessage(dto, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield httpPut(`${this.baseUrl}Chat/UpdateGroupChat`, dto, response => onResponse(response), response => onError(response));
         });
     }
     read(onResponse, onError) {
@@ -25,6 +40,21 @@ export class ChatDataSource {
     readByUserId(id, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
             yield httpGet(`${this.baseUrl}Chat/${id}`, response => onResponse(response), response => onError(response));
+        });
+    }
+    readGroupChatMessages(id, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield httpGet(`${this.baseUrl}Chat/ReadGroupChatMessages/${id}`, response => onResponse(response), response => onError(response));
+        });
+    }
+    readGroupChatById(id, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield httpGet(`${this.baseUrl}Chat/ReadGroupChatById/${id}`, response => onResponse(response), response => onError(response));
+        });
+    }
+    readMyGroupChats(onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield httpGet(`${this.baseUrl}Chat/ReadMyGroupChats`, response => onResponse(response), response => onError(response));
         });
     }
 }
