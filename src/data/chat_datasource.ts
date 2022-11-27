@@ -39,6 +39,7 @@ export class ChatDataSource {
 			response => onResponse(response),
 			response => onError(response)
 		);
+		
 	}
 
 	async UpdateGroupChatMessage(dto: GroupChatCreateUpdateDto,
