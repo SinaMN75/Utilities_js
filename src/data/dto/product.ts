@@ -199,6 +199,7 @@ export interface ProductV2FilterDto {
     showMedia?: boolean;
     showForms?: boolean;
     showCategories?: boolean;
+    showCategoryMedia?:boolean;
     showVoteFields?: boolean;
     showVotes?: boolean;
     showReports?: boolean;
