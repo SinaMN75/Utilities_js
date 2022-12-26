@@ -9,6 +9,7 @@ export interface UserReadDto {
     appUserName?: string;
     appPhoneNumber?: string;
     appEmail?: string;
+    email?: string;
     type?: string;
     firstName?: string;
     lastName?: string;
@@ -51,6 +52,7 @@ export interface UserCreateUpdateDto {
     appUserName?: string;
     appPhoneNumber?: string;
     appEmail?: string;
+    email?: string;
     categories?: string[];
     locations?: number[];
     birthDate?: string;
