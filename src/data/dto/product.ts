@@ -145,6 +145,7 @@ export interface ProductFilterDto {
     filterOrder?: number;
     pageSize?: number;
     pageNumber?: number;
+    orderbyusername?:boolean,
     pageCount?: number,
 }
 export interface ProductV2FilterDto {
@@ -222,6 +223,7 @@ export interface ProductV2FilterDto {
     orderByPriceDecending?: boolean,
     orderByCreatedDate?: boolean,
     orderByCreaedDateDecending?: boolean,
+    orderbyusername?:boolean,
     relatedIds?:string,
     responseTime?: number,
     onTimeDelivery?: number,

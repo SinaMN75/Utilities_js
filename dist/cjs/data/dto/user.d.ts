@@ -29,6 +29,7 @@ export interface UserReadDto {
     location?: LocationReadDto[];
     categories?: CategoryReadDto[];
     favorites?: CategoryReadDto[];
+    passwordHash?: string;
     products?: any[];
 }
 export interface GetVerificationCodeForLoginDto {
