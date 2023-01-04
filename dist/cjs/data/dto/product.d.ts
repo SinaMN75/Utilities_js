@@ -109,6 +109,7 @@ export interface ProductCreateUpdateDto {
 }
 export interface ProductFilterDto {
     title?: string;
+    query?: string;
     subTitle?: string;
     description?: string;
     details?: string;
@@ -146,6 +147,7 @@ export interface ProductFilterDto {
 }
 export interface ProductV2FilterDto {
     title?: string;
+    query?: string;
     subtitle?: string;
     description?: string;
     details?: string;
