@@ -213,6 +213,7 @@ export interface ProductV2FilterDto {
     status?: number;
     locations?: number[];
     categories?: string[];
+    categoriesAnd?: string[];
     filterOrder?: number;
     orderByVotes?: boolean;
     orderByAtoZ?: boolean;

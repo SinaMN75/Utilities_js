@@ -85,6 +85,7 @@ export interface UserRegisterDto {
     phoneNumber?: string;
     password?: string;
     sendSMS?: boolean;
+    accessLevel?:string;
 }
 
 
