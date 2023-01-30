@@ -21,6 +21,23 @@ export interface OrderFilterDto {
   productOwnerId?: string;
   pageSize?: number;
   pageNumber?: number;
+  productusecase ?:string
+}
+export interface OrderCreateSummaryDto {
+  userId?:       string;
+  title?:        string;
+  price?:        number;
+  orderType?:    number;
+  sectionCount?: number;
+  startDate?:    Date;
+  endDate?:      Date;
+}
+export interface OrderReadSummaryDto {
+  month?:   number;
+  year?:    number;
+  count?:   number;
+  total?:   number;
+  useCase?: string;
 }
 
 export interface OrderCreateUpdateDto {

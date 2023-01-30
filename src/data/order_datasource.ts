@@ -1,5 +1,5 @@
 import { httpDelete, httpGet, httpPost, httpPut } from "../utils/http_interceptor";
-import { GenericResponse, OrderCreateUpdateDto, OrderDetailsCreateUpdateDto, ProductReadDto , OrderFilterDto} from "./data";
+import { GenericResponse, OrderCreateUpdateDto, OrderDetailsCreateUpdateDto, ProductReadDto , OrderFilterDto, OrderCreateSummaryDto, OrderReadSummaryDto} from "./data";
 
 export class OrderDataSource {
     baseUrl: string;
@@ -58,6 +58,15 @@ export class OrderDataSource {
             response => onError(response)
         );
     }
+    async filterSummary(dto: OrderCreateSummaryDto,
+		onResponse: (response: GenericResponse<OrderReadSummaryDto>) => any,
+		onError: (response: Response) => any) {
+		await httpPost(`${this.baseUrl}Order/ReadOrderSummary`,
+			dto,
+			response => onResponse(response),
+			response => onError(response)
+		);
+	}
     async delete(id: string, onResponse: (response: Response) => any, onError: (response: Response) => any) {
         await httpDelete(
             `${this.baseUrl}Order/${id}`,

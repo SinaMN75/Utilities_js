@@ -37,6 +37,11 @@ export class OrderDataSource {
             yield httpPost(`${this.baseUrl}Order/filter`, dto, response => onResponse(response), response => onError(response));
         });
     }
+    filterSummary(dto, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield httpPost(`${this.baseUrl}Order/ReadOrderSummary`, dto, response => onResponse(response), response => onError(response));
+        });
+    }
     delete(id, onResponse, onError) {
         return __awaiter(this, void 0, void 0, function* () {
             yield httpDelete(`${this.baseUrl}Order/${id}`, response => onResponse(response), response => onError(response));
