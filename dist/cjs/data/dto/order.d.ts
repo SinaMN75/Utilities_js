@@ -50,6 +50,7 @@ export interface OrderCreateUpdateDto {
     payType?: number;
     sendType?: number;
     orderDetails?: OrderDetail[];
+    productusecase?: string;
 }
 export interface OrderDetailsCreateUpdateDto {
     id?: string;

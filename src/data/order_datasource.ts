@@ -59,7 +59,7 @@ export class OrderDataSource {
         );
     }
     async filterSummary(dto: OrderCreateSummaryDto,
-		onResponse: (response: GenericResponse<OrderReadSummaryDto>) => any,
+		onResponse: (response: GenericResponse<OrderReadSummaryDto[]>) => any,
 		onError: (response: Response) => any) {
 		await httpPost(`${this.baseUrl}Order/ReadOrderSummary`,
 			dto,
