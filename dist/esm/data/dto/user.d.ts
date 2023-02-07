@@ -31,6 +31,7 @@ export interface UserReadDto {
     favorites?: CategoryReadDto[];
     passwordHash?: string;
     products?: any[];
+    accessLevel?: string;
 }
 export interface GetVerificationCodeForLoginDto {
     mobile?: string;
@@ -57,6 +58,7 @@ export interface UserCreateUpdateDto {
     categories?: string[];
     locations?: number[];
     birthDate?: string;
+    accessLevel?: string;
 }
 export interface UserFilterDto {
     userId?: string;

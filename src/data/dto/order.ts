@@ -27,7 +27,8 @@ export interface OrderCreateSummaryDto {
   userId?:       string;
   title?:        string;
   price?:        number;
-  orderType?:    number;
+  orderType?:    any;
+  orderReportType?:    number;
   sectionCount?: number;
   startDate?:    Date;
   endDate?:      Date;

@@ -32,6 +32,7 @@ export interface UserReadDto {
     favorites?: CategoryReadDto[];
     passwordHash?:string;
 	products?: any[];
+    accessLevel?:string;
 }
 
 export interface GetVerificationCodeForLoginDto {
@@ -62,6 +63,7 @@ export interface UserCreateUpdateDto {
     categories?: string[];
     locations?: number[];
     birthDate?: string;
+    accessLevel?:string;
 }
 
 
