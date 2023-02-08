@@ -21,7 +21,7 @@ export interface OrderFilterDto {
   productOwnerId?: string;
   pageSize?: number;
   pageNumber?: number;
-  productusecase ?:string
+  productUseCase ?:string
 }
 export interface OrderCreateSummaryDto {
   userId?:       string;
@@ -54,7 +54,8 @@ export interface OrderCreateUpdateDto {
   payType?: number;
   sendType?: number;
   orderDetails?: OrderDetail[];
-  productusecase ?:string
+  productUseCase ?:string
+  userId?:string
 }
 export interface OrderDetailsCreateUpdateDto {
   id?: string;
