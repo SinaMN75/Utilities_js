@@ -32,4 +32,5 @@ __exportStar(require("./gender"), exports);
 __exportStar(require("./top_product"), exports);
 __exportStar(require("./transaction"), exports);
 __exportStar(require("./order"), exports);
+__exportStar(require("./payment"), exports);
 //# sourceMappingURL=dto.js.map

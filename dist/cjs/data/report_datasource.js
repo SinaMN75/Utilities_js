@@ -25,6 +25,16 @@ class ReportDatasource {
             yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}Report/filter`, dto, response => onResponse(response), response => onError(response));
         });
     }
+    topWords(dto, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}Report/TopReports`, dto, response => onResponse(response), response => onError(response));
+        });
+    }
+    completationInformation(dto, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield (0, http_interceptor_1.httpPost)(`${this.baseUrl}Report/CompletationInformation`, dto, response => onResponse(response), response => onError(response));
+        });
+    }
 }
 exports.ReportDatasource = ReportDatasource;
 //# sourceMappingURL=report_datasource.js.map

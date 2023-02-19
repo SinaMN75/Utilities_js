@@ -22,5 +22,15 @@ export class ReportDatasource {
             yield httpPost(`${this.baseUrl}Report/filter`, dto, response => onResponse(response), response => onError(response));
         });
     }
+    topWords(dto, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield httpPost(`${this.baseUrl}Report/TopReports`, dto, response => onResponse(response), response => onError(response));
+        });
+    }
+    completationInformation(dto, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield httpPost(`${this.baseUrl}Report/CompletationInformation`, dto, response => onResponse(response), response => onError(response));
+        });
+    }
 }
 //# sourceMappingURL=report_datasource.js.map

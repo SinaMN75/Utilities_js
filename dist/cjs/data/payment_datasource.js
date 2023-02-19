@@ -25,6 +25,11 @@ class PaymentDataSource {
             yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}Payment/IncreaseWalletBalance/${amount}`, response => onResponse(response), response => onError(response));
         });
     }
+    payOrderStripe(dto, onResponse, onError) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield (0, http_interceptor_1.httpGet)(`${this.baseUrl}Payment/PayOrderStripe/${dto.orderId}?param=${dto.params}`, response => onResponse(response), response => onError(response));
+        });
+    }
 }
 exports.PaymentDataSource = PaymentDataSource;
 //# sourceMappingURL=payment_datasource.js.map

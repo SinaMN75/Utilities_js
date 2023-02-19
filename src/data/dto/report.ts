@@ -62,3 +62,24 @@ export interface ReportReadDto {
 }
 
 
+export interface ReportTopWordsDto {
+	user?:          boolean;
+    product?:       boolean;
+    reportType?:    number;
+    userId?:        string;
+    creatorUserId?: string;
+    count?:         number;
+}
+
+
+
+export interface ReportCompletationInformationDto {
+    title?:     string;
+    month?:     number;
+    year?:      number;
+    day?:       number;
+    count?:     number;
+    total?:     number;
+    productId?: string;
+}
+
