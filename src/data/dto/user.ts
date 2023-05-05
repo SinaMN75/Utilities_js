@@ -27,7 +27,7 @@ export interface UserReadDto {
     media?: MediaReadDto[];
     colors?: CategoryReadDto[];
     specialties?: CategoryReadDto[];
-    location?: LocationReadDto[];
+    locations?: LocationReadDto[];
     categories?: CategoryReadDto[];
     favorites?: CategoryReadDto[];
     passwordHash?:string;

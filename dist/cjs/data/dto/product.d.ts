@@ -33,7 +33,7 @@ export interface ProductReadDto {
     deletedAt?: string;
     status?: number;
     user?: UserReadDto;
-    location?: LocationReadDto[];
+    locations?: LocationReadDto[];
     media?: MediaReadDto[];
     categories?: CategoryReadDto[];
     team?: CategoryReadDto[];
